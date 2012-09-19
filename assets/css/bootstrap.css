@@ -176,7 +176,6 @@ pre {
 .muted,
 .help-block,
 .uneditable-input,
-blockquote,
 small {
   color: #999999;
 }
@@ -2781,7 +2780,7 @@ table [class*=span],
 .open {
   *z-index: 1000;
 }
-.open  > .dropdown-menu {
+.open > .dropdown-menu {
   display: block;
 }
 .pull-right > .dropdown-menu {
@@ -5359,6 +5358,9 @@ body {
   position: absolute;
   top: auto;
   bottom: 270px;
+}
+.normal-color {
+  color: #000000;
 }
 .pull-right {
   float: right;
