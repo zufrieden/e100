@@ -1,0 +1,4 @@
+/vendor/
+/cache/
+antistatique.log
+.DS_Store
