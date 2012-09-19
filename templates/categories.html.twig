@@ -1,0 +1,104 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ 'categories.title' | trans }}{% endblock %}
+
+{% block content %}
+    <div class="row-fluid">
+      <div class="span12">
+        <h1>{{ 'categories.welcome.title' | trans }}</h1>
+        <p>{{ 'categories.welcome.text' | trans }}</p>
+        <p><a class="btn" href="#old">{{ 'categories.old.title' | trans }}</a></p>
+        <p><a class="btn" href="#new">{{ 'categories.new.title' | trans }}</a></p>
+      </div>
+    </div>
+        
+
+    <div class="row-fluid">
+      <div class="span6" id="old">
+        <h2>{{ 'categories.old.title' | trans }}</h2>
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                <h4>At the begining</h4>
+              </a>
+            </div>
+            <div id="collapseOne" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul class="nav nav-list bs-docs-sidenav">
+                  <li class="read-ok"><a href="{{ path('random') }}"><i class="icon-ok-circle"></i> <strong>1.</strong> Creation input </a></li>
+                  <li class="read-ok"><a href="{{ path('random') }}"><i class="icon-ok-circle"></i> <strong>2.</strong> The Fall</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>3.</strong> The Flood</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>4.</strong> God's Coveneant with Noah</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>5.</strong> Tower of Babel</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                <h4>Abraham, Isaac and Jaboc</h4>
+              </a>
+            </div>
+            <div id="collapseTwo" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul class="nav nav-list bs-docs-sidenav">
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>6.</strong> Creation</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>7.</strong> The Fall</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>8.</strong> The Flood</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>9.</strong> God's Coveneant with Noah</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>10.</strong> Tower of Babel</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!--/span-->
+
+      <div class="span6" id="new">
+        <h2>{{ 'categories.new.title' | trans }}</h2>
+        <div class="accordion" id="accordion3">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseOne2">
+                <h4>At the begining</h4>
+              </a>
+            </div>
+            <div id="collapseOne2" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul class="nav nav-list bs-docs-sidenav">
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>1.</strong> Creation</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>2.</strong> The Fall</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>3.</strong> The Flood</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>4.</strong> God's Coveneant with Noah</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>5.</strong> Tower of Babel</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTwo2">
+                <h4>Abraham, Isaac and Jaboc</h4>
+              </a>
+            </div>
+            <div id="collapseTwo2" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul class="nav nav-list bs-docs-sidenav">
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>6.</strong> Creation</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>7.</strong> The Fall</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>8.</strong> The Flood</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>9.</strong> God's Coveneant with Noah</a></li>
+                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>10.</strong> Tower of Babel</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div><!--/span-->
+    </div><!--/row-->
+{% endblock %}

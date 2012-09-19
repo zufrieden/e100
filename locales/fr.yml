@@ -1,0 +1,26 @@
+homepage: 
+    title: "E100 | Challenge"
+    welcome:
+        title: Bienvenue sur l'application E100
+        text: Votre défi est de découvrir les 100 textes ! Vous définissez votre rythme, nous vous aidons à relever le défi
+        action: Commencer le défi
+    categories:
+        title: Catégories
+        text: Chaque texte du défi E100 est classé dans une catégorie.
+        action: Découvrir les catégories
+    random: 
+        title: Perdu ?
+        text: Vous ne savez pas par où commencer. Suivez le guide !
+        action: Découvrir le text 1
+
+
+menu:
+    home: Accueil
+    categories: Catégories
+    random: Aléatoire
+    notes: Notes
+    favorites: Favoris
+    last: Dernier
+
+footer:
+
