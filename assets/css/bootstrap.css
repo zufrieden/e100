@@ -5376,7 +5376,7 @@ i {
 }
 .btn [class^="icon-"],
 .btn [class*=" icon-"] {
-  margin-top: 2px;
+  margin-top: 0px;
 }
 .btn-small {
   margin-right: 10px;
@@ -5386,6 +5386,16 @@ i {
 }
 .favorite table .btn-danger i {
   padding: 0;
+}
+.note h3 {
+  margin: 5px 0;
+}
+.note h4 {
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+.notes-tools {
+  padding-top: 20px;
 }
 .pull-right {
   float: right;
