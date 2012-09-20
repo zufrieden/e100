@@ -23,6 +23,24 @@ categories:
     new:
         title: New Testament
 
+random:
+    button:
+        favorites: "Add to Favorites"
+        read: "Mark read"
+        facebook: "Share on Facebook"
+        send: "Send to a friend"
+        note: "Write a note"
+
+favorites:
+    title: "E100 | Favorites"
+    welcome:
+        title: "Favorites"
+
+notes:
+    title: "E100 | Notes"
+    welcome: 
+        title: "Notes"
+
 menu:
     home: Home
     categories: Categories
