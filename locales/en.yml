@@ -28,6 +28,11 @@ favorites:
     welcome:
         title: "Favorites"
 
+notes:
+    title: "E100 | Notes"
+    welcome: 
+        title: "Notes"
+
 menu:
     home: Home
     categories: Categories
