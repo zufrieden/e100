@@ -5291,6 +5291,10 @@ body {
 .sidebar-nav {
   padding: 9px 0;
 }
+a:active,
+a:focus {
+  outline: none !important;
+}
 /* Sidenav for Docs
 -------------------------------------------------- */
 .bs-docs-sidenav {
@@ -5363,6 +5367,19 @@ body {
 .normal-color,
 blockquote {
   color: #000000;
+}
+sup {
+  padding-right: 5px;
+}
+i {
+  padding-right: 10px;
+}
+.btn [class^="icon-"],
+.btn [class*=" icon-"] {
+  margin-top: 2px;
+}
+.btn-small {
+  margin-right: 10px;
 }
 .pull-right {
   float: right;
