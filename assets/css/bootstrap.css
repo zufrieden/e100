@@ -5381,6 +5381,12 @@ i {
 .btn-small {
   margin-right: 10px;
 }
+.favorite table .btn-danger {
+  float: right;
+}
+.favorite table .btn-danger i {
+  padding: 0;
+}
 .pull-right {
   float: right;
 }

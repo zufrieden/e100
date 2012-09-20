@@ -5,7 +5,23 @@
 {% block content %}
     <div class="row-fluid">
       <div class="span12">
-        
+        <div class="span6 favorite">
+          <h2>{{ 'categories.old.title' | trans }}</h2>
+          <table class="table">
+            <tr><td><i class="icon-star"></i><strong>3.</strong> The Flood</a></td><td><a href="#" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
+            <tr><td><i class="icon-star"></i><strong>5.</strong> The Tower of Babel</td><td><a href="#" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
+            <tr><td><i class="icon-star"></i><strong>6.</strong> Time to leave</td><td><a href="#" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
+            <tr><td><i class="icon-star"></i><strong>9.</strong> Not alone</td><td><a href="#" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
+          </table>
+        </div>
+        <div class="span6 favorite">
+          <h2>{{ 'categories.new.title' | trans }}</h2>
+          <table class="table">
+            <tr><td><i class="icon-star"></i><strong>4.</strong> Get ready</td><td><a href="#" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
+            <tr><td><i class="icon-star"></i><strong>14.</strong> A man is well</td><td><a href="#" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
+            <tr><td><i class="icon-star"></i><strong>15.</strong> Lazarus is alive</td><td><a href="#" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
+          </table>
+        </div>
       </div><!--/span-->
     </div><!--/row-->
 {% endblock %}
