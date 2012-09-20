@@ -5,7 +5,14 @@
 {% block content %}
     <div class="row-fluid">
       <div class="span12">
-        <div class="span6 favorite">
+        <h1>{{ 'favorites.welcome.title' | trans }}</h1>
+        <p><a class="btn" href="#old">{{ 'categories.old.title' | trans }}</a></p>
+        <p><a class="btn" href="#new">{{ 'categories.new.title' | trans }}</a></p>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="span6 favorite" id="old">
           <h2>{{ 'categories.old.title' | trans }}</h2>
           <table class="table">
             <tr><td><i class="icon-star"></i><strong>3.</strong> The Flood</a></td><td><a href="#" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
@@ -14,7 +21,7 @@
             <tr><td><i class="icon-star"></i><strong>9.</strong> Not alone</td><td><a href="#" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
           </table>
         </div>
-        <div class="span6 favorite">
+        <div class="span6 favorite" id="new">
           <h2>{{ 'categories.new.title' | trans }}</h2>
           <table class="table">
             <tr><td><i class="icon-star"></i><strong>4.</strong> Get ready</td><td><a href="#" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>

@@ -23,6 +23,11 @@ categories:
     new:
         title: New Testament
 
+favorites:
+    title: "E100 | Favorites"
+    welcome:
+        title: "Favorites"
+
 menu:
     home: Home
     categories: Categories
