@@ -5380,6 +5380,7 @@ i {
 }
 .btn-small {
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 .favorite table .btn-danger {
   float: right;
