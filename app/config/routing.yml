@@ -1,7 +1,49 @@
-e100_core:
-    resource: "@E100CoreBundle/Controller/"
+homepage:
+    pattern:  /
+    defaults: { _controller: E100CoreBundle:Default:index }
+
+homepage_i18n:
+    pattern: /{_locale}
+    defaults: { _controller: E100CoreBundle:Default:index, _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
+Default:
+    resource: "@E100CoreBundle/Controller/DefaultController.php"
     type:     annotation
     prefix:   /
+
+Text:
+    resource: "@E100CoreBundle/Controller/Text/"
+    type:     annotation
+    prefix:   /{_locale}/text
+    defaults: { _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
+Favorites:
+    resource: "@E100CoreBundle/Controller/Favorites/"
+    type:     annotation
+    prefix:   /{_locale}/favorites
+    defaults: { _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
+Note:
+    resource: "@E100CoreBundle/Controller/Note/"
+    type:     annotation
+    prefix:   /{_locale}/note
+    defaults: { _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
+Login:
+    resource: "@E100CoreBundle/Controller/Login/"
+    type:     annotation
+    prefix:   /{_locale}/login
+    defaults: { _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
 
 # Internal routing configuration to handle ESI
 #_internal:
