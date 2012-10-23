@@ -1,6 +1,6 @@
 <?php
 
-namespace Derham\CoreBundle\Entity;
+namespace E100\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -25,7 +25,7 @@ class Goal
     /**
      * @var DateTime $startDateTime
      *
-     * @ORM\Column(name="start_date_time", type="DateTime")
+     * @ORM\Column(name="start_date_time", type="datetime")
      */
 
     private $startDateTime;
@@ -33,7 +33,7 @@ class Goal
     /**
      * @var DateTime $endDateTime
      *
-     * @ORM\Column(name="end_date_time", type="DateTime")
+     * @ORM\Column(name="end_date_time", type="datetime")
      */
 
     private $endDateTime;
@@ -47,4 +47,83 @@ class Goal
 
     private $user;    
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set startDateTime
+     *
+     * @param DateTime $startDateTime
+     * @return Goal
+     */
+    public function setStartDateTime(\DateTime $startDateTime)
+    {
+        $this->startDateTime = $startDateTime;
+    
+        return $this;
+    }
+
+    /**
+     * Get startDateTime
+     *
+     * @return DateTime 
+     */
+    public function getStartDateTime()
+    {
+        return $this->startDateTime;
+    }
+
+    /**
+     * Set endDateTime
+     *
+     * @param DateTime $endDateTime
+     * @return Goal
+     */
+    public function setEndDateTime(\DateTime $endDateTime)
+    {
+        $this->endDateTime = $endDateTime;
+    
+        return $this;
+    }
+
+    /**
+     * Get endDateTime
+     *
+     * @return DateTime 
+     */
+    public function getEndDateTime()
+    {
+        return $this->endDateTime;
+    }
+
+    /**
+     * Set user
+     *
+     * @param E100\CoreBundle\Entity\User $user
+     * @return Goal
+     */
+    public function setUser(\E100\CoreBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return E100\CoreBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

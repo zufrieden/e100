@@ -1,6 +1,6 @@
 <?php
 
-namespace Derham\CoreBundle\Entity;
+namespace E100\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -63,4 +63,129 @@ class Note
      */
 
     private $text;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set created_at
+     *
+     * @param \DateTime $createdAt
+     * @return Note
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->created_at = $createdAt;
+    
+        return $this;
+    }
+
+    /**
+     * Get created_at
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Set updated_at
+     *
+     * @param \DateTime $updatedAt
+     * @return Note
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
+    
+        return $this;
+    }
+
+    /**
+     * Get updated_at
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Set note_text
+     *
+     * @param string $noteText
+     * @return Note
+     */
+    public function setNoteText($noteText)
+    {
+        $this->note_text = $noteText;
+    
+        return $this;
+    }
+
+    /**
+     * Get note_text
+     *
+     * @return string 
+     */
+    public function getNoteText()
+    {
+        return $this->note_text;
+    }
+
+    /**
+     * Set user
+     *
+     * @param E100\CoreBundle\Entity\User $user
+     * @return Note
+     */
+    public function setUser(\E100\CoreBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return E100\CoreBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set text
+     *
+     * @param E100\CoreBundle\Entity\Text $text
+     * @return Note
+     */
+    public function setText(\E100\CoreBundle\Entity\Text $text = null)
+    {
+        $this->text = $text;
+    
+        return $this;
+    }
+
+    /**
+     * Get text
+     *
+     * @return E100\CoreBundle\Entity\Text 
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
 }

@@ -1,7 +1,6 @@
 <?php
-// src/Acme/UserBundle/Entity/User.php
 
-namespace Acme\UserBundle\Entity;
+namespace E100\CoreBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
@@ -26,10 +25,10 @@ class User extends BaseUser
      *
      * Unidirectional - Many users have Many favorite textes (OWNING SIDE)
      *
-     * @ManyToMany(targetEntity="Text")
-     * @JoinTable(name="user_favorite_texts",
-     *   joinColumns={@JoinColumn(name="user_id", referencedColumnName="id")},
-     *   inverseJoinColumns={@JoinColumn(name="favorite_text_id", referencedColumnName="id")}
+     * @ORM\ManyToMany(targetEntity="Text")
+     * @ORM\JoinTable(name="user_favorite_texts",
+     *   joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *   inverseJoinColumns={@ORM\JoinColumn(name="favorite_text_id", referencedColumnName="id")}
      * )
      */
     private $favorites;
@@ -39,7 +38,7 @@ class User extends BaseUser
      *
      * Unidirectional - A user has read many texts (INVERSE SIDE)
      *
-     * @OneToMany(targetEntity="MarkedRead", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="ReadText", mappedBy="user")
      */
     private $readTexts;
 
@@ -66,7 +65,7 @@ class User extends BaseUser
      *
      * Bidirectional - A users can write multiple notes  (INVERSE SIDE)
      *
-     * @OneToMany(targetEntity="Note", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Note", mappedBy="user")
      */
 
     private $notes;
@@ -76,7 +75,7 @@ class User extends BaseUser
      *
      * Bidirectional - A users can have multiple goal (INVERSE SIDE)
      *
-     * @OneToMany(targetEntity="Goal", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Goal", mappedBy="user")
      */
 
     private $goals;
@@ -86,5 +85,193 @@ class User extends BaseUser
     {
         parent::__construct();
         // your own logic
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set language
+     *
+     * @param string $language
+     * @return User
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+    
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return string 
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     * Add favorites
+     *
+     * @param E100\CoreBundle\Entity\Text $favorites
+     * @return User
+     */
+    public function addFavorite(\E100\CoreBundle\Entity\Text $favorites)
+    {
+        $this->favorites[] = $favorites;
+    
+        return $this;
+    }
+
+    /**
+     * Remove favorites
+     *
+     * @param E100\CoreBundle\Entity\Text $favorites
+     */
+    public function removeFavorite(\E100\CoreBundle\Entity\Text $favorites)
+    {
+        $this->favorites->removeElement($favorites);
+    }
+
+    /**
+     * Get favorites
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getFavorites()
+    {
+        return $this->favorites;
+    }
+
+    /**
+     * Add readTexts
+     *
+     * @param E100\CoreBundle\Entity\MarkedRead $readTexts
+     * @return User
+     */
+    public function addReadText(\E100\CoreBundle\Entity\MarkedRead $readTexts)
+    {
+        $this->readTexts[] = $readTexts;
+    
+        return $this;
+    }
+
+    /**
+     * Remove readTexts
+     *
+     * @param E100\CoreBundle\Entity\MarkedRead $readTexts
+     */
+    public function removeReadText(\E100\CoreBundle\Entity\MarkedRead $readTexts)
+    {
+        $this->readTexts->removeElement($readTexts);
+    }
+
+    /**
+     * Get readTexts
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getReadTexts()
+    {
+        return $this->readTexts;
+    }
+
+    /**
+     * Set lastRead
+     *
+     * @param E100\CoreBundle\Entity\Text $lastRead
+     * @return User
+     */
+    public function setLastRead(\E100\CoreBundle\Entity\Text $lastRead = null)
+    {
+        $this->lastRead = $lastRead;
+    
+        return $this;
+    }
+
+    /**
+     * Get lastRead
+     *
+     * @return E100\CoreBundle\Entity\Text 
+     */
+    public function getLastRead()
+    {
+        return $this->lastRead;
+    }
+
+    /**
+     * Add notes
+     *
+     * @param E100\CoreBundle\Entity\Note $notes
+     * @return User
+     */
+    public function addNote(\E100\CoreBundle\Entity\Note $notes)
+    {
+        $this->notes[] = $notes;
+    
+        return $this;
+    }
+
+    /**
+     * Remove notes
+     *
+     * @param E100\CoreBundle\Entity\Note $notes
+     */
+    public function removeNote(\E100\CoreBundle\Entity\Note $notes)
+    {
+        $this->notes->removeElement($notes);
+    }
+
+    /**
+     * Get notes
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getNotes()
+    {
+        return $this->notes;
+    }
+
+    /**
+     * Add goals
+     *
+     * @param E100\CoreBundle\Entity\Goal $goals
+     * @return User
+     */
+    public function addGoal(\E100\CoreBundle\Entity\Goal $goals)
+    {
+        $this->goals[] = $goals;
+    
+        return $this;
+    }
+
+    /**
+     * Remove goals
+     *
+     * @param E100\CoreBundle\Entity\Goal $goals
+     */
+    public function removeGoal(\E100\CoreBundle\Entity\Goal $goals)
+    {
+        $this->goals->removeElement($goals);
+    }
+
+    /**
+     * Get goals
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getGoals()
+    {
+        return $this->goals;
     }
 }
