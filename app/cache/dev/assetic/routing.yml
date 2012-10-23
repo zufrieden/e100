@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: /Users/office/Documents/mandats/e100/app/config/routing_dev.yml
+    resource: /Users/Office/Documents/mandats/e100/app/config/routing_dev.yml
