@@ -1,6 +1,28 @@
-/vendor/
-/cache/
-antistatique.log
-.DS_Store
+# Composer
+composer.phar
 
-/composer.phar
+# Bootstrap
+app/bootstrap*
+/bin/doctrine
+/bin/doctrine.php
+
+# Symfony directories
+vendor/*
+app/logs/*
+app/cache/*
+web/uploads/*
+web/bundles/*
+/src/Derham/CoreBundle/Resources/public/css/style.css
+
+
+# Configuration files
+app/config/parameters.ini
+
+# Generated files
+web/css/
+web/js/
+web/media/properties/
+web/media/cache/
+
+# OSX specific
+.DS_Store
