@@ -45,4 +45,12 @@ class Theme
      */
 
     private $texts;
+
+    /**
+     * @var string $image
+     *
+     * @ORM\Column(name="image", type="string", length="255")
+     */
+
+    private $image;
 }

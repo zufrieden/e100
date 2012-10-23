@@ -37,15 +37,11 @@ class User extends BaseUser
     /**
      * @var Text[] $textsRead
      *
-     * Unidirectional - Many users have marked many texts as read (OWNING SIDE)
+     * Unidirectional - A user has read many texts (INVERSE SIDE)
      *
-     * @ManyToMany(targetEntity="Text")
-     * @JoinTable(name="user_read_texts",
-     *   joinColumns={@JoinColumn(name="user_id", referencedColumnName="id")},
-     *   inverseJoinColumns={@JoinColumn(name="read_text_id", referencedColumnName="id")}
-     * )
+     * @OneToMany(targetEntity="MarkedRead", mappedBy="user")
      */
-    private $textsRead;
+    private $readTexts;
 
     /**
      * @var Text $lastRead
