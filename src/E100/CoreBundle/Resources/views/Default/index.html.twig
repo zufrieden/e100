@@ -1,4 +1,4 @@
-{% extends "layout.html.twig" %}
+{% extends "::base.html.twig" %}
 
 {% block title %}{{ 'homepage.title' | trans }}{% endblock %}
 
@@ -8,23 +8,23 @@
         <div class="hero-unit">
           <h1>{{ 'homepage.welcome.title' | trans }}</h1>
           <p>{{ 'homepage.welcome.text' | trans }}</p>
-          <p><a class="btn btn-primary btn-large" href="{{ path('categories') }}">{{ 'homepage.welcome.action' | trans }}</a></p>
+          <!-- <p><a class="btn btn-primary btn-large" href="{{ path('categories') }}">{{ 'homepage.welcome.action' | trans }}</a></p> -->
         </div>
 
         
 
         <div class="row-fluid">
           <div class="span6">
-            <img src="{{ app.request.basepath }}/assets/img/e100-ad.jpg" width="100%">
+            <!-- <img src="{{ app.request.basepath }}/assets/img/e100-ad.jpg" width="100%"> -->
           </div><!--/span-->
           <div class="span6">
             <h2>{{ 'homepage.categories.title' | trans }}</h2>
             <p>{{ 'homepage.categories.text' | trans }}</p>
-            <p><a class="btn" href="{{ path('categories') }}">{{ 'homepage.categories.action' | trans }}</a></p>
+            <!-- <p><a class="btn" href="{{ path('categories') }}">{{ 'homepage.categories.action' | trans }}</a></p> -->
             <hr>
             <h2>{{ 'homepage.random.title' | trans }}</h2>
             <p>{{ 'homepage.random.text' | trans }}</p>
-            <p><a class="btn" href="{{ path('categories') }}">{{ 'homepage.random.action' | trans }}</a></p>
+           <!--  <p><a class="btn" href="{{ path('categories') }}">{{ 'homepage.random.action' | trans }}</a></p> -->
           </div><!--/span-->
         </div><!--/row-->
       </div><!--/span-->
