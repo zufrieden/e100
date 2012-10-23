@@ -26,3 +26,5 @@ web/media/cache/
 
 # OSX specific
 .DS_Store
+
+/app/logs/dev.log
