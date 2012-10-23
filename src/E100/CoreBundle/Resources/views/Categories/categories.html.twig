@@ -1,4 +1,4 @@
-{% extends "layout.html.twig" %}
+{% extends "::base.html.twig" %}
 
 {% block title %}{{ 'categories.title' | trans }}{% endblock %}
 
@@ -18,25 +18,25 @@
       <div class="span6" id="old">
         <h2>{{ 'categories.old.title' | trans }}</h2>
         <div class="accordion" id="accordion2">
-          <div class="accordion-group">
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                <h4>God makes the world</h4>
-              </a>
-            </div>
-            <div id="collapseOne" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <img src="http://lorempixel.com/640/250/abstract/" width="100%">
-                <ul class="nav nav-list bs-docs-sidenav">
-                  <li class="read-ok"><a href="{{ path('random') }}"><i class="icon-ok-circle"></i> <strong>1.</strong> The first people </a></li>
-                  <li class="read-ok"><a href="{{ path('random') }}"><i class="icon-ok-circle"></i> <strong>2.</strong> The Fall</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>3.</strong> The Flood</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>4.</strong> God's promise to Noah</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>5.</strong> The Tower of Babel</a></li>
-                </ul>
+          {% for category in oldTestamentCategories %}
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                  <h4> {{ category.title }}</h4>
+                </a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  <img src="http://lorempixel.com/640/250/abstract/" width="100%">
+                  <ul class="nav nav-list bs-docs-sidenav">
+                    {% for text in category.texts %}
+                      <li class="read-ok"><a href="{{ path('random') }}"><i class="icon-ok-circle"></i> <strong>{{ loop.index }}.</strong> {{ text.title }} </a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
+          {% endfor %}
           <div class="accordion-group">
             <div class="accordion-heading">
               <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">

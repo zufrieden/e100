@@ -10,10 +10,15 @@ class CategoriesController extends Controller
 {
     /**
      * @Route("/", name="categories")
-     * @Template()
+     * @Template("E100CoreBundle:Categories:categories.html.twig")
      */
     public function indexAction()
-    {
-        return $this->render('E100CoreBundle:Default:index.html.twig', array('name' => 'default'));
+    {	
+    	$repository = $this->getDoctrine()->getRepository('E100CoreBundle:Theme');
+    	$newTestamCategories = $repository->findBy(array('testament' => 'new'));
+    	$oldTestamCategories = $repository->findBy(array('testament' => 'old'));;
+        
+        return array('newTestamentCategories' => $newTestamCategories,
+        			 'oldTestamentCategories' => $oldTestamCategories);
     }
 }
