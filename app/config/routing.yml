@@ -14,7 +14,7 @@ Default:
     prefix:   /
 
 Text:
-    resource: "@E100CoreBundle/Controller/Text/"
+    resource: "@E100CoreBundle/Controller/TextController.php"
     type:     annotation
     prefix:   /{_locale}/text
     defaults: { _locale: en }
@@ -22,23 +22,31 @@ Text:
         _locale: fr|de|en|ru
 
 Favorites:
-    resource: "@E100CoreBundle/Controller/Favorites/"
+    resource: "@E100CoreBundle/Controller/FavoritesController.php"
     type:     annotation
     prefix:   /{_locale}/favorites
     defaults: { _locale: en }
     requirements:
         _locale: fr|de|en|ru
 
-Note:
-    resource: "@E100CoreBundle/Controller/Note/"
+Categories:
+    resource: "@E100CoreBundle/Controller/CategoriesController.php"
     type:     annotation
-    prefix:   /{_locale}/note
+    prefix:   /{_locale}/categories
+    defaults: { _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
+Note:
+    resource: "@E100CoreBundle/Controller/NotesController.php"
+    type:     annotation
+    prefix:   /{_locale}/notes
     defaults: { _locale: en }
     requirements:
         _locale: fr|de|en|ru
 
 Login:
-    resource: "@E100CoreBundle/Controller/Login/"
+    resource: "@E100CoreBundle/Controller/LoginController.php"
     type:     annotation
     prefix:   /{_locale}/login
     defaults: { _locale: en }
