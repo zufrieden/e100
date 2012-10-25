@@ -9,11 +9,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class TextController extends Controller
 {
     /**
-     * @Route("/")
-     * @Template()
+     * @Route("/{id}")
+     * @Template("E100CoreBundle:BibleText:text.html.twig")
      */
-    public function indexAction($name)
+    public function indexAction($id)
     {
-        return array('name' => $name);
+    	$repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
+    	$text = $repository->findOneBy(array('id' => $id));
+        
+        return array('text' => $text);
     }
 }
