@@ -9,11 +9,35 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class NotesController extends Controller
 {
     /**
-     * @Route("/", name="notes")
-     * @Template()
+     * @Route("/add/{id}", name="notes")
+     * @Template("E100CoreBundle:Default:index.html.twig")
      */
-    public function indexAction($name)
+    public function indexAction($id)
     {
-        return $this->render('E100CoreBundle:Default:index.html.twig', array('name' => 'default'));
+        return array('name' => 'default');
     }
+
+    /**
+     * @Route("/delete/{id}", name="deleteNote")
+     */
+    public function deleteAction($id)
+    {
+    	// Get User form Session
+    	$repository = $this->getDoctrine()->getRepository('E100CoreBundle:User');
+    	$user = $repository->findOneById(1);
+
+    	$user->removeNote($id);
+    	$this->getDoctrine()->flush();
+    }
+
+    /**
+     * @Route("/edit/{id}", name="editNote")
+     * @Template("E100CoreBundle:Default:index.html.twig")
+     */
+    public function editAction()
+    {
+    	// Update
+    }
+
+
 }
