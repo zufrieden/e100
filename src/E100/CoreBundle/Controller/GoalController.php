@@ -21,6 +21,9 @@ class GoalController extends Controller
         return array('text' => $text);
     }
 
+    /**
+     * @Route("/markread/{id}", name="markRead")
+     */
     public function markRead($id)
     {
     	$today = date("Y-m-d");
@@ -36,6 +39,9 @@ class GoalController extends Controller
     	$em->flush();
     }
 
+    /**
+     * @Route("/unmarkread/{id}", name="unmarkRead")
+     */
     public function markNotRead($id)
     {
     	$em = $this->getDoctrine()->getManager();

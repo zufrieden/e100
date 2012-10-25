@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class NotesController extends Controller
 {
     /**
-     * @Route("/add/{id}", name="notes")
+     * @Route("/}", name="notes")
      * @Template("E100CoreBundle:Default:index.html.twig")
      */
     public function indexAction($id)

@@ -41,7 +41,7 @@ class FavoritesController extends Controller
     }
 
     /**
-     * @Route("/delete/{id}", name="addFavorites")
+     * @Route("/delete/{id}", name="deleteFavorites")
      */
     public function deleteAction($id)
     {

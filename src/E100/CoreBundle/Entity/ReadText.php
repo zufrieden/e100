@@ -110,7 +110,7 @@ class ReadText
      * @param E100\CoreBundle\Entity\User $date
      * @return ReadText
      */
-    public function setDate(\E100\CoreBundle\Entity\User $date = null)
+    public function setDate($date = null)
     {
         $this->date = $date;
     
