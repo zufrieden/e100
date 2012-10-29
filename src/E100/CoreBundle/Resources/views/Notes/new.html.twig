@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ 'notes.title' | trans }}{% endblock %}
+
+{% block content %}
+    <div class="row-fluid">
+      <div class="span12">
+        <h1>{{ 'notes.welcome.title' | trans }}</h1>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span12">
+        <form action="{{ path('newNote', { 'id': 2 }) }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+          <input type="submit" />
+        </form>
+      </div><!--/span-->
+    </div><!--/row-->
+{% endblock %}

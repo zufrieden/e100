@@ -7,14 +7,16 @@
       <div class="span12">
         <div class="span7">
           <blockquote>
-            <h1>{{ text.title }}<br /><a href="{{ path('addFavorites', { 'id': text.id }) }}" class="btn btn-small btn-warning"><i class="icon-star icon-white"></i>{{ 'random.button.favorites' | trans }}</a></h1>
+            <h1>{{ text.title }}</h1>
+              <a href="{{ path('addFavorites', { 'id': text.id }) }}" class="btn btn-small btn-warning add-favorite"><i class="icon-star icon-white"></i>{{ 'random.button.favorites' | trans }}</a>
+
             <p class="lead">{{ text.bibleRef}}</p>
             <p>
                 {{ text.bibleText | raw }}
             </p>
           </blockquote>
           <br />
-          <a href="{{ path('markRead', { 'id': text.id }) }}" class="btn btn-success btn-large"><i class="icon-ok icon-white"></i>{{ 'random.button.read' | trans }}</a>
+          <a href="#" class="btn btn-success btn-large"><i class="icon-ok icon-white"></i>{{ 'random.button.read' | trans }}</a>
           <br /><br />
           <a href="#" class="btn btn-info btn-small"><i class="icon-thumbs-up icon-white"></i>{{ 'random.button.facebook' | trans }}</a>
           <a href="#" class="btn btn-small"><i class="icon-envelope"></i>{{ 'random.button.send' | trans }}</a>
@@ -26,7 +28,7 @@
             {{ text.comment }}
           </p>
           <br />
-          <a href="#" class="btn btn-inverse btn-small"><i class="icon-pencil icon-white"></i>{{ 'random.button.note' | trans }}</a>
+          <a href="{{ path('newNote', { 'id': text.id }) }}" class="btn btn-inverse btn-small"><i class="icon-pencil icon-white"></i>{{ 'random.button.note' | trans }}</a>
           <br />
           <hr />
           <br />
