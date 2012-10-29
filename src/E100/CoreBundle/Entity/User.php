@@ -128,8 +128,12 @@ class User extends BaseUser
      */
     public function addFavorite(\E100\CoreBundle\Entity\Text $favorites)
     {
+        if ($this->favorites->contains($favorites)) {
+            throw new \Exception('Already favorited');
+        }
+
         $this->favorites[] = $favorites;
-    
+        
         return $this;
     }
 
@@ -140,7 +144,13 @@ class User extends BaseUser
      */
     public function removeFavorite(\E100\CoreBundle\Entity\Text $favorites)
     {
+        if (!$this->favorites->contains($favorites)) {
+            throw new \Exception('This text is not a favorit');
+        }
+
         $this->favorites->removeElement($favorites);
+
+        return $this;
     }
 
     /**
