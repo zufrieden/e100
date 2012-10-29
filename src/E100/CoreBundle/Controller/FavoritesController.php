@@ -5,6 +5,7 @@ namespace E100\CoreBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 
 class FavoritesController extends Controller
@@ -17,8 +18,8 @@ class FavoritesController extends Controller
     {
     	// User from session
 
-    	$repositoryUser = $this->getDoctrine()->getRepository('E100CoreBundle:User');
-    	$user = $repositoryUser->findOneById(1);
+    	// Get User form Session
+        $user = $this->getUser();
 
     	$favorites = $user->getFavorites();
 
@@ -34,10 +35,26 @@ class FavoritesController extends Controller
     	$repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
     	$text = $repository->findOneBy(array('id' => $id));
     	
-    	// User from user session
-    	$repositoryUser = $this->getDoctrine()->getRepository('E100CoreBundle:User');
-    	$user = $repositoryUser->findOneById(1);
-    	$user->addFavorite($text);	
+    	// Get User form Session
+        $user = $this->getUser();
+    	
+        try{
+            $user->addFavorite($text);
+            $this->getDoctrine()->getEntityManager()->persist($user);
+            $this->getDoctrine()->getEntityManager()->flush();
+
+            $response = new JsonResponse(array(
+                'success' => true,
+                'text_id' => $text->getId(),
+            ), 200);
+        } catch (\Exception $e){
+             $response = new JsonResponse(array(
+                'success' => false,
+                'text_id' => null,
+            ), 500);
+        }
+
+        return $response;
     }
 
     /**
@@ -45,12 +62,28 @@ class FavoritesController extends Controller
      */
     public function deleteAction($id)
     {
-    	$repositoryText = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
-    	$text = $repository->findOneById($id);
+    	$repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
+        $text = $repository->findOneBy(array('id' => $id));
 
-    	// User from user session
-    	$repositoryUser = $this->getDoctrine()->getRepository('E100CoreBundle:User');
-    	$user = $repositoryUser->findOneById(1);
-    	$user->removeFavorite($text);
+    	// Get User form Session
+        $user = $this->getUser();
+
+        try{
+            $user->removeFavorite($text);
+            $this->getDoctrine()->getEntityManager()->persist($user);
+            $this->getDoctrine()->getEntityManager()->flush();
+
+            $response = new JsonResponse(array(
+                'success' => true,
+                'text_id' => $text->getId(),
+            ), 200);
+        } catch (\Exception $e){
+             $response = new JsonResponse(array(
+                'success' => false,
+                'text_id' => null,
+            ), 500);
+        }
+
+        return $response;
     }
 }
