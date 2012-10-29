@@ -31,7 +31,8 @@ class GoalController extends Controller
     	$readText->setText($id);
 
     	// Set user from current session
-    	$readText->setUser(1);
+        $user = $this->getUser();
+    	$readText->setUser($user);
     	$readText->setDate($today);
 
     	$em = $this->getDoctrine()->getManager();
