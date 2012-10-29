@@ -16,6 +16,13 @@ class TextController extends Controller
     {
     	$repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
     	$text = $repository->findOneBy(array('id' => $id));
+
+        if($this->getUser()) {
+            $user = $this->getUser();
+            $user->setLastRead($text);
+            $this->getDoctrine()->getEntityManager()->persist($user);
+            $this->getDoctrine()->getEntityManager()->flush();
+        }
         
         return array('text' => $text);
     }
