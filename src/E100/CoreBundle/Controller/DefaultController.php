@@ -27,18 +27,30 @@ class DefaultController extends Controller
         $query = $repository->createQueryBuilder('t')->getQuery();
         $max = count($query->getResult());
         $text = null;
+        $hasRead = false;
+        $hasFavorited = false;
 
         while($text == NULL) {
-            $randomId = rand(1, $max);
+            $randomId = rand(38, $max);
             $text = $repository->findOneBy(array('id' => $randomId));
         }
 
-        return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text));
+         if($this->getUser()) {
+
+            if($user->getFavorites()->contains($text)) {
+                $hasFavorited = true;
+            }
+
+            if($user->getReadTexts()->contains($text)) {
+                $hasRead = true;
+            }
+        }
+
+        return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited));
     }
 
     /**
      * @Route("/last", name="last")
-     *
      */
     public function lastAction()
     {
@@ -46,8 +58,22 @@ class DefaultController extends Controller
 
         $text = $this->getLastRead();
 
+        $hasRead = false;
+        $hasFavorited = false;
+
+        if($this->getUser() && $text) {
+
+            if($user->getFavorites()->contains($text)) {
+                $hasFavorited = true;
+            }
+
+            if($user->getReadTexts()->contains($text)) {
+                $hasRead = true;
+            }
+        }
+
         if($text) {
-           return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text)); 
+           return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited)); 
         } else {
             $this->forward('/random');
         }
