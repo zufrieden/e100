@@ -1,4 +1,4 @@
-f<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -68,7 +68,7 @@ _gaq.push(['_trackPageview']);
               {% else %}
                 <ul class="nav pull-right">
                   <li {% if is_current_route('login') %}class="active"{% endif %}><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
-                  <!--  -->
+                  <li {% if is_current_route('login') %}class="active"{% endif %}><a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a></li>
                 </ul>
             {% endif %}
           </div><!--/.nav-collapse -->
