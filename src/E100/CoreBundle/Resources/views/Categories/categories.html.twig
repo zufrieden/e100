@@ -17,15 +17,42 @@
     <div class="row-fluid">
       <div class="span6" id="old">
         <h2>{{ 'categories.old.title' | trans }}</h2>
-        <div class="accordion" id="accordion2">
+        <div class="accordion" id="old-accordion">
           {% for category in oldTestamentCategories %}
             <div class="accordion-group">
               <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#old-accordion" href="#old-accordion{{ loop.index }}">
                   <h4> {{ category.title }}</h4>
                 </a>
               </div>
-              <div id="collapseOne" class="accordion-body collapse">
+              <div id="old-accordion{{ loop.index }}" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  <img src="http://lorempixel.com/640/250/abstract/" width="100%">
+                  <ul class="nav nav-list bs-docs-sidenav">
+                    {% for text in category.texts %}
+                      <li class="read-ok"><a href="{{ path('bibleText', {'id': text.id }) }}"><i class="icon-ok-circle"></i> <strong>{{ loop.index }}.</strong> {{ text.title }} </a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        
+
+      </div><!--/span-->
+
+      <div class="span6" id="new">
+        <h2>{{ 'categories.new.title' | trans }}</h2>
+        <div class="accordion" id="new-accordion">
+          {% for category in newTestamentCategories %}
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#new-accordion" href="#new-accordion{{loop.index}}">
+                  <h4> {{ category.title }}</h4>
+                </a>
+              </div>
+              <div id="new-accordion{{loop.index}}" class="accordion-body collapse">
                 <div class="accordion-inner">
                   <img src="http://lorempixel.com/640/250/abstract/" width="100%">
                   <ul class="nav nav-list bs-docs-sidenav">
@@ -37,108 +64,6 @@
               </div>
             </div>
           {% endfor %}
-          <div class="accordion-group">
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                <h4>God's family</h4>
-              </a>
-            </div>
-            <div id="collapseTwo" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <img src="http://lorempixel.com/640/250/abstract/" width="100%">
-                <ul class="nav nav-list bs-docs-sidenav">
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>6.</strong> Time to leave</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>7.</strong> God's promise to Abraham</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>8.</strong> Keeping the promise</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>9.</strong> Not alone</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>10.</strong> Becoming friends</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-group">
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                <h4>Good out of bad</h4>
-              </a>
-            </div>
-            <div id="collapseThree" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <img src="http://lorempixel.com/640/250/abstract/" width="100%">
-                <ul class="nav nav-list bs-docs-sidenav">
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>11.</strong> Sold!</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>12.</strong> Prison and a promotion</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>13.</strong> The brothers meet again</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>14.</strong> Back to Egypt</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>15.</strong> Reunion</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div><!--/span-->
-
-      <div class="span6" id="new">
-        <h2>{{ 'categories.new.title' | trans }}</h2>
-        <div class="accordion" id="accordion3">
-          <div class="accordion-group">
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseOne2">
-                <h4>Jesus, God's Son</h4>
-              </a>
-            </div>
-            <div id="collapseOne2" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <img src="http://lorempixel.com/640/250/abstract/" width="100%">
-                <ul class="nav nav-list bs-docs-sidenav">
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>1.</strong> One of us</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>2.</strong> Believe the impossible</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>3.</strong> Good News!</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>4.</strong> Get ready</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>5.</strong> Know your ennemy</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-group">
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTwo2">
-                <h4>What Jesus said</h4>
-              </a>
-            </div>
-            <div id="collapseTwo2" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <img src="http://lorempixel.com/640/250/abstract/" width="100%">
-                <ul class="nav nav-list bs-docs-sidenav">
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>6.</strong> What to do</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>7.</strong> How to pray</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>8.</strong> A story by Jesus</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>9.</strong> The good Samaritan</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>10.</strong> Lost and found</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-group">
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree2">
-                <h4>What Jesus did</h4>
-              </a>
-            </div>
-            <div id="collapseThree2" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <img src="http://lorempixel.com/640/250/abstract/" width="100%">
-                <ul class="nav nav-list bs-docs-sidenav">
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>11.</strong> Jesus feeds a crowd</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>12.</strong> Jesus walks on water</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>13.</strong> A man can see</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>14.</strong> A man is well</a></li>
-                  <li><a href="{{ path('random') }}"><i class="icon-book"></i> <strong>15.</strong> Lazarus is alive</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
 
 

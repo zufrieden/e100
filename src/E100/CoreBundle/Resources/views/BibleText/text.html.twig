@@ -8,15 +8,16 @@
         <div class="span7">
           <blockquote>
             <h1>{{ text.title }}</h1>
-              <a href="{{ path('addFavorites', { 'id': text.id }) }}" class="btn btn-small btn-warning add-favorite"><i class="icon-star icon-white"></i>{{ 'random.button.favorites' | trans }}</a>
-
+              <a href="{{ path('addFavorites', { 'id': text.id }) }}" class="btn btn-small btn-warning btn-favorit add-favorite {% if hasFavorited == true %}hide{% endif %}"><i class="icon-star icon-white"></i>{{ 'random.button.addfavorites' | trans }}</a>
+              <a href="{{ path('deleteFavorites', { 'id': text.id }) }}" class="btn btn-small btn-warning btn-favorit remove-favorite {% if hasFavorited == false %}hide{% endif %}"><i class="icon-star icon-white"></i>{{ 'random.button.removefavorites' | trans }}</a>
             <p class="lead">{{ text.bibleRef}}</p>
             <p>
                 {{ text.bibleText | raw }}
             </p>
           </blockquote>
           <br />
-          <a href="{{ path('markRead', { 'id': text.id }) }}" class="btn btn-success btn-large"><i class="icon-ok icon-white"></i>{{ 'random.button.read' | trans }}</a>
+          <a href="{{ path('markRead', { 'id': text.id }) }}" class="btn btn-success btn-large btn-markRead add-markRead {% if hasRead == true %}hide{% endif %}"><i class="icon-ok icon-white"></i>{{ 'random.button.read' | trans }}</a>
+          <a href="{{ path('unmarkRead', { 'id': text.id }) }}" class="btn btn-success btn-large btn-markRead remove-markRead {% if hasRead == false %}hide{% endif %}"><i class="icon-ok icon-white"></i>{{ 'random.button.unread' | trans }}</a>
           <br /><br />
           <a href="#" class="btn btn-info btn-small"><i class="icon-thumbs-up icon-white"></i>{{ 'random.button.facebook' | trans }}</a>
           <a href="#" class="btn btn-small"><i class="icon-envelope"></i>{{ 'random.button.send' | trans }}</a>
