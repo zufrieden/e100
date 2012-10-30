@@ -25,8 +25,10 @@ categories:
 
 random:
     button:
-        favorites: "Add to Favorites"
+        addfavorites: "Add to Favorites"
+        removefavorites: "Remove from favorites"
         read: "Mark read"
+        unread: "Unmark read"
         facebook: "Share on Facebook"
         send: "Send to a friend"
         note: "Write a note"
