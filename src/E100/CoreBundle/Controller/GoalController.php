@@ -5,6 +5,9 @@ namespace E100\CoreBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
+use E100\CoreBundle\Entity\ReadText;
 
 class GoalController extends Controller
 {
@@ -26,18 +29,33 @@ class GoalController extends Controller
      */
     public function markRead($id)
     {
-    	$today = date("Y-m-d");
-    	$readText = new ReadText();
-    	$readText->setText($id);
+    	$today = new \DateTime( "now" );
+        $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
+        $text = $repository->findOneBy(array('id' => $id));
+        $readText = new ReadText();
+        $readText->setText($text);
 
-    	// Set user from current session
         $user = $this->getUser();
-    	$readText->setUser($user);
-    	$readText->setDate($today);
+        $readText->setUser($user);
+        $readText->setDate($today);
 
-    	$em = $this->getDoctrine()->getManager();
-    	$em->persist($product);
-    	$em->flush();
+        try{
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->persist($readText);
+            $em->flush();
+
+            $response = new JsonResponse(array(
+                'success' => true,
+                'text_id' => $text->getId(),
+            ), 200);
+        } catch (\Exception $e){
+             $response = new JsonResponse(array(
+                'success' => false,
+                'text_id' => null,
+            ), 500);
+        }
+
+        return $response;
     }
 
     /**
@@ -47,12 +65,24 @@ class GoalController extends Controller
     {
     	$em = $this->getDoctrine()->getManager();
     	$repository = $em->getRepository('E100CoreBundle:ReadText');
-
+        $userid = $this->getUser()->getId();
     	$readText = $repository->findOneBy(array('user' => $userid, 'text' => $id));
 
-    	if($readText) {
-    		$repository->remove($readText);
-    		$em->flush();
-    	}
+        try{
+            $repository->remove($readText);
+            $em->flush();
+
+            $response = new JsonResponse(array(
+                'success' => true,
+                'text_id' => $text->getId(),
+            ), 200);
+        } catch (\Exception $e){
+             $response = new JsonResponse(array(
+                'success' => false,
+                'text_id' => null,
+            ), 500);
+        }
+
+        return $response;
     }
 }
