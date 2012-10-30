@@ -45,6 +45,14 @@ Note:
     requirements:
         _locale: fr|de|en|ru
 
+Goal:
+    resource: "@E100CoreBundle/Controller/GoalController.php"
+    type:     annotation
+    prefix:   /{_locale}/goal
+    defaults: { _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
 Login:
     resource: "@E100CoreBundle/Controller/LoginController.php"
     type:     annotation
