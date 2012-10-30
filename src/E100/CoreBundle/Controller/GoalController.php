@@ -85,4 +85,28 @@ class GoalController extends Controller
 
         return $response;
     }
+
+    /**
+     * @Route("/goalstatus", name="getGoalStatus")
+     */
+    public function getGoalJson()
+    {
+        $user = $this->getUser();
+        $goal = $user->getGoal();
+        $readTexts = $user->getReadTexts();
+
+        $history = array();
+        $nbrBooks = 0;
+
+        foreach ($readTexts as $readText) {
+            $nbrBooks++;
+            $history[$readText->getDate()] = $nbrBooks; 
+        }
+
+        $response = new JsonResponse(array(
+            'startdate' => $getStartDateTime(),
+            'enddate' => $getEndDateTime(),
+            'history' => $history,
+            ), 200);
+    }
 }
