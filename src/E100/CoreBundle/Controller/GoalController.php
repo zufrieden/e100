@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use E100\CoreBundle\Entity\ReadText;
+use E100\CoreBundle\Entity\Goal;
 
 class GoalController extends Controller
 {
@@ -92,7 +93,7 @@ class GoalController extends Controller
     public function getGoalJson()
     {
         $user = $this->getUser();
-        $goal = $user->getGoal();
+        $goals = $user->getGoals();
         $readTexts = $user->getReadTexts();
 
         $history = array();
@@ -100,13 +101,30 @@ class GoalController extends Controller
 
         foreach ($readTexts as $readText) {
             $nbrBooks++;
-            $history[$readText->getDate()] = $nbrBooks; 
+            $history[$readText->getDate()->format("Y-m-d")] = $nbrBooks; 
+        }
+
+        if(count($goals)) {
+            $startdate = $goals[0]->getStartDateTime();
+            $enddate = $goals[0]->getEndDateTime();
+        } else {
+            $goal = new Goal();
+            $goal->setUser($user);
+            $startdate = new \DateTime("now");
+            $enddate = new \DateTime("now");
+            $enddate->modify("+1 month");
+            $goal->setEndDateTime($enddate);
+            $goal->setStartDateTime($startdate);
+            $this->getDoctrine()->getEntityManager()->persist($goal);
+            $this->getDoctrine()->getEntityManager()->flush();
         }
 
         $response = new JsonResponse(array(
-            'startdate' => $getStartDateTime(),
-            'enddate' => $getEndDateTime(),
+            'startdate' => $startdate->format("Y-m-d"),
+            'enddate' => $enddate->format("Y-m-d"),
             'history' => $history,
             ), 200);
+
+        return $response;
     }
 }

@@ -39,6 +39,7 @@ class User extends BaseUser
      * Unidirectional - A user has read many texts (INVERSE SIDE)
      *
      * @ORM\OneToMany(targetEntity="ReadText", mappedBy="user")
+     * @ORM\OrderBy({"date" = "ASC"})
      */
     private $readTexts;
 
