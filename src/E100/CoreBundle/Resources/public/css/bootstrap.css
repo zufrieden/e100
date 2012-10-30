@@ -5398,6 +5398,11 @@ i {
 .notes-tools {
   padding-top: 20px;
 }
+/** SVG **/
+path {
+  stroke: #c00;
+  stroke-width: 2px;
+}
 .pull-right {
   float: right;
 }

@@ -14,15 +14,12 @@ class GoalController extends Controller
 {
     /**
      * @Route("/")
-     * @Template("E100CoreBundle:Goal:index.html.twig")
+     * @Template("E100CoreBundle:Goal:goal.html.twig")
      */
-    public function indexAction($id)
+    public function indexAction()
     {
 
-    	$repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
-    	$text = $repository->findOneBy(array('id' => $id));
-        
-        return array('text' => $text);
+    	return array('test' => 1);
     }
 
     /**
@@ -96,12 +93,17 @@ class GoalController extends Controller
         $goals = $user->getGoals();
         $readTexts = $user->getReadTexts();
 
+        $days = array();
         $history = array();
         $nbrBooks = 0;
 
         foreach ($readTexts as $readText) {
             $nbrBooks++;
-            $history[$readText->getDate()->format("Y-m-d")] = $nbrBooks; 
+            $days[$readText->getDate()->format("d.m.Y")] = $nbrBooks; 
+        }
+
+        foreach ($days as $day => $value) {
+            $history[] = (array('date' => $day, 'value' => $value));
         }
 
         if(count($goals)) {
@@ -120,9 +122,9 @@ class GoalController extends Controller
         }
 
         $response = new JsonResponse(array(
-            'startdate' => $startdate->format("Y-m-d"),
-            'enddate' => $enddate->format("Y-m-d"),
-            'history' => $history,
+            'startdate' => $startdate->format("d.m.Y"),
+            'enddate' => $enddate->format("d.m.Y"),
+            'history' => array($history),
             ), 200);
 
         return $response;
