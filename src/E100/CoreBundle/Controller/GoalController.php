@@ -13,7 +13,7 @@ use E100\CoreBundle\Entity\Goal;
 class GoalController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="goal")
      * @Template("E100CoreBundle:Goal:goal.html.twig")
      */
     public function indexAction()
@@ -95,6 +95,7 @@ class GoalController extends Controller
 
         $days = array();
         $history = array();
+        $future = array();
         $nbrBooks = 0;
 
         foreach ($readTexts as $readText) {
@@ -121,10 +122,19 @@ class GoalController extends Controller
             $this->getDoctrine()->getEntityManager()->flush();
         }
 
+        if(count($days)) {
+            $future[] = array('date' => $day, 'value' => $nbrBooks);
+        } else {
+            $future[] = array('date' => $startdate->format("d.m.Y"), 'value' => $nbrBooks);
+        }
+
+        $future[] = array('date' => $enddate->format("d.m.Y"), 'value' => 100);
+
         $response = new JsonResponse(array(
             'startdate' => $startdate->format("d.m.Y"),
             'enddate' => $enddate->format("d.m.Y"),
             'history' => array($history),
+            'future' => array($future),
             ), 200);
 
         return $response;

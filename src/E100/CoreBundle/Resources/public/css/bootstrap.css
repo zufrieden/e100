@@ -5399,9 +5399,30 @@ i {
   padding-top: 20px;
 }
 /** SVG **/
+svg {
+  max-height: 350px;
+  max-width: 700px;
+  max-width: 100%;
+}
 path {
   stroke: #c00;
   stroke-width: 2px;
+}
+.history-point {
+  fill: #c00;
+}
+.history-point:hover {
+  fill: #000;
+}
+.domain {
+  stroke: #000000;
+}
+.tick {
+  stroke: #000000;
+  stroke-width: 1px;
+}
+.future-path {
+  stroke: #ccc;
 }
 .pull-right {
   float: right;

@@ -38,7 +38,7 @@ _gaq.push(['_trackPageview']);
 
 </script>
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
 
 <!-- Navbar
     ================================================== -->
@@ -58,7 +58,7 @@ _gaq.push(['_trackPageview']);
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                      <a href="#">{{ 'layout.goals'|trans({}, 'FOSUserBundle') }}</a></li>
+                      <a href="{{ path('goal') }}">{{ 'layout.goals'|trans({}, 'FOSUserBundle') }}</a></li>
                       <li {% if is_current_route('login') %}class="active"{% endif %}><a href="{{ path('fos_user_change_password') }}">{{ 'layout.changePassword'|trans({}, 'FOSUserBundle') }}</a></li>
                       <a href="{{ path('fos_user_profile_show') }}">{{ 'layout.showProfile'|trans({}, 'FOSUserBundle') }}</a></li>
                       <a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
@@ -103,6 +103,7 @@ _gaq.push(['_trackPageview']);
     '@E100CoreBundle/Resources/public/js/bootstrap-collapse.js'
     '@E100CoreBundle/Resources/public/js/bootstrap-carousel.js'
     '@E100CoreBundle/Resources/public/js/bootstrap-typeahead.js'
+    '@E100CoreBundle/Resources/public/js/d3.v2.min.js'
     '@E100CoreBundle/Resources/public/js/script.js'
  %}
     <script src="{{ asset_url }}"></script>
