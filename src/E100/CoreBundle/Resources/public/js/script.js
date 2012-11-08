@@ -81,6 +81,7 @@ $(document).ready(function() {
         .data(data.history)
         .enter()
         .append('svg:path')
+        .attr("fill", "none")
         .attr("d", d3.svg.line()
             .x( function(d) { return x(format.parse(d.date)); })
             .y( function(d) { return height-margin - y(d.value); }));
@@ -94,18 +95,24 @@ $(document).ready(function() {
             .x( function(d) { return x(format.parse(d.date)); })
             .y( function(d) { return height-margin - y(d.value); }));
 
-      var points = vis.selectAll('rect')
+      var points = vis.selectAll('g')
         .data(data.history[0])
         .enter()
-        .append('rect')
-          .attr("x", function(d) { console.log(d); return x(format.parse(d.date))-3; })
-          .attr("y", function(d) { return height-margin - y(d.value)-3; })
-          .attr("width", 6)
-          .attr("height", 6)
-          .attr("class", "history-point")
-          .selectAll("text")
-            .append('text')
-            .text("Read 5 books");
+        .append("g")
+          .attr("class", "history");
+
+      points.append("rect")
+        .attr("x", function(d) { return x(format.parse(d.date))-3; })
+        .attr("y", function(d) { return height - margin - y(d.value)-3; })
+        .attr("width", 6)
+        .attr("height", 6)
+        .attr("class", "history-point");
+    
+      points.append("text")
+          .attr("class", "history-text")
+          .text(function(d) { return "At "+d.value+" books!"; })
+          .attr("x", function(d) { return x(format.parse(d.date)); })
+          .attr("y", function(d) { return height - margin - y(d.value); });
 
       vis.append("g")
         .attr("class", "x-axis")
