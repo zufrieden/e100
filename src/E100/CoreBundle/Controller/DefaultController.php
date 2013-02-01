@@ -25,25 +25,35 @@ class DefaultController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
         $query = $repository->createQueryBuilder('t');
-        $max = count($query->getResult());
         $text = null;
         $hasRead = false;
         $hasFavorited = false;
 
-        $text = $query->select('t')->orderBy('RAND()', '')->setMaxResult(1)->getQuery()->getResult();
-       
-        if($this->getUser()) {
+        $textIds = $query->add('select', 't.id')->getQuery()->getResult();
 
-            if($user->getFavorites()->contains($text)) {
-                $hasFavorited = true;
+        $textCount = sizeof($textIds);
+        $textNbr = rand(0, $textCount-1);
+        $textId = $textIds[$textNbr]['id'];
+
+        if(is_int($textId)) {
+            $text = $query->add('select', 't')->add('where', 't.id = :textId')->setParameter('textId', $textId)->getQuery()->getSingleResult();
+            $user = $this->getUser();
+
+            if($user) {
+                if($user->getFavorites()->contains($text)) {
+                    $hasFavorited = true;
+                }
+
+                if($user->getReadTexts()->contains($text)) {
+                    $hasRead = true;
+                }
             }
 
-            if($user->getReadTexts()->contains($text)) {
-                $hasRead = true;
-            }
+            $user->setLastRead($text);
+            $this->getDoctrine()->getEntityManager()->persist($user);
+            $this->getDoctrine()->getEntityManager()->flush();
+            return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited));
         }
-
-        return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited));
     }
 
     /**
@@ -53,8 +63,7 @@ class DefaultController extends Controller
     {
         $user = $this->getUser();
 
-        $text = $this->getLastRead();
-
+        $text = $user->getLastRead();
         $hasRead = false;
         $hasFavorited = false;
 
@@ -70,7 +79,10 @@ class DefaultController extends Controller
         }
 
         if($text) {
-           return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited)); 
+            $user->setLastRead($text);
+            $this->getDoctrine()->getEntityManager()->persist($user);
+            $this->getDoctrine()->getEntityManager()->flush();
+            return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited)); 
         } else {
             $this->forward('/random');
         }
