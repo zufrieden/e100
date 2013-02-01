@@ -1,0 +1,86 @@
+homepage:
+    pattern:  /
+    defaults: { _controller: E100CoreBundle:Default:index }
+
+homepage_i18n:
+    pattern: /{_locale}
+    defaults: { _controller: E100CoreBundle:Default:index, _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
+Default:
+    resource: "@E100CoreBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /
+
+Text:
+    resource: "@E100CoreBundle/Controller/TextController.php"
+    type:     annotation
+    prefix:   /{_locale}/text
+    defaults: { _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
+Favorites:
+    resource: "@E100CoreBundle/Controller/FavoritesController.php"
+    type:     annotation
+    prefix:   /{_locale}/favorites
+    defaults: { _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
+Categories:
+    resource: "@E100CoreBundle/Controller/CategoriesController.php"
+    type:     annotation
+    prefix:   /{_locale}/categories
+    defaults: { _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
+Note:
+    resource: "@E100CoreBundle/Controller/NotesController.php"
+    type:     annotation
+    prefix:   /{_locale}/notes
+    defaults: { _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
+Goal:
+    resource: "@E100CoreBundle/Controller/GoalController.php"
+    type:     annotation
+    prefix:   /{_locale}/goal
+    defaults: { _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
+Login:
+    resource: "@E100CoreBundle/Controller/LoginController.php"
+    type:     annotation
+    prefix:   /{_locale}/login
+    defaults: { _locale: en }
+    requirements:
+        _locale: fr|de|en|ru
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+
+# Internal routing configuration to handle ESI
+#_internal:
+#    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#    prefix:   /_internal
