@@ -5414,6 +5414,12 @@ path {
 .history-point:hover {
   fill: #000;
 }
+.history .history-text {
+  display: none;
+}
+.history:hover .history-text {
+  display: block;
+}
 .domain {
   stroke: #000000;
 }

@@ -24,18 +24,15 @@ class DefaultController extends Controller
     public function randomAction()
     {
         $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
-        $query = $repository->createQueryBuilder('t')->getQuery();
+        $query = $repository->createQueryBuilder('t');
         $max = count($query->getResult());
         $text = null;
         $hasRead = false;
         $hasFavorited = false;
 
-        while($text == NULL) {
-            $randomId = rand(38, $max);
-            $text = $repository->findOneBy(array('id' => $randomId));
-        }
-
-         if($this->getUser()) {
+        $text = $query->select('t')->orderBy('RAND()', '')->setMaxResult(1)->getQuery()->getResult();
+       
+        if($this->getUser()) {
 
             if($user->getFavorites()->contains($text)) {
                 $hasFavorited = true;
