@@ -45,11 +45,21 @@ class NotesController extends Controller
 
     /**
      * @Route("/edit/{id}", name="editNote")
-     * @Template("E100CoreBundle:Default:index.html.twig")
      */
-    public function editAction($id)
+    public function editAction(Request $request)
     {
-    	;// Update
+    	$id = $request->get('id');
+        $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Note');
+        $note = $repository->findOneBy(array('id' => $id));
+
+        $form = $this->createFormBuilder($note)
+                     ->add('noteText', 'textarea')
+                     ->getForm();
+
+        return $this->render('E100CoreBundle:Notes:edit.html.twig', array(
+            'form' => $form->createView(),
+            'note' => $note
+        ));
     }
 
     /**
@@ -65,7 +75,7 @@ class NotesController extends Controller
         $note->setText($text);
 
         $form = $this->createFormBuilder($note)
-                        ->add('note_text', 'textarea')
+                        ->add('noteText', 'textarea')
                         ->getForm();
 
         if ($request->getMethod() == 'POST') {
