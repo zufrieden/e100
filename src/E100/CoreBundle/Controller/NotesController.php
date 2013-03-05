@@ -29,11 +29,18 @@ class NotesController extends Controller
     public function deleteAction($id)
     {
     	// Get User form Session
-    	$user = $this->getUser();
-        $id = $user->getId();
+        $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Note');
+        $em = $this->getDoctrine()->getEntityManager();
+        $note = $repository->findOneBy(array('id' => $id));
 
-    	$user->removeNote($id);
-    	$this->getDoctrine()->flush();
+        try{
+            $em->remove($note);
+            $em->flush();
+        } catch (\Exception $e) {
+            var_dump($e);
+        }
+
+        return $this->redirect($this->generateUrl('notes'));
     }
 
     /**

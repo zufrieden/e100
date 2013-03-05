@@ -5,21 +5,22 @@
 {% block body_class %}notes{% endblock %}
 
 {% block content %}
+  <div class="notes-container"></div>
   {% for note in notes %}
-    <div class="note alert alert-block normal-color">
+    <div class="note alert alert-block normal-color masonry-brick">
       {% if note.text %}
       <h4><a href="{{ path('random') }}">{{ note.text.title }} - <em>{{ note.text.bibleRef }}</em></a></h4>
       <hr />
       {% endif %}
-      <h3>Title</h3>
       <p><small class="normal-color"><i class="icon-time"></i>{% if note.createdAt %}{{ note.createdAt }}{% endif %}</small></p><br />
       <p>
         {{ note.noteText }}
       </p>
       <div class="notes-tools">
-        <a href="{{ path('editNote', {id: note.id } ) }}" class="btn btn-small"><i class="icon-pencil"></i>Edit</a>
-        <a href="#" class="btn btn-small btn-danger"><i class="icon-trash icon-white"></i>Delete</a>
+        <a href="{{ path('editNote', { id: note.id } ) }}" class="btn btn-small"><i class="icon-pencil"></i>Edit</a>
+        <a href="{{ path('deleteNote', { id: note.id } ) }}" class="btn btn-small btn-danger"><i class="icon-trash icon-white"></i>Delete</a>
       </div> 
     </div>
   {% endfor %}
+  </div>
 {% endblock %}
