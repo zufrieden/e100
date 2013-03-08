@@ -5391,6 +5391,10 @@ i {
 .favorite table .btn-danger i {
   padding: 0;
 }
+.edit-notes textarea {
+  height: 300px;
+  width: 420px;
+}
 .note {
   width: 320px;
   margin: 10px 0;
