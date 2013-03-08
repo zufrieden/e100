@@ -25,6 +25,12 @@ class TextController extends Controller
             $this->getDoctrine()->getEntityManager()->persist($user);
             $this->getDoctrine()->getEntityManager()->flush();
 
+            $notes_repository = $this->getDoctrine()->getRepository('E100CoreBundle:Note');
+            $note = $notes_repository->findOneBy(array(
+                                            'text' => $text,
+                                            'user' => $user
+                                            ) );
+
             if($user->getFavorites()->contains($text)) {
                 $hasFavorited = true;
             }
@@ -34,6 +40,6 @@ class TextController extends Controller
             }
         }
         
-        return array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited);
+        return array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited, 'hasNote' => $note);
     }
 }

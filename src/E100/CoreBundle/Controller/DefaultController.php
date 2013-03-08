@@ -39,6 +39,8 @@ class DefaultController extends Controller
             $text = $query->add('select', 't')->add('where', 't.id = :textId')->setParameter('textId', $textId)->getQuery()->getSingleResult();
             $user = $this->getUser();
 
+            $note = NULL;
+
             if($user) {
                 if($user->getFavorites()->contains($text)) {
                     $hasFavorited = true;
@@ -48,12 +50,18 @@ class DefaultController extends Controller
                     $hasRead = true;
                 }
 
+                $notes_repository = $this->getDoctrine()->getRepository('E100CoreBundle:Note');
+                $note = $notes_repository->findOneBy(array(
+                                            'text' => $text,
+                                            'user' => $user
+                                            ) );
+
                 $user->setLastRead($text);
                 $this->getDoctrine()->getEntityManager()->persist($user);
                 $this->getDoctrine()->getEntityManager()->flush();
             }
 
-            return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited));
+            return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited, 'hasNote' => $note));
         }
     }
 
