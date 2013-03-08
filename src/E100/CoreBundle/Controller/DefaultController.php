@@ -47,11 +47,12 @@ class DefaultController extends Controller
                 if($user->getReadTexts()->contains($text)) {
                     $hasRead = true;
                 }
+
+                $user->setLastRead($text);
+                $this->getDoctrine()->getEntityManager()->persist($user);
+                $this->getDoctrine()->getEntityManager()->flush();
             }
 
-            $user->setLastRead($text);
-            $this->getDoctrine()->getEntityManager()->persist($user);
-            $this->getDoctrine()->getEntityManager()->flush();
             return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited));
         }
     }
@@ -63,12 +64,11 @@ class DefaultController extends Controller
     {
         $user = $this->getUser();
 
-        $text = $user->getLastRead();
         $hasRead = false;
         $hasFavorited = false;
 
-        if($this->getUser() && $text) {
-
+        if($user && $user->getLastRead()) {
+            $text = $user->getLastRead();
             if($user->getFavorites()->contains($text)) {
                 $hasFavorited = true;
             }
@@ -76,15 +76,13 @@ class DefaultController extends Controller
             if($user->getReadTexts()->contains($text)) {
                 $hasRead = true;
             }
-        }
 
-        if($text) {
             $user->setLastRead($text);
             $this->getDoctrine()->getEntityManager()->persist($user);
             $this->getDoctrine()->getEntityManager()->flush();
             return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited)); 
         } else {
-            $this->forward('/random');
+            return $this->redirect($this->generateUrl('random'));
         }
         
     }
