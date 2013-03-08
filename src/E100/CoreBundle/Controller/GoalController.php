@@ -67,7 +67,7 @@ class GoalController extends Controller
     	$readText = $repository->findOneBy(array('user' => $userid, 'text' => $id));
 
         try{
-            $repository->remove($readText);
+            $em->remove($readText);
             $em->flush();
 
             $response = new JsonResponse(array(

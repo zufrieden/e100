@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use E100\CoreBundle\Entity\Note;
+use Symfony\Component\HttpFoundation\Request;
 
 
 class NotesController extends Controller
@@ -16,7 +17,10 @@ class NotesController extends Controller
      */
     public function indexAction()
     {
-        return array('name' => 'default');
+        $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Note');
+        $notes = $repository->findAll();
+
+        return array('notes' => $notes);
     }
 
     /**
@@ -25,27 +29,45 @@ class NotesController extends Controller
     public function deleteAction($id)
     {
     	// Get User form Session
-    	$user = $this->getUser();
-        $id = $user->getId();
+        $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Note');
+        $em = $this->getDoctrine()->getEntityManager();
+        $note = $repository->findOneBy(array('id' => $id));
 
-    	$user->removeNote($id);
-    	$this->getDoctrine()->flush();
+        try{
+            $em->remove($note);
+            $em->flush();
+        } catch (\Exception $e) {
+            var_dump($e);
+        }
+
+        return $this->redirect($this->generateUrl('notes'));
     }
 
     /**
      * @Route("/edit/{id}", name="editNote")
-     * @Template("E100CoreBundle:Default:index.html.twig")
      */
-    public function editAction($id)
+    public function editAction(Request $request)
     {
-    	;// Update
+    	$id = $request->get('id');
+        $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Note');
+        $note = $repository->findOneBy(array('id' => $id));
+
+        $form = $this->createFormBuilder($note)
+                     ->add('noteText', 'textarea')
+                     ->getForm();
+
+        return $this->render('E100CoreBundle:Notes:edit.html.twig', array(
+            'form' => $form->createView(),
+            'note' => $note
+        ));
     }
 
     /**
      * @Route("/new/{id}", name="newNote")
      */
-    public function newAction($id)
+    public function newAction(Request $request)
     {
+        $id = $request->get('id');
         $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
         $text = $repository->findOneBy(array('id' => $id));
 
@@ -53,11 +75,27 @@ class NotesController extends Controller
         $note->setText($text);
 
         $form = $this->createFormBuilder($note)
-                        ->add('note_text', 'textarea')
+                        ->add('noteText', 'textarea')
                         ->getForm();
+
+        if ($request->getMethod() == 'POST') {
+            $form->bindRequest($request);
+
+            $user = $this->getUser();
+            $note->setUser($user);
+
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getEntityManager();
+                $em->persist($note);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl('notes'));
+            }
+        }
 
         return $this->render('E100CoreBundle:Notes:new.html.twig', array(
             'form' => $form->createView(),
+            'text' => $text,
         ));
     }
 }
