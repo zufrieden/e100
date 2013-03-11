@@ -18,6 +18,7 @@ class TextController extends Controller
     	$text = $repository->findOneBy(array('id' => $id));
         $hasRead = false;
         $hasFavorited = false;
+        $note = false;
 
         if($this->getUser()) {
             $user = $this->getUser();
