@@ -23,6 +23,13 @@ class Text
     private $id;
 
     /**
+     * @var integer $textNumber
+     *
+     * @ORM\Column(name="text_number", type="integer", unique=true)
+     */
+    private $textNumber;
+
+    /**
      * @var string $title
      *
      * @ORM\Column(name="title", type="string", length=255)
@@ -104,11 +111,11 @@ class Text
     {
         $this->notes = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -124,14 +131,14 @@ class Text
     public function setTitle($title)
     {
         $this->title = $title;
-    
+
         return $this;
     }
 
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -147,14 +154,14 @@ class Text
     public function setTeaserQuestion($teaserQuestion)
     {
         $this->teaserQuestion = $teaserQuestion;
-    
+
         return $this;
     }
 
     /**
      * Get teaserQuestion
      *
-     * @return string 
+     * @return string
      */
     public function getTeaserQuestion()
     {
@@ -170,14 +177,14 @@ class Text
     public function setLink($link)
     {
         $this->link = $link;
-    
+
         return $this;
     }
 
     /**
      * Get link
      *
-     * @return string 
+     * @return string
      */
     public function getLink()
     {
@@ -193,14 +200,14 @@ class Text
     public function setBibleRef($bibleRef)
     {
         $this->bibleRef = $bibleRef;
-    
+
         return $this;
     }
 
     /**
      * Get bibleRef
      *
-     * @return string 
+     * @return string
      */
     public function getBibleRef()
     {
@@ -216,14 +223,14 @@ class Text
     public function setBibleText($bibleText)
     {
         $this->bibleText = $bibleText;
-    
+
         return $this;
     }
 
     /**
      * Get bibleText
      *
-     * @return string 
+     * @return string
      */
     public function getBibleText()
     {
@@ -239,14 +246,14 @@ class Text
     public function setComment($comment)
     {
         $this->comment = $comment;
-    
+
         return $this;
     }
 
     /**
      * Get comment
      *
-     * @return string 
+     * @return string
      */
     public function getComment()
     {
@@ -262,14 +269,14 @@ class Text
     public function setTheme(\E100\CoreBundle\Entity\Theme $theme = null)
     {
         $this->theme = $theme;
-    
+
         return $this;
     }
 
     /**
      * Get theme
      *
-     * @return E100\CoreBundle\Entity\Theme 
+     * @return E100\CoreBundle\Entity\Theme
      */
     public function getTheme()
     {
@@ -285,7 +292,7 @@ class Text
     public function addNote(\E100\CoreBundle\Entity\Note $notes)
     {
         $this->notes[] = $notes;
-    
+
         return $this;
     }
 
@@ -302,7 +309,7 @@ class Text
     /**
      * Get notes
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getNotes()
     {
@@ -318,17 +325,40 @@ class Text
     public function setActionText($actionText)
     {
         $this->actionText = $actionText;
-    
+
         return $this;
     }
 
     /**
      * Get action_text
      *
-     * @return text 
+     * @return text
      */
     public function getActionText()
     {
         return $this->actionText;
+    }
+
+    /**
+     * Set textNumber
+     *
+     * @param integer $textNumber
+     * @return Text
+     */
+    public function setTextNumber($textNumber)
+    {
+        $this->textNumber = $textNumber;
+    
+        return $this;
+    }
+
+    /**
+     * Get textNumber
+     *
+     * @return integer 
+     */
+    public function getTextNumber()
+    {
+        return $this->textNumber;
     }
 }
