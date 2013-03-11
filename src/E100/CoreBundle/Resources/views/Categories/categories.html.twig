@@ -22,12 +22,25 @@
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#old-accordion" href="#old-accordion{{ loop.index }}">
-                  <h4> {{ category.title }}</h4>
+                  <h4> {{ category.title }} 
+{#                     <div class="pull-right">
+                      <span class="label label-important">1</span> 
+                      <span class="label label-important">2</span>
+                      <span class="label label-important">3</span>
+                      <span class="label label-success">4</span>
+                      <span class="label label-success">5</span>
+                    </div> #}
+                  </h4>
                 </a>
               </div>
               <div id="old-accordion{{ loop.index }}" class="accordion-body collapse">
                 <div class="accordion-inner">
                   <img src="http://lorempixel.com/640/250/abstract/" width="100%">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
                   <ul class="nav nav-list bs-docs-sidenav">
                     {% for text in category.texts %}
                       <li class="read-ok"><a href="{{ path('bibleText', {'id': text.id }) }}"><i class="icon-ok-circle"></i> <strong>{{ loop.index }}.</strong> {{ text.title }} </a></li>
