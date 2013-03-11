@@ -79,7 +79,7 @@ class ImportCommentCommand extends ContainerAwareCommand
             $text->setTextNumber($textNumber);
             $text->setBibleRef($line['E']);
             $text->setTitle($line['K'] ?: '[empty]');
-            $text->setTeaserQuestion($bibleText);
+            $text->setTeaserQuestion($line['L'] ?:'[empty]');
             $text->setBibleText($bibleText ?: '[empty]');
             $text->setComment($line['N'] ?: '[empty]');
             $text->setActionText($line['O'] ?: '[empty]');
