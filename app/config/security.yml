@@ -33,3 +33,5 @@ security:
         - { path: ^/(en|fr|de)/notes, role: ROLE_USER }
         - { path: ^/(en|fr|de)/last, role: ROLE_USER }
         - { path: ^/(en|fr|de)/favorites, role: ROLE_USER }
+        - { path: ^/(en|fr|de)/user, role: ROLE_USER }
+
