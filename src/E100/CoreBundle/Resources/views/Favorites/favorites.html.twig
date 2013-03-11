@@ -21,7 +21,7 @@
             
               {% for favorite in favorites %}
                 {% if favorite.theme.testament == 'old' %}
-                  <tr><td><i class="icon-star"></i><strong>3.</strong> favorite.title</a></td><td><a href="{{ path('deleteFavorites', { 'id': favorite.id }) }}" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
+                  <tr><td><i class="icon-star"></i><strong>{{ favorite.bibleRef }}</strong> {{ favorite.title }}</a></td><td><a href="{{ path('deleteFavorites', { 'id': favorite.id }) }}" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
                 {% else %}
                   <tr><td>{{ 'favorites.nothingFound' | trans }}</td></tr>
                 {% endif %}
