@@ -76,12 +76,13 @@ class ImportCommentCommand extends ContainerAwareCommand
             }
 
             $text->setTheme($this->getThemeById($line['B']));
+            $text->setTextNumber($textNumber);
             $text->setBibleRef($line['E']);
-            $text->setTitle($line['K']);
+            $text->setTitle($line['K'] ?: '[empty]');
             $text->setTeaserQuestion($bibleText);
-            $text->setBibleText($bibleText);
-            $text->setComment($line['N']);
-            $text->setActionText($line['O']);
+            $text->setBibleText($bibleText ?: '[empty]');
+            $text->setComment($line['N'] ?: '[empty]');
+            $text->setActionText($line['O'] ?: '[empty]');
             $text->setLink($line['P']);
 
             $em->persist($text);
@@ -102,7 +103,7 @@ class ImportCommentCommand extends ContainerAwareCommand
         $texts = array();
 
         foreach($results as $text) {
-            $texts[$text->getId()] = $text;
+            $texts[$text->getTextNumber()] = $text;
         }
 
         return $texts;
