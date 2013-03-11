@@ -1,6 +1,5 @@
 {
-    "name": "symfony/framework-standard-edition",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "E100",
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -19,6 +18,7 @@
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
         "friendsofsymfony/user-bundle": "*",
+        "doctrine/data-fixtures": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master"
     },
     "scripts": {
