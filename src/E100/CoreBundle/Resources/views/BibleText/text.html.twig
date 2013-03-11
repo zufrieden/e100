@@ -2,6 +2,12 @@
 
 {% block title %}{{ 'homepage.title' | trans }}{% endblock %}
 
+{% block meta %}
+    <meta property="og:title" content="{{ text.title }}"/>
+    <meta property="og:url" content="{{ path('bibleText', { id: text.id } ) }}"/>
+    <meta property="og:site_name" content="E100"/>
+{% endblock %}
+
 {% block content %}
     <div class="row-fluid">
       <div class="span12">
@@ -19,7 +25,7 @@
           <a href="{{ path('markRead', { 'id': text.id }) }}" class="btn btn-success btn-large btn-markRead add-markRead {% if hasRead == true %}hide{% endif %}"><i class="icon-ok icon-white"></i>{{ 'random.button.read' | trans }}</a>
           <a href="{{ path('unmarkRead', { 'id': text.id }) }}" class="btn btn-success btn-large btn-markRead remove-markRead {% if hasRead == false %}hide{% endif %}"><i class="icon-ok icon-white"></i>{{ 'random.button.unread' | trans }}</a>
           <br /><br />
-          <a href="#" class="btn btn-info btn-small"><i class="icon-thumbs-up icon-white"></i>{{ 'random.button.facebook' | trans }}</a>
+          <div class="fb-like" data-href="{{ url('bibleText', { id: text.id } ) }}" data-send="false" data-width="450" data-show-faces="true"></div>
           <a href="#" class="btn btn-small"><i class="icon-envelope"></i>{{ 'random.button.send' | trans }}</a>
           <br /><br />
         </div>
@@ -29,11 +35,16 @@
             {{ text.comment }}
           </p>
           <br />
-          <a href="{{ path('newNote', { 'id': text.id }) }}" class="btn btn-inverse btn-small"><i class="icon-pencil icon-white"></i>{{ 'random.button.note' | trans }}</a>
+          {% if hasNote %}
+            <a href="#" class="btn">Read note</a>
+          {% else %}
+              <a href="{{ path('newNote', { 'id': text.id }) }}" class="btn btn-inverse btn-small"><i class="icon-pencil icon-white"></i>{{ 'random.button.note' | trans }}</a>
+          {% endif %}
+          
           <br />
           <hr />
           <br />
-          <h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor ?</h4>
+          <h4>{{ text.actionText }}</h4>
           <br />
         </div>
       </div><!--/span-->

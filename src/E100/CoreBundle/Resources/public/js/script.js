@@ -1,4 +1,11 @@
 $(document).ready(function() {
+  // Brick wall
+  $('.notes-container').masonry({
+    itemSelector: '.note',
+    columnWidth: 360,
+    gutterWidth: 10
+  });
+
   $('.btn-markRead').click(function(e) {
     var url = $(this).attr('href');
     var self = $(this);
