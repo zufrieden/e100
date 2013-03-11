@@ -412,6 +412,7 @@ div.subnav .nav li.nav-header {
   -webkit-box-shadow: 1px 1px 2px #111111;
   -moz-box-shadow: 1px 1px 2px #111111;
   box-shadow: 1px 1px 2px #111111;
+  color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #5c5c5c;
   background-image: -moz-linear-gradient(top, #666666, #4d4d4d);
@@ -3059,7 +3060,7 @@ table [class*=span],
 .open {
   *z-index: 1000;
 }
-.open > .dropdown-menu {
+.open  > .dropdown-menu {
   display: block;
 }
 .pull-right > .dropdown-menu {
@@ -5694,10 +5695,6 @@ i {
 }
 .notes-tools {
   padding-top: 20px;
-}
-/* NAV BAR FIXED EVERY QUERIES */
-@media (max-width: 979px) {
-  position: fixed;
 }
 /** SVG **/
 svg {
