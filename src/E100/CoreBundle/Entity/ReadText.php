@@ -8,9 +8,14 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Represents a read text
  *
- * @ORM\Table(name="read_text")
+ * @ORM\Table(name="read_text", uniqueConstraints={
+ *      @ORM\UniqueConstraint(name="user_text_read_once", columns={"user_id","text_id"})
+ * })
  * @ORM\Entity
  */
+
+
+
 class ReadText
 {
     /**
@@ -45,13 +50,13 @@ class ReadText
      * @ORM\Column(name="read_date", type="datetime")
      */
 
-    private $date;    
+    private $date;
 
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -67,14 +72,14 @@ class ReadText
     public function setUser(\E100\CoreBundle\Entity\User $user = null)
     {
         $this->user = $user;
-    
+
         return $this;
     }
 
     /**
      * Get user
      *
-     * @return E100\CoreBundle\Entity\User 
+     * @return E100\CoreBundle\Entity\User
      */
     public function getUser()
     {
@@ -90,14 +95,14 @@ class ReadText
     public function setText(\E100\CoreBundle\Entity\Text $text = null)
     {
         $this->text = $text;
-    
+
         return $this;
     }
 
     /**
      * Get text
      *
-     * @return E100\CoreBundle\Entity\Text 
+     * @return E100\CoreBundle\Entity\Text
      */
     public function getText()
     {
@@ -113,14 +118,14 @@ class ReadText
     public function setDate($date = null)
     {
         $this->date = $date;
-    
+
         return $this;
     }
 
     /**
      * Get date
      *
-     * @return E100\CoreBundle\Entity\User 
+     * @return E100\CoreBundle\Entity\User
      */
     public function getDate()
     {
