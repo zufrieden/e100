@@ -91,7 +91,7 @@ class Text
     /**
      * @var text $teaserQuestion
      *
-     * @ORM\Column(name="teaser_question", type="text")
+     * @ORM\Column(name="teaser_question", type="text", nullable=true)
      */
 
     private $teaserQuestion;
@@ -99,7 +99,7 @@ class Text
     /**
      * @var text $link
      *
-     * @ORM\Column(name="link", type="text")
+     * @ORM\Column(name="link", type="text", nullable=true)
      */
 
     private $link;
@@ -348,14 +348,14 @@ class Text
     public function setTextNumber($textNumber)
     {
         $this->textNumber = $textNumber;
-    
+
         return $this;
     }
 
     /**
      * Get textNumber
      *
-     * @return integer 
+     * @return integer
      */
     public function getTextNumber()
     {
