@@ -19,10 +19,13 @@ class UserController extends Controller
     {
 
         $user = $this->getUser();
-        $lastReading = $this->getDoctrine()->getRepository('E100CoreBundle:Text')->getLastReadTextForUser();
+        $lastReading = $this->getDoctrine()->getRepository('E100CoreBundle:Text')->getLastReadTextForUser($user);
+        $numberOfTextReaded = $user->getReadTexts()->count();
+        $velocity = 0;
 
     	return array(
             'lastReading' => $lastReading,
+            'numberOfTextReaded' => $numberOfTextReaded,
         );
     }
 }

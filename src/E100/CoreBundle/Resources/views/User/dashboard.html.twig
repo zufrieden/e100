@@ -6,27 +6,19 @@
     <div class="row-fluid">
       <div class="span12">
         <div class="hero-unit">
-          <h1>{{ 'homepage.welcome.title' | trans }}</h1>
-          <p>{{ 'homepage.welcome.text' | trans }}</p>
-          <!-- <p><a class="btn btn-primary btn-large" href="{{ path('categories') }}">{{ 'homepage.welcome.action' | trans }}</a></p> -->
+          <h1>{{ 'dashboard.welcome.title' | trans }}</h1>
         </div>
 
-        
+        <h2>{{ 'dashboard.lastread.title' | trans }}<h2>
+        {% if lastReading %}
+          <a href="{{ path('bibleText', {id: lastReading.id}) }}">{{ lastReading.bibleRef }}</a>
+        {% endif %}
 
-        <div class="row-fluid">
-          <div class="span6">
-            <img src="/img/e100-ad.jpg" width="100%">
-          </div><!--/span-->
-          <div class="span6">
-            <h2>{{ 'homepage.categories.title' | trans }}</h2>
-            <p>{{ 'homepage.categories.text' | trans }}</p>
-            <!-- <p><a class="btn" href="{{ path('categories') }}">{{ 'homepage.categories.action' | trans }}</a></p> -->
-            <hr>
-            <h2>{{ 'homepage.random.title' | trans }}</h2>
-            <p>{{ 'homepage.random.text' | trans }}</p>
-           <!--  <p><a class="btn" href="{{ path('categories') }}">{{ 'homepage.random.action' | trans }}</a></p> -->
-          </div><!--/span-->
-        </div><!--/row-->
+        <h2>{{ 'dashboard.progress.title' | trans }}<h2>
+        <div class="progress progress-striped active">
+          <div class="bar" style="width: {{ numberOfTextReaded }}%;"></div>
+        </div>
+
       </div><!--/span-->
     </div><!--/row-->
 {% endblock %}
