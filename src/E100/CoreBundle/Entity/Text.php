@@ -82,6 +82,22 @@ class Text
     private $actionText;
 
     /**
+     * @var text $teaserQuestion
+     *
+     * @ORM\Column(name="teaser_question", type="text")
+     */
+
+    private $teaserQuestion;
+
+    /**
+     * @var text $link
+     *
+     * @ORM\Column(name="link", type="text")
+     */
+
+    private $link;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -120,6 +136,52 @@ class Text
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Set teaserQuestion
+     *
+     * @param string $teaserQuestion
+     * @return Text
+     */
+    public function setTeaserQuestion($teaserQuestion)
+    {
+        $this->teaserQuestion = $teaserQuestion;
+    
+        return $this;
+    }
+
+    /**
+     * Get teaserQuestion
+     *
+     * @return string 
+     */
+    public function getTeaserQuestion()
+    {
+        return $this->teaserQuestion;
+    }
+
+    /**
+     * Set link
+     *
+     * @param string $link
+     * @return Text
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+    
+        return $this;
+    }
+
+    /**
+     * Get link
+     *
+     * @return string 
+     */
+    public function getLink()
+    {
+        return $this->link;
     }
 
     /**
