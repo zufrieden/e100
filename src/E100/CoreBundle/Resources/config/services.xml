@@ -14,6 +14,11 @@
             <argument type="service" id="service_container" />
             <tag name="twig.extension" />
         </service>
+
+        <service id="e100.registration.form.type" class="E100\CoreBundle\Form\Type\RegistrationFormType">
+            <tag name="form.type" alias="e100_user_registration" />
+            <argument>%fos_user.model.user.class%</argument>
+        </service>
     </services>
     
 </container>

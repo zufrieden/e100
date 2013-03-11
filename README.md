@@ -16,6 +16,7 @@ How to install
     $ php app/console assetic:dump -e prod --no-debug
     $ php app/console doctrine:database:create
     $ php app/console doctrine:schema:create
+    $ php app/console doctrine:fixtures:load
 ```
 
 After a pull
