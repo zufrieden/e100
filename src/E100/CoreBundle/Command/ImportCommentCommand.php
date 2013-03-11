@@ -7,10 +7,9 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use Derham\CoreBundle\Entity\Note;
-use Derham\CoreBundle\Entity\Theme;
-use Derham\CoreBundle\Entity\Text;
-use SplFileObject;
+use E100\CoreBundle\Entity\Note;
+use E100\CoreBundle\Entity\Theme;
+use E100\CoreBundle\Entity\Text;
 
 /**
  * Import association table for associate a Non-de Rham property to a de Rham agency based on zipcode.
@@ -22,16 +21,20 @@ class ImportCommentCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('e100:import:Comment')
+            ->setName('e100:import:comment')
             ->setDescription('Import and update comment 1 to 100')
-            ->addArgument('source', InputArgument::REQUIRED, 'EXCEL file')
-            ->addArgument('language', InputArgument::REQUIRED, '[fr|en|?]')
+            ->addArgument('source', InputArgument::REQUIRED, 'EXCEL file (.xlsx)')
+            ->addOption('language', null, InputOption::VALUE_REQUIRED, '[fr|en|?] (don\t used actually)', 'en')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         @ini_set('memory_limit', -1);
+
+        $inputFileName = $input->getArgument('source');
+        $language = $input->getOption('language');
+        $em = $this->getDoctrine()->getEntityManager();
 
         /*
          Excel document structure
@@ -52,11 +55,70 @@ class ImportCommentCommand extends ContainerAwareCommand
            15 Priere text->setActionText()
            16 Link text->setLink()
         */
+        $phpExcel = \PHPExcel_IOFactory::load($inputFileName);
+        $data = $phpExcel->getActiveSheet()->toArray(null,true,true,true);
+
+
+        $texts = $this->getTextsIndexedByNumber();
+
+        // remove first line
+        unset($data[1]);
+
+        foreach ($data as $i => $line) {
+            $textNumber = (int) $line['A'];
+            $bibleText = $this->formatVerset($line['M'], $line['E']);
+
+            if (isset($texts[$textNumber])) {
+                $text = $texts[$textNumber];
+            } else {
+                // create a new Text if not exists
+                $text = new Text();
+            }
+
+            $text->setTheme($this->getThemeById($line['B']));
+            $text->setBibleRef($line['E']);
+            $text->setTitle($line['K']);
+            $text->setTeaserQuestion($bibleText);
+            $text->setBibleText($bibleText);
+            $text->setComment($line['N']);
+            $text->setActionText($line['O']);
+            $text->setLink($line['P']);
+
+            $em->persist($text);
+        }
+
+        $em->flush();
+
     }
 
     private function getDoctrine()
     {
         return $this->getContainer()->get('doctrine');
+    }
+
+    private function getTextsIndexedByNumber()
+    {
+        $results = $this->getDoctrine()->getRepository('E100CoreBundle:Text')->findAll();
+        $texts = array();
+
+        foreach($results as $text) {
+            $texts[$text->getId()] = $text;
+        }
+
+        return $texts;
+    }
+
+    private function getThemeById($numberId)
+    {
+        $theme = $this->getDoctrine()->getRepository('E100CoreBundle:Theme')->findOneById((int)$numberId);
+
+        return $theme;
+    }
+
+    private function formatVerset($text, $versetRef = null)
+    {
+        // @TODO: add <sup></sup> around verset number
+        return $text;
     }
 
     // @todo -> put verset number in <sup></sup> base on bibleReference field
