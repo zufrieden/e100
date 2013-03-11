@@ -37,7 +37,7 @@ class Note
      * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
 
-    private $created_at;
+    private $createdAt;
 
     /**
      * @var DateTime $updated_at
@@ -45,7 +45,7 @@ class Note
      * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
 
-    private $updated_at;
+    private $updatedAt;
 
     /**
      * @var text $note
@@ -53,7 +53,7 @@ class Note
      * @ORM\Column(name="note_text", type="text")
      */
 
-    private $note_text;
+    private $noteText;
 
     /**
      * @var Text $text
@@ -82,7 +82,7 @@ class Note
      */
     public function setCreatedAt($createdAt)
     {
-        $this->created_at = $createdAt;
+        $this->createdAt = $createdAt;
     
         return $this;
     }
@@ -94,7 +94,7 @@ class Note
      */
     public function getCreatedAt()
     {
-        return $this->created_at;
+        return $this->createdAt;
     }
 
     /**
@@ -105,7 +105,7 @@ class Note
      */
     public function setUpdatedAt($updatedAt)
     {
-        $this->updated_at = $updatedAt;
+        $this->updatedAt = $updatedAt;
     
         return $this;
     }
@@ -117,7 +117,7 @@ class Note
      */
     public function getUpdatedAt()
     {
-        return $this->updated_at;
+        return $this->updatedAt;
     }
 
     /**
@@ -128,7 +128,7 @@ class Note
      */
     public function setNoteText($noteText)
     {
-        $this->note_text = $noteText;
+        $this->noteText = $noteText;
     
         return $this;
     }
@@ -140,7 +140,7 @@ class Note
      */
     public function getNoteText()
     {
-        return $this->note_text;
+        return $this->noteText;
     }
 
     /**

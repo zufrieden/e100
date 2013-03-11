@@ -74,6 +74,14 @@ class Text
     private $notes;
 
     /**
+     * @var text $actionText
+     *
+     * @ORM\Column(name="action_text", type="text")
+     */
+
+    private $actionText;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -237,5 +245,28 @@ class Text
     public function getNotes()
     {
         return $this->notes;
+    }
+
+    /**
+     * Set action_text
+     *
+     * @param text $actionText
+     * @return Note
+     */
+    public function setActionText($actionText)
+    {
+        $this->actionText = $actionText;
+    
+        return $this;
+    }
+
+    /**
+     * Get action_text
+     *
+     * @return text 
+     */
+    public function getActionText()
+    {
+        return $this->actionText;
     }
 }
