@@ -19,6 +19,11 @@
             <tag name="form.type" alias="e100_user_registration" />
             <argument>%fos_user.model.user.class%</argument>
         </service>
+
+        <service id="e100.listener.create_first_goal" class="E100\CoreBundle\EventListener\CreateFirstGoalListener">
+            <argument type="service" id="doctrine" />
+            <tag name="kernel.event_subscriber" />
+        </service>
     </services>
     
 </container>
