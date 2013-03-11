@@ -50,7 +50,6 @@ class User extends BaseUser
      *
      * @ORM\ManyToOne(targetEntity="Text")
      */
-
     private $lastRead;
 
     /**
@@ -58,7 +57,6 @@ class User extends BaseUser
      *
      * @ORM\Column(name="language", type="string", length=2)
      */
-
     private $language;
 
     /**
@@ -68,7 +66,6 @@ class User extends BaseUser
      *
      * @ORM\OneToMany(targetEntity="Note", mappedBy="user")
      */
-
     private $notes;
 
     /**
@@ -78,7 +75,6 @@ class User extends BaseUser
      *
      * @ORM\OneToMany(targetEntity="Goal", mappedBy="user")
      */
-
     private $goals;
 
 
@@ -170,7 +166,7 @@ class User extends BaseUser
      * @param E100\CoreBundle\Entity\MarkedRead $readTexts
      * @return User
      */
-    public function addReadText(\E100\CoreBundle\Entity\MarkedRead $readTexts)
+    public function addReadText(ReadText $readTexts)
     {
         $this->readTexts[] = $readTexts;
     
@@ -182,7 +178,7 @@ class User extends BaseUser
      *
      * @param E100\CoreBundle\Entity\MarkedRead $readTexts
      */
-    public function removeReadText(\E100\CoreBundle\Entity\MarkedRead $readTexts)
+    public function removeReadText(ReadText $readTexts)
     {
         $this->readTexts->removeElement($readTexts);
     }
