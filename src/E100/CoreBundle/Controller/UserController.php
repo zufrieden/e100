@@ -19,13 +19,18 @@ class UserController extends Controller
     {
 
         $user = $this->getUser();
+        $goal = $user->getGoals();
+        $goal = $goal[0];
+        $now  = new \DateTime("now");
+
         $lastReading = $this->getDoctrine()->getRepository('E100CoreBundle:Text')->getLastReadTextForUser($user);
         $numberOfTextReaded = $user->getReadTexts()->count();
-        $velocity = 0;
+        $velocity = ($goal->getEndDateTime()->diff($now)->days) / (100 - $numberOfTextReaded);
 
     	return array(
             'lastReading' => $lastReading,
             'numberOfTextReaded' => $numberOfTextReaded,
+            'velocity' => $velocity,
         );
     }
 }

@@ -19,6 +19,9 @@
           <div class="bar" style="width: {{ numberOfTextReaded }}%;"></div>
         </div>
 
+        <h2>{{ 'dashboard.velocity.title' | trans }}<h2>
+        <p>Velocity: {{ velocity | number_format(2) }}</p>
+
       </div><!--/span-->
     </div><!--/row-->
 {% endblock %}
