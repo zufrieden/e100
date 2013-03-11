@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * Represents a text
  *
  * @ORM\Table(name="text")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="E100\CoreBundle\Entity\TextRepository")
  */
 class Text
 {
