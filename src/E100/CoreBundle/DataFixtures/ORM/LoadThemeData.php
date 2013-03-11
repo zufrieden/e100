@@ -148,6 +148,13 @@ class LoadThemeData extends AbstractFixture implements OrderedFixtureInterface
         $this->addReference('theme.nineteen', $theme);
         $manager->persist($theme);
 
+        $theme = new Theme();
+        $theme->setTestament("new");
+        $theme->setImage("");
+        $theme->setTitle("With God, always!");
+        $this->addReference('theme.twenty', $theme);
+        $manager->persist($theme);
+
         $manager->flush();
     }
 
