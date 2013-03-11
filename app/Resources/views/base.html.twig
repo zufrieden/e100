@@ -59,7 +59,7 @@
                     <ul class="dropdown-menu">
                       <a href="{{ path('goal') }}">{{ 'layout.goals'|trans({}, 'FOSUserBundle') }}</a></li>
                       <li {% if is_current_route('login') %}class="active"{% endif %}><a href="{{ path('fos_user_change_password') }}">{{ 'layout.changePassword'|trans({}, 'FOSUserBundle') }}</a></li>
-                      <a href="{{ path('fos_user_profile_show') }}">{{ 'layout.showProfile'|trans({}, 'FOSUserBundle') }}</a></li>
+                      <a href="{{ path('dashboard') }}">{{ 'layout.showProfile'|trans({}, 'FOSUserBundle') }}</a></li>
                       <a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
                     </ul>
                   </li>
