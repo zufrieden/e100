@@ -115,7 +115,7 @@ class GoalController extends Controller
             $goal->setUser($user);
             $startdate = new \DateTime("now");
             $enddate = new \DateTime("now");
-            $enddate->modify("+1 month");
+            $enddate->modify("+3 month");
             $goal->setEndDateTime($enddate);
             $goal->setStartDateTime($startdate);
             $this->getDoctrine()->getEntityManager()->persist($goal);
