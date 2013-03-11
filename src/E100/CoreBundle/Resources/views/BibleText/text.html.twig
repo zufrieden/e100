@@ -52,11 +52,10 @@
           {% else %}
               <a href="{{ path('newNote', { 'id': text.id }) }}" class="btn btn-inverse btn-small"><i class="icon-pencil icon-white"></i>{{ 'random.button.note' | trans }}</a>
           {% endif %}
-
           <br />
           <hr />
           <br />
-          <h4>{{ text.actionText }}</h4>
+          <h4 id="question">{{ text.actionText }}</h4>
           <br />
         </div>
       </div><!--/span-->
