@@ -14,7 +14,11 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('E100CoreBundle:Default:index.html.twig', array('name' => 'default'));
+        if($this->getUser()) {
+            return $this->redirect($this->generateUrl('dashboard'));
+        } else {
+            return $this->render('E100CoreBundle:Default:index.html.twig', array('name' => 'default'));
+        }
     }
 
     /**
