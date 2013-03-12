@@ -44,7 +44,7 @@ class GoalController extends Controller
 
             $response = new JsonResponse(array(
                 'success' => true,
-                'text_id' => $text->getId(),
+                'text_id' => $id
             ), 200);
         } catch (\Exception $e){
              $response = new JsonResponse(array(
@@ -61,18 +61,18 @@ class GoalController extends Controller
      */
     public function markNotRead($id)
     {
-    	$em = $this->getDoctrine()->getManager();
-    	$repository = $em->getRepository('E100CoreBundle:ReadText');
+    	$repository = $this->getDoctrine()->getRepository('E100CoreBundle:ReadText');
         $userid = $this->getUser()->getId();
     	$readText = $repository->findOneBy(array('user' => $userid, 'text' => $id));
 
         try{
+            $em = $this->getDoctrine()->getEntityManager();
             $em->remove($readText);
             $em->flush();
 
             $response = new JsonResponse(array(
                 'success' => true,
-                'text_id' => $text->getId(),
+                'text_id' => $id
             ), 200);
         } catch (\Exception $e){
              $response = new JsonResponse(array(
