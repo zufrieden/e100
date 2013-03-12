@@ -2,8 +2,11 @@
 
 namespace E100\CoreBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+
+use Gedmo\Translatable\Translatable;
 
 /**
  * Represents a text
@@ -32,6 +35,7 @@ class Text
     /**
      * @var string $title
      *
+     * @Gedmo\Translatable
      * @ORM\Column(name="title", type="string", length=255)
      */
 
@@ -48,6 +52,7 @@ class Text
     /**
      * @var text $bibleText
      *
+     * @Gedmo\Translatable
      * @ORM\Column(name="bible_text", type="text")
      */
 
@@ -83,6 +88,7 @@ class Text
     /**
      * @var text $actionText
      *
+     * @Gedmo\Translatable
      * @ORM\Column(name="action_text", type="text")
      */
 
@@ -91,6 +97,7 @@ class Text
     /**
      * @var text $teaserQuestion
      *
+     * @Gedmo\Translatable
      * @ORM\Column(name="teaser_question", type="text", nullable=true)
      */
 
@@ -99,10 +106,18 @@ class Text
     /**
      * @var text $link
      *
+     * @Gedmo\Translatable
      * @ORM\Column(name="link", type="text", nullable=true)
      */
 
     private $link;
+
+    /**
+     * @Gedmo\Locale
+     * Used locale to override Translation listener`s locale
+     * this is not a mapped field of entity metadata, just a simple property
+     */
+    private $locale;
 
     /**
      * Constructor
@@ -360,5 +375,26 @@ class Text
     public function getTextNumber()
     {
         return $this->textNumber;
+    }
+
+    /**
+     * Get locale
+     *
+     * @return integer
+     */
+    public function getTranslatableLocale()
+    {
+        return $this->locale;
+    }    
+
+    /**
+     * Set locale
+     *
+     * @param locale $locale
+     * @return Text
+     */
+    public function setTranslatableLocale($locale)
+    {
+        $this->locale = $locale;
     }
 }
