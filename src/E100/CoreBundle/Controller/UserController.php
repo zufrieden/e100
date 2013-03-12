@@ -30,19 +30,19 @@ class UserController extends Controller
         // Display message
         switch($numberOfTextReaded) {
             case 1:
-                $message = "Awesome, you've read one text! Go on!";
+                $message = $this->get('translator')->trans('motivation.message1');
                 break;
             case 10:
-                $message = "Awesome, you've read 10 texts! Go on!";
+                $message = $this->get('translator')->trans('motivation.message2');
                 break;
             case 25:
-                $message = "Awesome, you've read 25 texts! Go on!";
+                $message = $this->get('translator')->trans('motivation.message3');
                 break;
             case 50:
-                $message = "Awesome, you've read 50 texts! Go on!";
+                $message = $this->get('translator')->trans('motivation.message4');
                 break;
             case 99:
-                $message = "Awesome, you've read 99 texts! Go on!";
+                $message = $this->get('translator')->trans('motivation.message5');
                 break;
         }
 

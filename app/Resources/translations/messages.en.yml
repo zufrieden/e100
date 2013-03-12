@@ -60,3 +60,10 @@ goal:
 navigation:
     next: 'Next article'
     prev: 'Previous article'
+
+motivation:
+    message1: "Awesome, you've read one article!"
+    message2: "Awesome, you've read 10 articles"
+    message3: "Awesome, you've read 25 articles"
+    message4: "Awesome, you've read 50 articles"
+    message5: "Awesome, you've read 99 articles"
