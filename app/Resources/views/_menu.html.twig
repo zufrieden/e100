@@ -1,7 +1,9 @@
 <ul class="nav">
-    <li {% if is_current_route('homepage') or is_current_route('homepage_i18n') %}class="active"{% endif %}>
-        <a href="{{ path('homepage_i18n') }}">{{ 'menu.home' | trans }}</a>
-    </li>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <li {% if is_current_route('dashboard') %}class="active"{% endif %}>
+            <a href="{{ path('dashboard') }}">{{ 'menu.dashboard' | trans }}</a>
+        </li>
+    {% endif %}
     <li {% if is_current_route('categories') %}class="active"{% endif %}>
         <a href="{{ path('categories') }}">{{ 'menu.categories' | trans }}</a>
     </li>
