@@ -27,7 +27,7 @@ class GoalController extends Controller
      */
     public function markRead($id)
     {
-    	$today = new \DateTime( "now" );
+        $today = new \DateTime( "now" );
         $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
         $text = $repository->findOneBy(array('id' => $id));
         $readText = new ReadText();

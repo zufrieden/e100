@@ -31,13 +31,12 @@ class FavoritesController extends Controller
      */
     public function addAction($id)
     {
-
-    	$repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
-    	$text = $repository->findOneBy(array('id' => $id));
-    	
-    	// Get User form Session
+        $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
+        $text = $repository->findOneBy(array('id' => $id));
+        
+        // Get User form Session
         $user = $this->getUser();
-    	
+        
         try{
             $user->addFavorite($text);
             $this->getDoctrine()->getEntityManager()->persist($user);

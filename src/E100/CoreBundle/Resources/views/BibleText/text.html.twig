@@ -25,8 +25,13 @@
         <div class="span7">
           <blockquote>
             <h1>{{ text.title }}</h1>
-              <a href="{{ path('addFavorites', { 'id': text.id }) }}" class="btn btn-small btn-warning btn-favorit add-favorite {% if hasFavorited == true %}hide{% endif %}"><i class="icon-star icon-white"></i>{{ 'random.button.addfavorites' | trans }}</a>
-              <a href="{{ path('deleteFavorites', { 'id': text.id }) }}" class="btn btn-small btn-warning btn-favorit remove-favorite {% if hasFavorited == false %}hide{% endif %}"><i class="icon-star icon-white"></i>{{ 'random.button.removefavorites' | trans }}</a>
+              {% if hasUser %}
+                <a href="{{ path('addFavorites', { 'id': text.id }) }}" class="btn btn-small btn-warning btn-favorit add-favorite {% if hasFavorited == true %}hide{% endif %}"><i class="icon-star icon-white"></i>{{ 'random.button.addfavorites' | trans }}</a>
+                <a href="{{ path('deleteFavorites', { 'id': text.id }) }}" class="btn btn-small btn-warning btn-favorit remove-favorite {% if hasFavorited == false %}hide{% endif %}"><i class="icon-star icon-white"></i>{{ 'random.button.removefavorites' | trans }}</a>
+              {% else %}
+                <a href="{{ path('fos_user_security_login') }}" class="btn btn-small btn-warning add-favorite"><i class="icon-star icon-white"></i>{{ 'random.button.addfavorites' | trans }}</a>
+              {% endif %}
+              
             <h2>{{ text.teaserQuestion }}</h2>
             <p class="lead">{{ text.bibleRef}}</p>
             <p id="bible-text">
@@ -34,9 +39,13 @@
             </p>
           </blockquote>
           <br />
-          <a href="{{ path('markRead', { 'id': text.id }) }}" class="btn btn-success btn-large btn-markRead add-markRead {% if hasRead == true %}hide{% endif %}"><i class="icon-ok icon-white"></i>{{ 'random.button.read' | trans }}</a>
-          <a href="{{ path('unmarkRead', { 'id': text.id }) }}" class="btn btn-success btn-large btn-markRead remove-markRead {% if hasRead == false %}hide{% endif %}"><i class="icon-ok icon-white"></i>{{ 'random.button.unread' | trans }}</a>
-          <a href="{{ path('dashboard') }}" class="btn btn-large btn-inverse"><i class="icon-home icon-white"></i>{{ 'random.button.dashboard' | trans }}</a>
+          {% if hasUser %}
+            <a href="{{ path('markRead', { 'id': text.id }) }}" class="btn btn-success btn-large btn-markRead add-markRead {% if hasRead == true %}hide{% endif %}"><i class="icon-ok icon-white"></i>{{ 'random.button.read' | trans }}</a>
+            <a href="{{ path('unmarkRead', { 'id': text.id }) }}" class="btn btn-success btn-large btn-markRead remove-markRead {% if hasRead == false %}hide{% endif %}"><i class="icon-ok icon-white"></i>{{ 'random.button.unread' | trans }}</a>
+            <a href="{{ path('dashboard') }}" class="btn btn-large btn-inverse"><i class="icon-home icon-white"></i>{{ 'random.button.dashboard' | trans }}</a>
+          {% else %}
+            <a href="{{ path('fos_user_security_login') }}" class="btn btn-success btn-large add-markRead"><i class="icon-ok icon-white"></i>{{ 'random.button.read' | trans }}</a>
+          {% endif %}
           <br /><br />
           <div class="fb-like" data-href="{{ url('bibleText', { id: text.id } ) }}" data-send="false" data-width="450" data-show-faces="true"></div>
           <a href="#" class="btn btn-small"><i class="icon-envelope"></i>{{ 'random.button.send' | trans }}</a>

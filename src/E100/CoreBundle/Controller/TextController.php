@@ -18,9 +18,11 @@ class TextController extends Controller
     	$text = $repository->findOneBy(array('id' => $id));
         $hasRead = false;
         $hasFavorited = false;
+        $hasUser = false;
         $note = false;
 
         if($this->getUser()) {
+            $hasUser = true;
             $user = $this->getUser();
             $user->setLastRead($text);
             $this->getDoctrine()->getEntityManager()->persist($user);
@@ -48,6 +50,6 @@ class TextController extends Controller
 
         }
         
-        return array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited, 'hasNote' => $note);
+        return array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited, 'hasNote' => $note, 'hasUser' => $hasUser);
     }
 }

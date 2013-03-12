@@ -32,6 +32,7 @@ class DefaultController extends Controller
         $text = null;
         $hasRead = false;
         $hasFavorited = false;
+        $hasUser = false;
 
         $textIds = $query->add('select', 't.id')->getQuery()->getResult();
 
@@ -46,6 +47,7 @@ class DefaultController extends Controller
             $note = NULL;
 
             if($user) {
+                $hasUser = true;
                 if($user->getFavorites()->contains($text)) {
                     $hasFavorited = true;
                 }
@@ -65,7 +67,7 @@ class DefaultController extends Controller
                 $this->getDoctrine()->getEntityManager()->flush();
             }
 
-            return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited, 'hasNote' => $note));
+            return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited, 'hasNote' => $note, 'hasUser' => $hasUser));
         }
     }
 
@@ -81,6 +83,7 @@ class DefaultController extends Controller
         $note = false;
 
         if($user && $user->getLastRead()) {
+            $hasUser = true;
             $text = $user->getLastRead();
 
             $notes_repository = $this->getDoctrine()->getRepository('E100CoreBundle:Note');
@@ -106,7 +109,7 @@ class DefaultController extends Controller
             $user->setLastRead($text);
             $this->getDoctrine()->getEntityManager()->persist($user);
             $this->getDoctrine()->getEntityManager()->flush();
-            return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasNote' => $note, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited)); 
+            return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasNote' => $note, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited, 'hasUser' => $hasUser)); 
         } else {
             return $this->redirect($this->generateUrl('random'));
         }
