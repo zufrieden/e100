@@ -32,6 +32,7 @@ random:
         facebook: "Share on Facebook"
         send: "Send to a friend"
         note: "Write a note"
+        dashboard: "Back to dashboard"
 
 favorites:
     title: "E100 | Favorites"
