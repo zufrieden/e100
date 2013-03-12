@@ -17,6 +17,14 @@
             <li><a href="#comments">Comments</a></li>
             <li><a href="#questions">Questions</a></li>
           </ul>
+          <ul class="nav pull-right">
+            {% if prev != 0 %}
+            <li><a href="{{ path('bibleText', { 'id': prev }) }}">{{ 'navigation.prev'|trans }}</a></li>
+            {% endif %}
+            {% if next != 0 %}
+            <li><a href="{{ path('bibleText', { 'id': next }) }}">{{ 'navigation.next'|trans }}</a></li>
+            {% endif %}
+          </ul>
         </div>
       </div>
     </div>
@@ -46,6 +54,14 @@
           {% else %}
             <a href="{{ path('fos_user_security_login') }}" class="btn btn-success btn-large add-markRead"><i class="icon-ok icon-white"></i>{{ 'random.button.read' | trans }}</a>
           {% endif %}
+          <ul class="nav pull-right">
+            {% if prev != 0 %}
+            <li><a href="{{ path('bibleText', { 'id': prev }) }}">{{ 'navigation.prev'|trans }}</a></li>
+            {% endif %}
+            {% if next != 0 %}
+            <li><a href="{{ path('bibleText', { 'id': next }) }}">{{ 'navigation.next'|trans }}</a></li>
+            {% endif %}
+          </ul>
           <br /><br />
           <div class="fb-like" data-href="{{ url('bibleText', { id: text.id } ) }}" data-send="false" data-width="450" data-show-faces="true"></div>
           <a href="#" class="btn btn-small"><i class="icon-envelope"></i>{{ 'random.button.send' | trans }}</a>

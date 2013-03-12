@@ -53,3 +53,10 @@ menu:
     last: Last
 
 footer:
+
+goal:
+    change: 'Change the date at which all texts should be read:'
+
+navigation:
+    next: 'Next article'
+    prev: 'Previous article'

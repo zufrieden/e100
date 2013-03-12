@@ -15,11 +15,13 @@ class TextController extends Controller
     public function indexAction($id)
     {
     	$repository = $this->getDoctrine()->getRepository('E100CoreBundle:Text');
-    	$text = $repository->findOneBy(array('id' => $id));
+    	$text = $repository->findOneBy(array('textNumber' => $id));
         $hasRead = false;
         $hasFavorited = false;
         $hasUser = false;
         $note = false;
+        $prev = $id - 1;
+        $next = $id + 1 <= 100 ? $id + 1 : 0;
 
         if($this->getUser()) {
             $hasUser = true;
@@ -50,6 +52,6 @@ class TextController extends Controller
 
         }
         
-        return array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited, 'hasNote' => $note, 'hasUser' => $hasUser);
+        return array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited, 'hasNote' => $note, 'hasUser' => $hasUser, 'next' => $next, 'prev' => $prev);
     }
 }

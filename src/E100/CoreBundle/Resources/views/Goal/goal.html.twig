@@ -21,14 +21,11 @@
         <hr>
         <h2>{{ 'goal.change'|trans }}</h2>
         <form action="{{ path('goal') }}" method="post" {{ form_enctype(form) }}>
-
             {{ form_errors(form) }}
             <div>
             {{ form_widget(form.endDateTime) }}
             {{ form_rest(form) }}
             </div>
-
-
             <input type="submit" />
         </form>
       </div>
