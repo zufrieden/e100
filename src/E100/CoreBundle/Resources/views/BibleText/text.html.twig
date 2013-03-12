@@ -36,7 +36,7 @@
           <br />
           <a href="{{ path('markRead', { 'id': text.id }) }}" class="btn btn-success btn-large btn-markRead add-markRead {% if hasRead == true %}hide{% endif %}"><i class="icon-ok icon-white"></i>{{ 'random.button.read' | trans }}</a>
           <a href="{{ path('unmarkRead', { 'id': text.id }) }}" class="btn btn-success btn-large btn-markRead remove-markRead {% if hasRead == false %}hide{% endif %}"><i class="icon-ok icon-white"></i>{{ 'random.button.unread' | trans }}</a>
-          <a href="{{ path('unmarkRead', { 'id': text.id }) }}" class="btn btn-large btn-inverse"><i class="icon-home icon-white"></i>{{ 'random.button.dashboard' | trans }}</a>
+          <a href="{{ path('dashboard') }}" class="btn btn-large btn-inverse"><i class="icon-home icon-white"></i>{{ 'random.button.dashboard' | trans }}</a>
           <br /><br />
           <div class="fb-like" data-href="{{ url('bibleText', { id: text.id } ) }}" data-send="false" data-width="450" data-show-faces="true"></div>
           <a href="#" class="btn btn-small"><i class="icon-envelope"></i>{{ 'random.button.send' | trans }}</a>
