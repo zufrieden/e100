@@ -36,9 +36,16 @@ class TextController extends Controller
                 $hasFavorited = true;
             }
 
-            if($user->getReadTexts()->contains($text)) {
-                $hasRead = true;
+            if($user->getReadTexts()) {
+                $readTexts = $user->getReadTexts();
+                foreach($readTexts as $readText) {
+                    if($readText->getText()->getId() == $text->getId()) {
+                        $hasRead = true;
+                        break;
+                    }
+                }
             }
+
         }
         
         return array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited, 'hasNote' => $note);

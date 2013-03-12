@@ -74,21 +74,35 @@ class DefaultController extends Controller
 
         $hasRead = false;
         $hasFavorited = false;
+        $note = false;
 
         if($user && $user->getLastRead()) {
             $text = $user->getLastRead();
+
+            $notes_repository = $this->getDoctrine()->getRepository('E100CoreBundle:Note');
+            $note = $notes_repository->findOneBy(array(
+                                            'text' => $text,
+                                            'user' => $user
+                                            ) );
+
             if($user->getFavorites()->contains($text)) {
                 $hasFavorited = true;
             }
 
-            if($user->getReadTexts()->contains($text)) {
-                $hasRead = true;
+            if($user->getReadTexts()) {
+                $readTexts = $user->getReadTexts();
+                foreach($readTexts as $readText) {
+                    if($readText->getText()->getId() == $text->getId()) {
+                        $hasRead = true;
+                        break;
+                    }
+                }
             }
 
             $user->setLastRead($text);
             $this->getDoctrine()->getEntityManager()->persist($user);
             $this->getDoctrine()->getEntityManager()->flush();
-            return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited)); 
+            return $this->render('E100CoreBundle:BibleText:text.html.twig', array('text' => $text, 'hasNote' => $note, 'hasRead' => $hasRead, 'hasFavorited' => $hasFavorited)); 
         } else {
             return $this->redirect($this->generateUrl('random'));
         }
