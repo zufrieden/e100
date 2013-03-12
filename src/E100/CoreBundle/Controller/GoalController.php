@@ -6,20 +6,44 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 use E100\CoreBundle\Entity\ReadText;
 use E100\CoreBundle\Entity\Goal;
+
 
 class GoalController extends Controller
 {
     /**
      * @Route("/", name="goal")
-     * @Template("E100CoreBundle:Goal:goal.html.twig")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $user = $this->getUser();
+        $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Goal');
+        $goal = $repository->findOneBy(array('user' => $user));
 
-    	return array('test' => 1);
+        $form = $this->createFormBuilder($goal)
+            ->add('endDateTime', 'date')
+            ->getForm()
+        ;
+
+        if ($request->getMethod() == 'POST') {
+            $form->bindRequest($request);
+
+            $newGoalDate = $form->get('endDateTime')->getData();
+            $goal->setEndDateTime($newGoalDate);
+
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->persist($goal);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('goal'));
+        }
+
+        return $this->render('E100CoreBundle:Goal:goal.html.twig', array(
+            'form' => $form->createView(),
+        ));
     }
 
     /**

@@ -113,6 +113,5 @@ class DefaultController extends Controller
         } else {
             return $this->redirect($this->generateUrl('random'));
         }
-        
     }
 }
