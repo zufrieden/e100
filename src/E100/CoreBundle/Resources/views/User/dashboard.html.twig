@@ -9,6 +9,12 @@
           <h1>{{ 'dashboard.welcome.title' | trans }}</h1>
         </div>
 
+        {% if message %}
+        <div class="well">
+          <h2>{{ message }}</h2>
+        </div>
+        {% endif %}
+
         <h2>{{ 'dashboard.lastread.title' | trans }}<h2>
         {% if lastReading %}
           <a href="{{ path('bibleText', {id: lastReading.id}) }}">{{ lastReading.bibleRef }}</a>
