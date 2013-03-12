@@ -126,4 +126,9 @@ class Goal
     {
         return $this->user;
     }
+
+    public function isEndDateTimeLegal()
+    {
+        return ($this->startDateTime < $this->endDateTime);
+    }
 }

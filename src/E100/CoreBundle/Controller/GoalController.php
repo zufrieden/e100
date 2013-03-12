@@ -30,15 +30,16 @@ class GoalController extends Controller
 
         if ($request->getMethod() == 'POST') {
             $form->bindRequest($request);
-
             $newGoalDate = $form->get('endDateTime')->getData();
             $goal->setEndDateTime($newGoalDate);
 
-            $em = $this->getDoctrine()->getEntityManager();
-            $em->persist($goal);
-            $em->flush();
+            if($form->isValid()) {
+                $em = $this->getDoctrine()->getEntityManager();
+                $em->persist($goal);
+                $em->flush();
 
-            return $this->redirect($this->generateUrl('goal'));
+                return $this->redirect($this->generateUrl('goal'));
+            }
         }
 
         return $this->render('E100CoreBundle:Goal:goal.html.twig', array(

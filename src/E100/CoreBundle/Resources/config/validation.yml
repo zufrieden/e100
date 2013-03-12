@@ -1,0 +1,4 @@
+E100\CoreBundle\Entity\Goal:
+    getters:
+        endDateTimeLegal:
+            - "True": { message: "The goal date has to be after the start date." }
