@@ -5404,6 +5404,13 @@ a:focus {
 .clear {
   clear: both;
 }
+.read-progress {
+  background-color: green;
+}
+.read-progress .full {
+  background-color: #ffffff;
+  display: block;
+}
 /* Sidenav for Docs
 -------------------------------------------------- */
 .bs-docs-sidenav {

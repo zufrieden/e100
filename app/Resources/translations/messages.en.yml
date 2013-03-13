@@ -1,4 +1,4 @@
-homepage: 
+homepage:
     title: "E100 | Challenge"
     welcome:
         title: Welcome to E100
@@ -8,7 +8,7 @@ homepage:
         title: Categories
         text: Each text of the E100 challenge seats in a defined category.
         action: Browse categories
-    random: 
+    random:
         title: Random
         text: Don't know where to start. Follow the guide.
         action: Start with text 1
@@ -41,16 +41,31 @@ favorites:
 
 notes:
     title: "E100 | Notes"
-    welcome: 
+    welcome:
         title: "Notes"
 
 menu:
     home: Home
+    dashboard: Dashboard
     categories: Categories
     random: Random
     notes: Notes
     favorites: Favorites
     last: Last
+    goals: Goals
+    changePassword: Change your password
+    logout: Logout
+
+
+dashboard:
+    velocity:
+        title: Your Velocity
+    welcome:
+        title: Your Dashboard
+    lastread:
+        title: Last read text
+    progress:
+        title: Your progression
 
 footer:
 

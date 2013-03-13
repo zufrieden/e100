@@ -21,6 +21,7 @@
         {% endif %}
 
         <h2>{{ 'dashboard.progress.title' | trans }}<h2>
+        <p>{{numberOfTextReaded}}/100 {{ 'dashboard.lastread.text' | trans }}</p>
         <div class="progress progress-striped active">
           <div class="bar" style="width: {{ numberOfTextReaded }}%;"></div>
         </div>
