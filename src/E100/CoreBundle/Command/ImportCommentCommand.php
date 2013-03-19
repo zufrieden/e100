@@ -24,7 +24,7 @@ class ImportCommentCommand extends ContainerAwareCommand
             ->setName('e100:import:comment')
             ->setDescription('Import and update comment 1 to 100')
             ->addArgument('source', InputArgument::REQUIRED, 'EXCEL file (.xlsx)')
-            ->addOption('language', null, InputOption::VALUE_REQUIRED, '[fr|en|?] (don\t used actually)', 'en')
+            ->addOption('language', null, InputOption::VALUE_REQUIRED, '[fr|en|de|?] (don\t used actually)', 'en')
         ;
     }
 
@@ -74,7 +74,11 @@ class ImportCommentCommand extends ContainerAwareCommand
                 // create a new Text if not exists
                 $text = new Text();
             }
-
+            
+            if(!empty($language)) {
+                $text->setTranslatableLocale($language);
+            }
+            
             $text->setTheme($this->getThemeById($line['B']));
             $text->setTextNumber($textNumber);
             $text->setBibleRef($line['E']);
@@ -89,7 +93,6 @@ class ImportCommentCommand extends ContainerAwareCommand
         }
 
         $em->flush();
-
     }
 
     private function getDoctrine()

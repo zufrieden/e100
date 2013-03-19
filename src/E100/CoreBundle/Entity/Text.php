@@ -14,7 +14,7 @@ use Gedmo\Translatable\Translatable;
  * @ORM\Table(name="text")
  * @ORM\Entity(repositoryClass="E100\CoreBundle\Entity\TextRepository")
  */
-class Text
+class Text implements Translatable
 {
     /**
      * @var integer $id
@@ -61,6 +61,7 @@ class Text
     /**
      * @var text $comment
      *
+     * @Gedmo\Translatable
      * @ORM\Column(name="comment", type="text")
      */
 
