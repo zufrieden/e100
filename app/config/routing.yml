@@ -4,7 +4,7 @@ homepage:
 
 homepage_i18n:
     pattern: /{_locale}
-    defaults: { _controller: E100CoreBundle:Default:index, _locale: en }
+    defaults: { _controller: E100CoreBundle:Default:index, _locale: %locale% }
     requirements:
         _locale: fr|de|en|ru
 
@@ -17,7 +17,7 @@ Text:
     resource: "@E100CoreBundle/Controller/TextController.php"
     type:     annotation
     prefix:   /{_locale}/text
-    defaults: { _locale: en }
+    defaults: { _locale: %locale% }
     requirements:
         _locale: fr|de|en|ru
 
@@ -25,7 +25,7 @@ Favorites:
     resource: "@E100CoreBundle/Controller/FavoritesController.php"
     type:     annotation
     prefix:   /{_locale}/favorites
-    defaults: { _locale: en }
+    defaults: { _locale: %locale% }
     requirements:
         _locale: fr|de|en|ru
 
@@ -33,7 +33,7 @@ Categories:
     resource: "@E100CoreBundle/Controller/CategoriesController.php"
     type:     annotation
     prefix:   /{_locale}/categories
-    defaults: { _locale: en }
+    defaults: { _locale: %locale% }
     requirements:
         _locale: fr|de|en|ru
 
@@ -41,7 +41,7 @@ Note:
     resource: "@E100CoreBundle/Controller/NotesController.php"
     type:     annotation
     prefix:   /{_locale}/notes
-    defaults: { _locale: en }
+    defaults: { _locale: %locale% }
     requirements:
         _locale: fr|de|en|ru
 
@@ -49,7 +49,7 @@ User:
     resource: "@E100CoreBundle/Controller/UserController.php"
     type:     annotation
     prefix:   /{_locale}/user
-    defaults: { _locale: en }
+    defaults: { _locale: %locale% }
     requirements:
         _locale: fr|de|en|ru
 
@@ -57,7 +57,7 @@ Goal:
     resource: "@E100CoreBundle/Controller/GoalController.php"
     type:     annotation
     prefix:   /{_locale}/goal
-    defaults: { _locale: en }
+    defaults: { _locale: %locale% }
     requirements:
         _locale: fr|de|en|ru
 
@@ -65,7 +65,7 @@ Login:
     resource: "@E100CoreBundle/Controller/LoginController.php"
     type:     annotation
     prefix:   /{_locale}/login
-    defaults: { _locale: en }
+    defaults: { _locale: %locale% }
     requirements:
         _locale: fr|de|en|ru
 
