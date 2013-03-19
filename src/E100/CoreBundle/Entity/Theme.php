@@ -2,7 +2,9 @@
 
 namespace E100\CoreBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Translatable\Translatable;
 
 /**
  * Represents a theme
@@ -10,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="theme")
  * @ORM\Entity
  */
-class Theme
+class Theme implements Translatable
 {
     /**
      * @var integer $id
@@ -32,6 +34,7 @@ class Theme
     /**
      * @var string $title
      *
+     * @Gedmo\Translatable
      * @ORM\Column(name="title", type="string", length=255)
      */
 
@@ -52,6 +55,14 @@ class Theme
      */
 
     private $image;
+
+    /**
+     * @Gedmo\Locale
+     * Used locale to override Translation listener`s locale
+     * this is not a mapped field of entity metadata, just a simple property
+     */
+    private $locale;
+
     /**
      * Constructor
      */
@@ -170,5 +181,26 @@ class Theme
     public function getTexts()
     {
         return $this->texts;
+    }
+
+    /**
+     * Get locale
+     *
+     * @return integer
+     */
+    public function getTranslatableLocale()
+    {
+        return $this->locale;
+    }    
+
+    /**
+     * Set locale
+     *
+     * @param locale $locale
+     * @return Theme
+     */
+    public function setTranslatableLocale($locale)
+    {
+        $this->locale = $locale;
     }
 }
