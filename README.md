@@ -22,6 +22,13 @@ How to install
     $ php app/console e100:import:comment data/comments.xlsx
 ```
 
+Translation files of texts are loaded with the command
+```bash
+
+    $ php app/console e100:import:comment data/filename.xlsx --language="lang"
+```
+
+
 
 A user is created from fixtures with credential
 
