@@ -32,17 +32,20 @@ class UserController extends Controller
             case 1:
                 $message = $this->get('translator')->trans('motivation.message1');
                 break;
-            case 10:
+            case 5:
                 $message = $this->get('translator')->trans('motivation.message2');
                 break;
-            case 25:
+            case 10:
                 $message = $this->get('translator')->trans('motivation.message3');
                 break;
-            case 50:
+            case 25:
                 $message = $this->get('translator')->trans('motivation.message4');
                 break;
-            case 99:
+            case 50:
                 $message = $this->get('translator')->trans('motivation.message5');
+                break;
+            case 99:
+                $message = $this->get('translator')->trans('motivation.message6');
                 break;
         }
 

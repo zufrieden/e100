@@ -7,12 +7,16 @@
       <div class="span12">
         <h1>{{ 'categories.welcome.title' | trans }}</h1>
         <p>{{ 'categories.welcome.text' | trans }}</p>
-        <a class="btn btn-inverse" href="#old">{{ 'categories.old.title' | trans }}</a>
-        <a class="btn btn-inverse" href="#new">{{ 'categories.new.title' | trans }}</a>
+
+        <div class="hidden-desktop">
+          <a class="btn btn-inverse" href="#old">{{ 'categories.old.title' | trans }}</a>
+          <a class="btn btn-inverse" href="#new">{{ 'categories.new.title' | trans }}</a>
+        </div>
+
         <br /><br />
       </div>
     </div>
-        
+
 
     <div class="row-fluid">
       <div class="span6" id="old">
@@ -22,28 +26,15 @@
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#old-accordion" href="#old-accordion{{ loop.index }}">
-                  <h4> {{ category.title }} 
-{#                     <div class="pull-right">
-                      <span class="label label-important">1</span> 
-                      <span class="label label-important">2</span>
-                      <span class="label label-important">3</span>
-                      <span class="label label-success">4</span>
-                      <span class="label label-success">5</span>
-                    </div> #}
-                  </h4>
+                  <h4 class="read-progress"><span class="full">{{ category.title }}</span></h4>
                 </a>
               </div>
               <div id="old-accordion{{ loop.index }}" class="accordion-body collapse">
                 <div class="accordion-inner">
                   <img src="http://lorempixel.com/640/250/abstract/" width="100%">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
                   <ul class="nav nav-list bs-docs-sidenav">
                     {% for text in category.texts %}
-                      <li class="read-ok"><a href="{{ path('bibleText', {'id': text.id }) }}"><i class="icon-ok-circle"></i> <strong>{{ loop.index }}.</strong> {{ text.title }} </a></li>
+                      <li class="read-ok"><a href="{{ path('bibleText', {'id': text.id }) }}"><i class="icon-ok-circle"></i> <strong>{{ text.textNumber }}.</strong> {{ text.title }} </a></li>
                     {% endfor %}
                   </ul>
                 </div>
@@ -51,7 +42,7 @@
             </div>
           {% endfor %}
         </div>
-        
+
 
       </div><!--/span-->
 
@@ -62,7 +53,7 @@
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#new-accordion" href="#new-accordion{{loop.index}}">
-                  <h4> {{ category.title }}</h4>
+                  <h4 class="read-progress"><span class="full">{{ category.title }}</span></h4>
                 </a>
               </div>
               <div id="new-accordion{{loop.index}}" class="accordion-body collapse">
@@ -70,7 +61,7 @@
                   <img src="http://lorempixel.com/640/250/abstract/" width="100%">
                   <ul class="nav nav-list bs-docs-sidenav">
                     {% for text in category.texts %}
-                      <li class="read-ok"><a href="{{ path('random') }}"><i class="icon-ok-circle"></i> <strong>{{ loop.index }}.</strong> {{ text.title }} </a></li>
+                      <li class="read-ok"><a href="{{ path('random') }}"><i class="icon-ok-circle"></i> <strong>{{ text.textNumber }}.</strong> {{ text.title }} </a></li>
                     {% endfor %}
                   </ul>
                 </div>
