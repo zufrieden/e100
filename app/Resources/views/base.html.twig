@@ -70,6 +70,7 @@
               {% else %}
                 <ul class="nav pull-right">
                 <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">Fr</a></li>
+                <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">En</a></li>
                 <li><a href="{{  path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'de'}))}}">De</a></li>
                   <li {% if is_current_route('login') %}class="active"{% endif %}><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a></li>
                   <li {% if is_current_route('login') %}class="active"{% endif %}><a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a></li>
