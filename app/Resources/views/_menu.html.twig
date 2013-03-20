@@ -19,11 +19,11 @@
     <li {% if is_current_route('last') %}class="active"{% endif %}>
         <a href="{{ path('last') }}">{{ 'menu.last' | trans }}</a>
     </li>
-    <form class="navbar-form pull-left">
+{#     <form class="navbar-form pull-left">
         <select class="span1">
             {% for i in 0..100 %}
                 <option value="{{ i }}">{{ i }}</option>
             {% endfor %}
         </select>
-    </form>
+    </form> #}
 </ul>
