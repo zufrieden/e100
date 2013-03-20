@@ -13,9 +13,9 @@
       <div class="navbar-inner">
         <div class="container">
           <ul class="nav">
-            <li class="active"><a href="#bible-text">Bible text</a></li>
-            <li><a href="#comments">Comments</a></li>
-            <li><a href="#questions">Questions</a></li>
+            <li class="active"><a href="#bible-text">{{ 'text.innerNav.bibleText' | trans}}</a></li>
+            <li><a href="#comments">{{ 'text.innerNav.comment' | trans}}</a></li>
+            <li><a href="#questions">{{ 'text.innerNav.question' | trans}}</a></li>
           </ul>
           <ul class="nav pull-right">
             {% if prev != 0 %}
@@ -64,17 +64,17 @@
           </ul>
           <br /><br />
           <div class="fb-like" data-href="{{ url('bibleText', { id: text.id } ) }}" data-send="false" data-width="450" data-show-faces="true"></div>
-          <a href="#" class="btn btn-small"><i class="icon-envelope"></i>{{ 'random.button.send' | trans }}</a>
-          <br /><br />
+          {# <a href="#" class="btn btn-small"><i class="icon-envelope"></i>{{ 'random.button.send' | trans }}</a>
+          <br /><br /> #}
         </div>
         <div class="span4 offset1">
-          <h2 class="normal-color" id="comments">Comment</h2>
+          <h2 class="normal-color" id="comments">{{ 'text.innerNav.comment' | trans}}</h2>
           <p class="normal-color">
             {{ text.comment }}
           </p>
           <br />
           {% if hasNote %}
-            <a href="#" class="btn">Read note</a>
+            {# <a href="#" class="btn">Read note</a> #}
           {% else %}
               <a href="{{ path('newNote', { 'id': text.id }) }}" class="btn btn-inverse btn-small"><i class="icon-pencil icon-white"></i>{{ 'random.button.note' | trans }}</a>
           {% endif %}
@@ -82,7 +82,7 @@
           <hr />
           <br />
           <div class="alert">
-            <h4 id="question">Take action</h4>
+            <h4 id="question">{{ 'text.innerNav.question' | trans}}</h4>
             <p>{{ text.actionText }}</p>
           </div>
           <br />

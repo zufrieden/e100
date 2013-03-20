@@ -3,5 +3,15 @@
 {% form_theme form 'MopaBootstrapBundle:Form:fields.html.twig' %}
 
 {% block fos_user_content %}
+<div class="row-fluid">
+      <div class="span12">
+        <h1>{{ 'user.register.title' | trans }}</h1>
+        <p>{{ 'user.register.text' | trans }}</p>
+        <p>{{ 'user.register.login' | trans }}</p>
+        <p><a href="{{ path("fos_user_security_login") }}">{{ 'user.register.loginAction' | trans }}</a></p>
+        <hr>
+
 {% include "FOSUserBundle:Registration:register_content.html.twig" %}
+    </div>
+</div>
 {% endblock fos_user_content %}

@@ -7,6 +7,7 @@
       <div class="span12">
         <div class="hero-unit">
           <h1>{{ 'dashboard.welcome.title' | trans }}</h1>
+          <h1>{{ 'dashboard.welcome.text' | trans }}</h1>
         </div>
 
         {% if message %}
@@ -27,7 +28,7 @@
         </div>
 
         <h2>{{ 'dashboard.velocity.title' | trans }}<h2>
-        <p>Velocity: {{ velocity | number_format(2) }}</p>
+        <p>{{ velocity | number_format(2) }}</p>
 
       </div><!--/span-->
     </div><!--/row-->
