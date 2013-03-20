@@ -1,6 +1,6 @@
 set :application, "e100youth"
 set :domain,      "www.example.org" # CHANGE ME
-set :deploy_to,   "/antistatique"
+set :deploy_to,   "/var/www/clients/client1/web5/antistatique"
 set :app_path,    "app"
 
 set :user,        "my_ssh_user" # CHANGE ME
@@ -12,6 +12,9 @@ set :scm,         :git
 set :use_composer, true
 set :dump_assetic_assets, true
 set :model_manager, "doctrine"
+
+# set :permission_method,     :chmod
+# set :use_set_permissions, true
 
 set :shared_files,      [app_path + "/config/parameters.yml"]
 
