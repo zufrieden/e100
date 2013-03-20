@@ -28,3 +28,4 @@ web/media/cache/
 .DS_Store
 
 /app/logs/dev.log
+/app/config/deploy.rb

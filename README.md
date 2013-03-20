@@ -43,3 +43,27 @@ After a pull
 ```bash
     $ php app/console doctrine:migrations:migrate
 ```
+
+How to deploy
+=============
+We use [Capifony](http://capifony.org/) to handle deployment.
+
+Installation
+------------
+Install Capifony:
+```bash
+    $ gem install capifony
+```
+
+Configure the deploy script:
+```bash
+    $ cp app/config/deploy.rb.dist app/config/deploy.rb
+    $ edit app/config.deploy.rb # and change all 'CHANGE ME' flag
+```
+
+Deploy
+------
+
+```bash
+   $ cap deploy:migrations
+```
