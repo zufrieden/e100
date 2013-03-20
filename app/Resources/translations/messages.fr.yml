@@ -1,4 +1,4 @@
-homepage: 
+homepage:
     title: "E100 | Challenge"
     welcome:
         title: Bienvenue sur l'application E100
@@ -8,18 +8,78 @@ homepage:
         title: Catégories
         text: Chaque texte du défi E100 est classé dans une catégorie.
         action: Découvrir les catégories
-    random: 
+    random:
         title: Perdu ?
         text: Vous ne savez pas par où commencer. Suivez le guide !
         action: Découvrir le text 1
 
 
+categories:
+    title: "E100 | Textes bibliques"
+    welcome:
+        title: "Clique sur un thème pour accèder aux textes"
+        text: "Dans l’Ancien Testament, on trouve les récits de la création du monde et toute  l’histoire de Dieu avec Israël, son peuple."
+    old:
+        title: Ancien Testament
+    new:
+        title: Nouveau Testament
+
+random:
+    button:
+        addfavorites: "Ajouter aux favoris"
+        removefavorites: "Supprimer des favoris"
+        read: "Marquer comme lu"
+        unread: "Marquer comme non-lu"
+        facebook: "Partager sur facebook"
+        send: "Envoyer à un ami"
+        note: "Ecrire une note personnelle"
+        dashboard: "Retour à l'espace personel"
+
+favorites:
+    title: "E100 | Favoris"
+    welcome:
+        title: "Mes favoris"
+
+notes:
+    title: "E100 | Notes personnelles"
+    welcome:
+        title: "Notes personnelles"
+
 menu:
     home: Accueil
-    categories: Catégories
+    dashboard: Espace personnel
+    categories: Textes bibliques
     random: Aléatoire
     notes: Notes
     favorites: Favoris
-    last: Dernier
+    last: Dernier lu
+    goals: Objectifs
+    changePassword: Changer le mot de passe
+    logout: Déconnexion
+
+
+dashboard:
+    velocity:
+        title: Ton rythme
+    welcome:
+        title: Ton espace personnel
+    lastread:
+        title: Dernier texte lu
+    progress:
+        title: Ta progression
 
 footer:
+
+goal:
+    change: 'Change la date à laquelle tous les textes devront être lus.'
+
+navigation:
+    next: 'Texte suivant'
+    prev: 'Texte précédent'
+
+motivation:
+    message1: "Awesome, you've read one article!"
+    message2: "Awesome, you've read 10 articles"
+    message3: "Awesome, you've read 25 articles"
+    message4: "Awesome, you've read 50 articles"
+    message5: "Awesome, you've read 99 articles"
