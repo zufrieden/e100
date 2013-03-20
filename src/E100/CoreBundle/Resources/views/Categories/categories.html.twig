@@ -31,7 +31,7 @@
               </div>
               <div id="old-accordion{{ loop.index }}" class="accordion-body collapse">
                 <div class="accordion-inner">
-                  <img src="http://lorempixel.com/640/250/abstract/" width="100%">
+                  <p>{{ category.description }}</p>
                   <ul class="nav nav-list bs-docs-sidenav">
                     {% for text in category.texts %}
                       <li class="read-ok"><a href="{{ path('bibleText', {'id': text.id }) }}"><i class="icon-ok-circle"></i> <strong>{{ text.textNumber }}.</strong> {{ text.title }} </a></li>
@@ -58,7 +58,7 @@
               </div>
               <div id="new-accordion{{loop.index}}" class="accordion-body collapse">
                 <div class="accordion-inner">
-                  <img src="http://lorempixel.com/640/250/abstract/" width="100%">
+                  <p>{{ category.description }}</p>
                   <ul class="nav nav-list bs-docs-sidenav">
                     {% for text in category.texts %}
                       <li class="read-ok"><a href="{{ path('random') }}"><i class="icon-ok-circle"></i> <strong>{{ text.textNumber }}.</strong> {{ text.title }} </a></li>

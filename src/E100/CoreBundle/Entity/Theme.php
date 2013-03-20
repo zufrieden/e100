@@ -41,6 +41,15 @@ class Theme implements Translatable
     private $title;
 
     /**
+     * @var string $description
+     *
+     * @Gedmo\Translatable
+     * @ORM\Column(name="description", type="text")
+     */
+
+    private $description;
+
+    /**
      * @var Text[] $texts
      *
      * @ORM\OneToMany(targetEntity="Text", mappedBy="theme")
@@ -70,11 +79,11 @@ class Theme implements Translatable
     {
         $this->texts = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -90,14 +99,14 @@ class Theme implements Translatable
     public function setTestament($testament)
     {
         $this->testament = $testament;
-    
+
         return $this;
     }
 
     /**
      * Get testament
      *
-     * @return string 
+     * @return string
      */
     public function getTestament()
     {
@@ -113,14 +122,14 @@ class Theme implements Translatable
     public function setTitle($title)
     {
         $this->title = $title;
-    
+
         return $this;
     }
 
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -136,14 +145,14 @@ class Theme implements Translatable
     public function setImage($image)
     {
         $this->image = $image;
-    
+
         return $this;
     }
 
     /**
      * Get image
      *
-     * @return string 
+     * @return string
      */
     public function getImage()
     {
@@ -159,7 +168,7 @@ class Theme implements Translatable
     public function addText(\E100\CoreBundle\Entity\Text $texts)
     {
         $this->texts[] = $texts;
-    
+
         return $this;
     }
 
@@ -176,7 +185,7 @@ class Theme implements Translatable
     /**
      * Get texts
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getTexts()
     {
@@ -191,7 +200,7 @@ class Theme implements Translatable
     public function getTranslatableLocale()
     {
         return $this->locale;
-    }    
+    }
 
     /**
      * Set locale
@@ -202,5 +211,28 @@ class Theme implements Translatable
     public function setTranslatableLocale($locale)
     {
         $this->locale = $locale;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Theme
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }
