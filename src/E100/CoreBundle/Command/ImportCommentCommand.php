@@ -121,7 +121,15 @@ class ImportCommentCommand extends ContainerAwareCommand
 
     private function formatVerset($text, $versetRef = null)
     {
-        // @TODO: add <sup></sup> around verset number
+        // Get chapter reference in bible
+        // Use regexp to get different chapters
+        // Remove book
+
+        $pattern1 = '#^([0-9]+)#';
+        $pattern = '#([.»\n,:\"\!\”\?]\s?)([0-9]+)(\s+)#';
+        $text = preg_replace($pattern, '$1<sup>$2</sup>$3', $text);
+        $text = preg_replace($pattern1, '<sup>$1</sup>', $text);
+
         return $text;
     }
 
@@ -136,7 +144,7 @@ class ImportCommentCommand extends ContainerAwareCommand
 
     //   $verset = get_post_meta($post->ID, 'ref', true);
     //   //Find versets
-    //   preg_match_all('#[0-9]+\.([0-9]+)-?([0-9]+)?#',$verset, $versetsResult);
+    //   preg_match_all('#[0-9]+\,([0-9]+)-?([0-9]+)?#',$verset, $versetsResult);
     //   if(count($versetsResult[1]) > 1){
     //     $content = preg_replace($pattern, '<sup>$1</sup>', $content);
     //     return $content;
