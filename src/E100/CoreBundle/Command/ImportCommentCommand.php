@@ -126,7 +126,7 @@ class ImportCommentCommand extends ContainerAwareCommand
         // Remove book
 
         $pattern1 = '#^([0-9]+)#';
-        $pattern = '#([.»\n,:\"\!\”\?]\s?)([0-9]+)(\s+)#';
+        $pattern = '#([,.»\n:\?!”]\s?)([0-9]+-[0-9]+|[0-9]{1,2})(\s*)#';
         $text = preg_replace($pattern, '$1<sup>$2</sup>$3', $text);
         $text = preg_replace($pattern1, '<sup>$1</sup>', $text);
 
