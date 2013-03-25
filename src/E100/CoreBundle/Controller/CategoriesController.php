@@ -19,32 +19,21 @@ class CategoriesController extends Controller
     	$oldTestamCategories = $repository->findBy(array('testament' => 'old'));
 
         $user = $this->getUser();
-        $userId = $user->getId();
-
-        $repository = $this->getDoctrine()->getRepository('E100CoreBundle:ReadText');
-        $readTexts = $repository->findBy(array('user' => $user));
-
-        // Create an array with read texts as keys
+        $result = array();
         $readTextIds = array();
-        for($i = 0; $i < sizeof($readTexts); $i++) {
-            $readTextIds[$readTexts[$i]->getText()->getId()] = true;
+        
+        if($user) {
+
+            $repository = $this->getDoctrine()->getRepository('E100CoreBundle:ReadText');
+            $readTexts = $repository->findBy(array('user' => $user));
+
+            // Create an array with read texts as keys
+            for($i = 0; $i < sizeof($readTexts); $i++) {
+                $readTextIds[$readTexts[$i]->getText()->getId()] = true;
+            }
+
+            $result = $this->getDoctrine()->getRepository('E100CoreBundle:Theme')->getThemeTextCount($user);
         }
-
-        $query = $this->getDoctrine()->getEntityManager()->createQuery("
-            SELECT DISTINCT theme.id, COUNT(text.id) AS counter
-            FROM 
-                E100\CoreBundle\Entity\Text AS text,
-                E100\CoreBundle\Entity\Theme AS theme INDEX BY theme.id,
-                E100\CoreBundle\Entity\ReadText AS readtext
-            WHERE
-                text.theme = theme.id AND
-                text.id = readtext.text AND
-                readtext.user = ?1
-            GROUP BY theme.id
-        ");
-
-        $query->setParameter(1, $userId);
-        $result = $query->getResult();
 
         return array('newTestamentCategories' => $newTestamCategories,
         			 'oldTestamentCategories' => $oldTestamCategories,

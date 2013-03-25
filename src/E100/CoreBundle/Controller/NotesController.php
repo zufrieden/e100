@@ -17,8 +17,9 @@ class NotesController extends Controller
      */
     public function indexAction()
     {
+        $user = $this->getUser();
         $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Note');
-        $notes = $repository->findAll();
+        $notes = $repository->findBy(array('user' => $user));
 
         return array('notes' => $notes);
     }
@@ -29,9 +30,10 @@ class NotesController extends Controller
     public function deleteAction($id)
     {
     	// Get User form Session
+        $user = $this->getUser();
         $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Note');
         $em = $this->getDoctrine()->getEntityManager();
-        $note = $repository->findOneBy(array('id' => $id));
+        $note = $repository->findOneBy(array('id' => $id, 'user' => $user));
 
         try{
             $em->remove($note);
@@ -50,7 +52,8 @@ class NotesController extends Controller
     {
     	$id = $request->get('id');
         $repository = $this->getDoctrine()->getRepository('E100CoreBundle:Note');
-        $note = $repository->findOneBy(array('id' => $id));
+        $user = $this->getUser();
+        $note = $repository->findOneBy(array('id' => $id, 'user' => $user));
 
         $form = $this->createFormBuilder($note)
                      ->add('noteText', 'textarea')
