@@ -21,6 +21,15 @@ class CategoriesController extends Controller
         $user = $this->getUser();
         $userId = $user->getId();
 
+        $repository = $this->getDoctrine()->getRepository('E100CoreBundle:ReadText');
+        $readTexts = $repository->findBy(array('user' => $user));
+
+        // Create an array with read texts as keys
+        $readTextIds = array();
+        for($i = 0; $i < sizeof($readTexts); $i++) {
+            $readTextIds[$readTexts[$i]->getText()->getId()] = true;
+        }
+
         $query = $this->getDoctrine()->getEntityManager()->createQuery("
             SELECT DISTINCT theme.id, COUNT(text.id) AS counter
             FROM 
@@ -36,9 +45,10 @@ class CategoriesController extends Controller
 
         $query->setParameter(1, $userId);
         $result = $query->getResult();
-        
+
         return array('newTestamentCategories' => $newTestamCategories,
         			 'oldTestamentCategories' => $oldTestamCategories,
-                     'categoryCount' => $result);
+                     'categoryCount' => $result,
+                     'readTexts' => $readTextIds);
     }
 }

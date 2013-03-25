@@ -26,7 +26,7 @@
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#old-accordion" href="#old-accordion{{ loop.index }}">
-                  <h4 class="read-progress"><span class="full">{{ category.title }}</span> ({% if category.id in categoryCount|keys %}{{ categoryCount[category.id]['counter'] }}{% else %}0{% endif %} / 5)</h4>
+                  <h4 class="read-progress"><span class="full">{{ category.title }} ({% if category.id in categoryCount|keys %}{{ categoryCount[category.id]['counter'] }}{% else %}0{% endif %} / 5)</span></h4>
                 </a>
               </div>
               <div id="old-accordion{{ loop.index }}" class="accordion-body collapse">
@@ -34,7 +34,8 @@
                   <p>{{ category.description }}</p>
                   <ul class="nav nav-list bs-docs-sidenav">
                     {% for text in category.texts %}
-                      <li class="read-ok"><a href="{{ path('bibleText', {'id': text.id }) }}"><i class="icon-ok-circle"></i> <strong>{{ text.textNumber }}.</strong> {{ text.title }} </a></li>
+                      <li class="read-ok">
+                        <a href="{{ path('bibleText', {'id': text.id }) }}"><i class="icon-ok-circle {% if text.id in readTexts|keys %}icon-read-ok{% endif %}"></i> <strong>{{ text.textNumber }}.</strong> {{ text.title }} </a></li>
                     {% endfor %}
                   </ul>
                 </div>
@@ -53,7 +54,7 @@
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#new-accordion" href="#new-accordion{{loop.index}}">
-                  <h4 class="read-progress"><span class="full">{{ category.title }}</span> ({% if category.id in categoryCount|keys %}{{ categoryCount[category.id]['counter'] }}{% else %}0{% endif %} / 5)</h4>
+                  <h4 class="read-progress"><span class="full">{{ category.title }} ({% if category.id in categoryCount|keys %}{{ categoryCount[category.id]['counter'] }}{% else %}0{% endif %} / 5)</span></h4>
                 </a>
               </div>
               <div id="new-accordion{{loop.index}}" class="accordion-body collapse">
@@ -61,7 +62,8 @@
                   <p>{{ category.description }}</p>
                   <ul class="nav nav-list bs-docs-sidenav">
                     {% for text in category.texts %}
-                      <li class="read-ok"><a href="{{ path('bibleText', {'id': text.id }) }}"><i class="icon-ok-circle"></i> <strong>{{ text.textNumber }}.</strong> {{ text.title }} </a></li>
+                      <li class="read-ok">
+                        <a href="{{ path('bibleText', {'id': text.id }) }}"><i class="icon-ok-circle {% if text.id in readTexts|keys %}icon-read-ok{% endif %}"></i> <strong>{{ text.textNumber }}.</strong> {{ text.title }} </a></li>
                     {% endfor %}
                   </ul>
                 </div>

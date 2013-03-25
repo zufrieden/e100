@@ -5460,6 +5460,9 @@ a:focus {
   margin-right: -6px;
   opacity: .25;
 }
+.bs-docs-sidenav i.icon-read-ok {
+  opacity: 1;
+}
 .bs-docs-sidenav > li > a:hover,
 .bs-docs-sidenav > li.read-ok a {
   background-color: #fefefe;
@@ -5467,6 +5470,9 @@ a:focus {
 }
 .bs-docs-sidenav a:hover i {
   opacity: .5;
+}
+.bs-docs-sidenav a:hover i.icon-read-ok {
+  opacity: 1;
 }
 .bs-docs-sidenav .active i,
 .bs-docs-sidenav .active a:hover i {
