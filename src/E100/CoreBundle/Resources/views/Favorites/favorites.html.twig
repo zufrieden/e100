@@ -17,7 +17,7 @@
           <table class="table">
               {% for favorite in favorites %}
                 {% if favorite.theme.testament == 'old' %}
-                  <tr><td><a href="{{ path('bibleText', { id: favorite.id } ) }}"><i class="icon-star"></i><strong>{{ loop.index }}. </strong>{{ favorite.title}}</a></td><td><a href="{{ path('deleteFavorites', { 'id': favorite.id }) }}" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
+                  <tr><td><a href="{{ path('bibleText', { id: favorite.id } ) }}"><i class="icon-star"></i><strong>{{ loop.index }}. </strong>{{ favorite.title}}</a></td><td><a href="{{ path('deleteFavorites', { 'id': favorite.id }) }}" class="btn btn-delete btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
                 {% endif %}
              {% endfor %}
           </table>
@@ -27,7 +27,7 @@
           <table class="table">
             {% for favorite in favorites %}
               {% if favorite.theme.testament == 'new' %}
-                <tr><td><i class="icon-star"></i><strong>3.</strong> favorite.title</a></td><td><a href="{{ path('deleteFavorites', { 'id': favorite.id }) }}" class="btn btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
+                <tr><td><i class="icon-star"></i><strong>3.</strong> favorite.title</a></td><td><a href="{{ path('deleteFavorites', { 'id': favorite.id }) }}" class="btn btn-delete btn-mini btn-danger"><i class="icon-trash icon-white"></i></a></td></tr>
               {% endif %}
            {% endfor %}
           </table>

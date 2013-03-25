@@ -6,6 +6,20 @@ $(document).ready(function() {
     gutterWidth: 10
   });
 
+  $('.btn-delete').click(function(e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+    var self = $(this);
+    $.ajax({
+      url: url,
+      statusCode: {
+        200: function(data) {
+          window.location.reload();
+        }
+      }
+    });
+  });
+
   $('.btn-markRead').click(function(e) {
     var url = $(this).attr('href');
     var self = $(this);
