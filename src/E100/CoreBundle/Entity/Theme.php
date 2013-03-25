@@ -10,7 +10,7 @@ use Gedmo\Translatable\Translatable;
  * Represents a theme
  *
  * @ORM\Table(name="theme")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="E100\CoreBundle\Entity\ThemeRepository")
  */
 class Theme implements Translatable
 {
