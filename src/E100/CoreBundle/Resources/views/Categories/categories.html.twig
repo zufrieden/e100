@@ -26,7 +26,7 @@
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#old-accordion" href="#old-accordion{{ loop.index }}">
-                  <h4 class="read-progress"><span class="full">{{ category.title }}</span></h4>
+                  <h4 class="read-progress"><span class="full">{{ category.title }}</span> ({% if category.id in categoryCount|keys %}{{ categoryCount[category.id]['counter'] }}{% else %}0{% endif %} / 5)</h4>
                 </a>
               </div>
               <div id="old-accordion{{ loop.index }}" class="accordion-body collapse">
@@ -53,7 +53,7 @@
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#new-accordion" href="#new-accordion{{loop.index}}">
-                  <h4 class="read-progress"><span class="full">{{ category.title }}</span></h4>
+                  <h4 class="read-progress"><span class="full">{{ category.title }}</span> ({% if category.id in categoryCount|keys %}{{ categoryCount[category.id]['counter'] }}{% else %}0{% endif %} / 5)</h4>
                 </a>
               </div>
               <div id="new-accordion{{loop.index}}" class="accordion-body collapse">
