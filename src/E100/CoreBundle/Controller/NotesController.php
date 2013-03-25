@@ -56,6 +56,18 @@ class NotesController extends Controller
                      ->add('noteText', 'textarea')
                      ->getForm();
 
+        if($request->getMethod() == 'POST') {
+            $form->bindRequest($request);
+            
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getEntityManager();
+                $em->persist($note);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl('notes'));
+            }
+        }
+
         return $this->render('E100CoreBundle:Notes:edit.html.twig', array(
             'form' => $form->createView(),
             'note' => $note
