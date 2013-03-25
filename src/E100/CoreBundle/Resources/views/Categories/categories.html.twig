@@ -61,7 +61,7 @@
                   <p>{{ category.description }}</p>
                   <ul class="nav nav-list bs-docs-sidenav">
                     {% for text in category.texts %}
-                      <li class="read-ok"><a href="{{ path('random') }}"><i class="icon-ok-circle"></i> <strong>{{ text.textNumber }}.</strong> {{ text.title }} </a></li>
+                      <li class="read-ok"><a href="{{ path('bibleText', {'id': text.id }) }}"><i class="icon-ok-circle"></i> <strong>{{ text.textNumber }}.</strong> {{ text.title }} </a></li>
                     {% endfor %}
                   </ul>
                 </div>

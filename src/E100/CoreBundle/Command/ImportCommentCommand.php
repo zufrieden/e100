@@ -121,56 +121,14 @@ class ImportCommentCommand extends ContainerAwareCommand
 
     private function formatVerset($text, $versetRef = null)
     {
-        // Get chapter reference in bible
-        // Use regexp to get different chapters
-        // Remove book
-
+        // Pattern for begin of each text
         $pattern1 = '#^([0-9]+)#';
+        // Pattern for indices in the text
         $pattern = '#([,.»\n:\?!”]\s?)([0-9]+-[0-9]+|[0-9]{1,2})(\s*)#';
         $text = preg_replace($pattern, '$1<sup>$2</sup>$3', $text);
         $text = preg_replace($pattern1, '<sup>$1</sup>', $text);
 
         return $text;
     }
-
-    // @todo -> put verset number in <sup></sup> base on bibleReference field
-    // private function supContent($post){
-    //   $content = $post->post_content;
-    //   $pattern = '#\s?([0-9]+)\s?#';
-    //   if(preg_match('#<sup>#', $content)){
-    //     return false;
-    //   }
-    //   preg_match_all($pattern, $content, $nbsResult);
-
-    //   $verset = get_post_meta($post->ID, 'ref', true);
-    //   //Find versets
-    //   preg_match_all('#[0-9]+\,([0-9]+)-?([0-9]+)?#',$verset, $versetsResult);
-    //   if(count($versetsResult[1]) > 1){
-    //     $content = preg_replace($pattern, '<sup>$1</sup>', $content);
-    //     return $content;
-    //   }else{
-    //     //Ajoute le premier numero de verset si oublié
-    //     if($versetsResult[1][0] != $nbsResult[0][0]){
-    //       $content = $versetsResult[1][0] . ' ' .$content;
-    //       preg_match_all($pattern, $content, $nbsResult);
-    //     }
-    //     $lastReplace = $versetsResult[1][0] - 1;
-
-    //     $replaceCount = 0;
-    //     foreach($nbsResult[0] as $index => $value){
-    //       if($value == $lastReplace + 1){
-    //         // $pattern = '#(<sup[.]*>){'.$replaceCount.'}.*('.$value.')#';
-    //         $pattern = '#('.$value.')#';
-    //         if($content = preg_replace($pattern, '<sup>$1</sup>', $content)){
-    //          // print $content;
-    //           $replaceCount++;
-    //           $lastReplace = $value;
-    //         }
-    //       }
-    //     }
-    //   }
-    //   return $content;
-    // }
-
 
 }
