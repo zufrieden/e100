@@ -18,7 +18,7 @@ class TextRepository extends EntityRepository
             ->from('E100CoreBundle:ReadText', 'rt')
             ->join('rt.text', 't')
             ->where('rt.user = :user')
-            ->orderBy('rt.date')
+            ->orderBy('rt.date', 'DESC')
             ->setMaxResults(1)
             ->setParameter('user', $user->getId())
             ->getQuery();
