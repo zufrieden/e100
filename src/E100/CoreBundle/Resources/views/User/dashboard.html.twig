@@ -5,29 +5,32 @@
 {% block content %}
     <div class="row-fluid">
       <div class="span12">
-        <div class="hero-unit">
+        <div>
           <h1>{{ 'dashboard.welcome.title' | trans }}</h1>
-          <h1>{{ 'dashboard.welcome.text' | trans }}</h1>
+          <h2>{{ 'dashboard.welcome.text' | trans }}</h2>
         </div>
 
         {% if message %}
         <div class="well">
           <h2>{{ message }}</h2>
         </div>
+        <hr>
         {% endif %}
 
-        <h2>{{ 'dashboard.lastread.title' | trans }}<h2>
+        <h3>{{ 'dashboard.lastread.title' | trans }}<h3>
         {% if lastReading %}
-          <a href="{{ path('bibleText', {id: lastReading.id}) }}">{{ lastReading.bibleRef }}</a>
+          <a href="{{ path('bibleText', {id: lastReading.id}) }}" class="btn">{{ lastReading.bibleRef }}</a>
         {% endif %}
+        <hr>
 
-        <h2>{{ 'dashboard.progress.title' | trans }}<h2>
+        <h3>{{ 'dashboard.progress.title' | trans }}<h3>
         <p>{{numberOfTextReaded}}/100 {{ 'dashboard.lastread.text' | trans }}</p>
         <div class="progress progress-striped active">
           <div class="bar" style="width: {{ numberOfTextReaded }}%;"></div>
         </div>
+        <hr>
 
-        <h2>{{ 'dashboard.velocity.title' | trans }}<h2>
+        <h3>{{ 'dashboard.velocity.title' | trans }}<h3>
         <p>{{ velocity | number_format(2) }}</p>
 
       </div><!--/span-->

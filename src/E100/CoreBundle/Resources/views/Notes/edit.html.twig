@@ -6,15 +6,21 @@
 
 {% block content %}
     <div class="row-fluid">
-      <h1>Edit note</h1>
-      <p>Note was added to the text "{{ note.text.title }}".</p>
+      <h1>{{ 'notes.action.edit' | trans }}</h1>
+      <p>{{ note.text.title }}</p>
     </div>
     <div class="row-fluid">
       <div class="span12">
-        <form action="{{ path('editNote', { 'id': note.id }) }}" method="post" {{ form_enctype(form) }}>
-        {{ form_widget(form) }}
+        <form action="{{ path('editNote', { 'id': note.id }) }}" method="post" class="form-horizontal" {{ form_enctype(form) }}>
 
-          <input type="submit" />
+           <div class="control-group">
+        {{ form_widget(form) }}
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <input type="submit" class="btn-primary" value="{{ 'notes.action.edit' | trans }}"/>
+              </div>
+          </div>
         </form>
       </div><!--/span-->
     </div><!--/row-->

@@ -39,6 +39,7 @@ random:
 
 favorites:
     title: "E100 | Favoris"
+    nothingFound: Aucun favoris pour le moment
     welcome:
         title: "Mes favoris"
 
@@ -46,6 +47,10 @@ notes:
     title: "E100 | Notes personnelles"
     welcome:
         title: "Notes personnelles"
+    action:
+        edit: Editer
+        delete: Supprimer
+        new: Ajouter
 
 menu:
     home: Accueil
@@ -61,6 +66,7 @@ menu:
 
 
 dashboard:
+    title: Espace personnel
     velocity:
         title: Ton rythme de lecture pour atteindre ton objectif est de 1 texte tous les combien de jours
     welcome:
@@ -70,6 +76,7 @@ dashboard:
         title:Lire le prochain
     lastread:
         title: Retour sur le dernier texte lu
+        text: textes déjà lus
     progress:
         title: Ta progression
 
@@ -95,6 +102,9 @@ text:
 footer:
 
 goal:
+    title: Objectif
+    welcome:
+        title: Fixe toi un objectif
     change: 'Change la date à laquelle tous les textes devront être lus.'
 
 navigation:

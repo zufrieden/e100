@@ -8,7 +8,7 @@
   <div class="notes-container">
   {% for note in notes %}
     <div class="note masonry-brick">
-      <div class="alert alert-block normal-color">
+      <div class="alert-block normal-color">
         {% if note.text %}
         <h4><a href="{{ path('bibleText', { id: note.text.id } ) }}">{{ note.text.title }} - <em>{{ note.text.bibleRef }}</em></a></h4>
         <hr />
@@ -17,8 +17,8 @@
           {{ note.noteText }}
         </p>
         <div class="notes-tools">
-          <a href="{{ path('editNote', { id: note.id } ) }}" class="btn btn-small"><i class="icon-pencil"></i>Edit</a>
-          <a href="{{ path('deleteNote', { id: note.id } ) }}" class="btn btn-small btn-danger"><i class="icon-trash icon-white"></i>Delete</a>
+          <a href="{{ path('editNote', { id: note.id } ) }}" class="btn btn-small"><i class="icon-pencil"></i>{{ 'notes.action.edit' | trans}}</a>
+          <a href="{{ path('deleteNote', { id: note.id } ) }}" class="btn btn-small btn-danger"><i class="icon-trash icon-white"></i>{{ 'notes.action.delete' | trans}}</a>
         </div>
       </div>
     </div>
