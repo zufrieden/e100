@@ -31,7 +31,7 @@
     <div class="row-fluid">
       <div class="span12">
         <div class="span7">
-          <blockquote>
+          <blockquote id="bible-text">
             <h1>{{ text.textNumber }} – {{ text.title }}</h1>
               {% if hasUser %}
                 <a href="{{ path('addFavorites', { 'id': text.id }) }}" class="btn btn-small btn-warning btn-favorit add-favorite {% if hasFavorited == true %}hide{% endif %}"><i class="icon-star icon-white"></i>{{ 'random.button.addfavorites' | trans }}</a>
@@ -42,7 +42,7 @@
 
             <h2>{{ text.teaserQuestion }}</h2>
             <p class="lead">{{ text.bibleRef}}</p>
-            <p id="bible-text">
+            <p>
                 {{ text.bibleText | raw }}
             </p>
           </blockquote>
