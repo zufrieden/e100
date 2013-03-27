@@ -67,3 +67,8 @@ Deploy
 ```bash
    $ cap deploy:migrations
 ```
+
+
+FIX ME
+------
+Hard cache clearing
