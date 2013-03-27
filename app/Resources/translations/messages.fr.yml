@@ -72,7 +72,7 @@ dashboard:
         title: Pour atteindre ton objectif, il te faut lire 1 texte tous les  jours
     welcome:
         title: Bienvenue dans ton espace personel
-        text: Cet espace personnel te permet de retrouver tes notes, favoris, le dernier texte que tu as lu et de suivre ta progression. 
+        text: Cet espace personnel te permet de retrouver tes notes, favoris, le dernier texte que tu as lu et de suivre ta progression.
     next:
         title:Lire le prochain
     lastread:
@@ -98,6 +98,7 @@ text:
         bibleText: Texte biblique
         comment: Commentaire
         question: Passe à l'action
+        link: Pour aller plus loin
 
 
 footer:

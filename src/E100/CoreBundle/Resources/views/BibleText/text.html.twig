@@ -85,7 +85,13 @@
             <h4 id="question">{{ 'text.innerNav.question' | trans}}</h4>
             <p>{{ text.actionText }}</p>
           </div>
+          {% if text.link %}
           <br />
+            <p>
+              <a href="{{ text.link }}" target="_blank" class="btn btn-primary">{{ 'text.innerNav.link' | trans}}</a>
+            </p>
+          </div>
+          {% endif %}
         </div>
       </div><!--/span-->
     </div><!--/row-->
