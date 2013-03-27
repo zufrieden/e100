@@ -17,22 +17,25 @@
         <hr>
         {% endif %}
 
-        <h3>{{ 'dashboard.lastread.title' | trans }}<h3>
+        <div class="btn-group">
         {% if lastReading %}
-          <a href="{{ path('bibleText', {id: lastReading.id}) }}" class="btn">{{ lastReading.bibleRef }}</a>
+          <a href="{{ path('bibleText', {id: lastReading.id}) }}" class="btn btn-primary" title="{{ lastReading.bibleRef }}">{{ 'menu.last' | trans }}</a>
         {% endif %}
+          <a href="{{ path('favorites') }}" class="btn btn-primary">{{ 'menu.favorites' | trans }}</a>
+          <a href="{{ path('notes') }}" class="btn btn-primary">{{ 'menu.notes' | trans }}</a>
+        </div>
         <hr>
 
-        <h3>{{ 'dashboard.progress.title' | trans }}<h3>
-        <p>{{numberOfTextReaded}}/100 {{ 'dashboard.lastread.text' | trans }}</p>
+        <h3>{{ 'dashboard.progress.title' | trans }} <span class="pull-right">{{numberOfTextReaded}}/100 {{ 'dashboard.lastread.text' | trans }}</span></h3>
         <div class="progress progress-striped active">
           <div class="bar" style="width: {{ numberOfTextReaded }}%;"></div>
         </div>
         <hr>
 
-        <h3>{{ 'dashboard.velocity.title' | trans }}<h3>
-        <p>{{ velocity | number_format(2) }}</p>
-
+        <p>{{ 'dashboard.velocity.title' | trans({ '%count%':velocity | number_format(0)}) }}<p>
+        <p>
+          <a href="{{ path('goal') }}" class="btn btn-primary">{{ 'dashboard.goal.link'| trans() }}</a></li>
+        </p>
       </div><!--/span-->
     </div><!--/row-->
 {% endblock %}

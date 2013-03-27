@@ -5,8 +5,9 @@
 {% block body_class %}notes{% endblock %}
 
 {% block content %}
-  <div class="notes-container">
+
   {% for note in notes %}
+  <div class="notes-container">
     <div class="note masonry-brick">
       <div class="alert-block normal-color">
         {% if note.text %}
@@ -22,9 +23,11 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="clear"></div>
   {% else %}
     <p>{{ 'notes.nothingFound' | trans }}</p>
   {% endfor %}
-  </div>
-  <div class="clear"></div>
+
+
 {% endblock %}
