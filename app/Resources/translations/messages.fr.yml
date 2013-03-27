@@ -21,6 +21,7 @@ categories:
     welcome:
         title: "Clique sur un thème pour accèder aux textes"
         text: "Dans l’Ancien Testament, on trouve les récits de la création du monde et toute  l’histoire de Dieu avec Israël, son peuple."
+        text2: "Dans le Nouveau Testament, c'est Jésus le personnage central. Ces textes nous racontent son histoire sur la Terre et les débuts de l'Eglise."
     old:
         title: Ancien Testament
     new:
@@ -39,7 +40,7 @@ random:
 
 favorites:
     title: "E100 | Favoris"
-    nothingFound: Aucun favoris pour le moment
+    nothingFound: Aucun favori pour le moment
     welcome:
         title: "Mes favoris"
 
@@ -68,15 +69,15 @@ menu:
 dashboard:
     title: Espace personnel
     velocity:
-        title: Ton rythme de lecture pour atteindre ton objectif est de 1 texte tous les combien de jours
+        title: Pour atteindre ton objectif, il te faut lire 1 texte tous les  jours
     welcome:
         title: Bienvenue dans ton espace personel
-        text: Sur cette page, tu peux suivre ta progression dans ton challenge !
+        text: Cet espace personnel te permet de retrouver tes notes, favoris, le dernier texte que tu as lu et de suivre ta progression. 
     next:
         title:Lire le prochain
     lastread:
-        title: Retour sur le dernier texte lu
-        text: textes déjà lus
+        title: Dernier texte lu
+        text: Textes déjà lus
     progress:
         title: Ta progression
 
