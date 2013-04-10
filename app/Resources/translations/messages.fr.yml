@@ -92,7 +92,7 @@ user:
         registerAction: Inscris-toi !
     register:
         title: S'inscrire
-        text: Inscris-toi au challenge E100 tu pourras : suivre ta progression de lecture, écrire tes commentaires personnels sur les textes et mettre des textes en favoris
+        text: Inscris-toi au challenge E100 tu pourras suivre ta progression de lecture, écrire tes commentaires personnels sur les textes et mettre des textes en favoris
         login: Si tu as déjà un compte, rends toi directement à la page de login.
         loginAction: S'identifier
 
