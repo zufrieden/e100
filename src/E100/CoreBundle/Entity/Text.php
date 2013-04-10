@@ -114,6 +114,24 @@ class Text implements Translatable
     private $link;
 
     /**
+     * @var text $authorName
+     *
+     * @Gedmo\Translatable
+     * @ORM\Column(name="author_name", type="text", nullable=true)
+     */
+
+    private $authorName;
+
+    /**
+     * @var text $authorDescription
+     *
+     * @Gedmo\Translatable
+     * @ORM\Column(name="author_description", type="text", nullable=true)
+     */
+
+    private $authorDescription;
+
+    /**
      * @Gedmo\Locale
      * Used locale to override Translation listener`s locale
      * this is not a mapped field of entity metadata, just a simple property
@@ -397,5 +415,51 @@ class Text implements Translatable
     public function setTranslatableLocale($locale)
     {
         $this->locale = $locale;
+    }
+
+    /**
+     * Set authorName
+     *
+     * @param string $authorName
+     * @return Text
+     */
+    public function setAuthorName($authorName)
+    {
+        $this->authorName = $authorName;
+    
+        return $this;
+    }
+
+    /**
+     * Get authorName
+     *
+     * @return string 
+     */
+    public function getAuthorName()
+    {
+        return $this->authorName;
+    }
+
+    /**
+     * Set authorDescription
+     *
+     * @param string $authorDescription
+     * @return Text
+     */
+    public function setAuthorDescription($authorDescription)
+    {
+        $this->authorDescription = $authorDescription;
+    
+        return $this;
+    }
+
+    /**
+     * Get authorDescription
+     *
+     * @return string 
+     */
+    public function getAuthorDescription()
+    {
+        return $this->authorDescription;
     }
 }

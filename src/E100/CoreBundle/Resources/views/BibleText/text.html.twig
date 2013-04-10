@@ -46,6 +46,7 @@
             </p>
           </blockquote>
           <br />
+          <div class="btn-toolbar">
           {% if hasUser %}
             <a href="{{ path('markRead', { 'id': text.id }) }}" class="btn btn-success btn-large btn-markRead add-markRead {% if hasRead == true %}hide{% endif %}"><i class="icon-ok icon-white"></i>{{ 'random.button.read' | trans }}</a>
             <a href="{{ path('unmarkRead', { 'id': text.id }) }}" class="btn btn-success btn-large btn-markRead remove-markRead {% if hasRead == false %}hide{% endif %}"><i class="icon-ok icon-white"></i>{{ 'random.button.unread' | trans }}</a>
@@ -53,14 +54,15 @@
           {% else %}
             <a href="{{ path('fos_user_security_login') }}" class="btn btn-success btn-large add-markRead"><i class="icon-ok icon-white"></i>{{ 'random.button.read' | trans }}</a>
           {% endif %}
-          <ul class="nav pull-right">
+          <div class="btn-group pull-right">
             {% if prev != 0 %}
-            <li><a href="{{ path('bibleText', { 'id': prev }) }}">{{ 'navigation.prev'|trans }}</a></li>
+            <a class="btn" href="{{ path('bibleText', { 'id': prev }) }}">{{ 'navigation.prev'|trans }}</a>
             {% endif %}
             {% if next != 0 %}
-            <li><a href="{{ path('bibleText', { 'id': next }) }}">{{ 'navigation.next'|trans }}</a></li>
+            <a class="btn" href="{{ path('bibleText', { 'id': next }) }}">{{ 'navigation.next'|trans }}</a>
             {% endif %}
-          </ul>
+          </div>
+          </div>
           <br /><br />
           <div class="fb-like" data-href="{{ url('bibleText', { id: text.id } ) }}" data-send="false" data-width="450" data-show-faces="true"></div>
           {# <a href="#" class="btn btn-small"><i class="icon-envelope"></i>{{ 'random.button.send' | trans }}</a>
@@ -70,6 +72,10 @@
           <h2 class="normal-color" id="comments">{{ 'text.innerNav.comment' | trans}}</h2>
           <p class="normal-color">
             {{ text.comment }}
+          </p>
+          <p>
+            <strong>{{ text.authorName }}</strong><br/>
+            {{ text.authorDescription }}
           </p>
           <br />
           {% if hasNote %}

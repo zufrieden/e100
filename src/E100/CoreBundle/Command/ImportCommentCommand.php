@@ -46,8 +46,8 @@ class ImportCommentCommand extends ContainerAwareCommand
             6 skip it --- Titre de la section
             7 skip it --- Intro not use for now
             8 skip it --- Image not use for now
-            9 skip it --- Auteur not use for now
-           10 skip it --- Auteur infos not use for now
+            9 AuthorName --- Auteur not use for now
+           10 AuthorDescription --- Auteur infos not use for now
            11 Titre text->setTitle()
            12 Teaser question text->setTeaserQuestion()
            13 Texte biblique text->setBibleText() do the Mathieu function
@@ -85,6 +85,8 @@ class ImportCommentCommand extends ContainerAwareCommand
             $text->setTitle($line['K'] ?: '[empty]');
             $text->setTeaserQuestion($line['L'] ?:'[empty]');
             $text->setBibleText($bibleText ?: '[empty]');
+            $text->setAuthorName($line['I'] ?: '[empty]');
+            $text->setAuthorDescription($line['J'] ?: '[empty]');
             $text->setComment($line['N'] ?: '[empty]');
             $text->setActionText($line['O'] ?: '[empty]');
             $text->setLink($line['P']);
