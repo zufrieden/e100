@@ -113,8 +113,8 @@ goal:
     change: 'Change la date à laquelle tous les textes devront être lus.'
 
 navigation:
-    next: 'Texte suivant'
-    prev: 'Texte précédent'
+    next: '>'
+    prev: '<'
 
 motivation:
     cas1: "Bienvenue dans le challenge! Fixe-toi des objectifs pour lire et méditer 100 textes bibliques passionnants. On commence par les présentations avec le couple le plus connu de l’Histoire. "
