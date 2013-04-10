@@ -5425,6 +5425,9 @@ a:focus {
   background-position: fixed;
   color: #000000;
 }
+footer {
+  padding: 1em;
+}
 .clear {
   clear: both;
 }
