@@ -6,12 +6,17 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{% block title%}{% endblock %}</title>
+    <title>{% block title%}E100 Youth{% endblock %}</title>
     <meta name="description" content="{% block meta_description%}{% endblock %}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ app.request.basepath }}/image/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ app.request.basepath }}/img/favicon.ico" />
+
+    <link rel="apple-touch-icon" href="{{ app.request.basepath }}/img/touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="E100 Youth">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
     {% stylesheets 'bundles/e100core/css/*' filter='cssrewrite' %}
         <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
@@ -127,6 +132,7 @@
     '@E100CoreBundle/Resources/public/js/bootstrap-typeahead.js'
     '@E100CoreBundle/Resources/public/js/jquery.masonry.min.js'
     '@E100CoreBundle/Resources/public/js/script.js'
+    '@E100CoreBundle/Resources/public/js/add2home.js'
     %}
     {# '@E100CoreBundle/Resources/public/js/d3.v2.min.js' #}
     <script src="{{ asset_url }}"></script>
