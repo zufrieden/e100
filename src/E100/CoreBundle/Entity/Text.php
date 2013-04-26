@@ -44,6 +44,7 @@ class Text implements Translatable
     /**
      * @var string $bibleRef
      *
+     * @Gedmo\Translatable
      * @ORM\Column(name="bible_reference", type="string", length=255)
      */
 
