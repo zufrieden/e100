@@ -59,6 +59,7 @@ menu:
     goals: "eigenes Ziel setzen "
     changePassword: "Passwort ändern"
     logout: Ausloggen
+    language: Sprache
 dashboard:
     title: "Persönlicher Bereich"
     velocity:

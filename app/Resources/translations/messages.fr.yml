@@ -65,6 +65,7 @@ menu:
     goals: Objectifs
     changePassword: Changer le mot de passe
     logout: Déconnexion
+    language: Langue
 
 
 dashboard:
@@ -131,4 +132,4 @@ motivation:
     cas90: "Dernière ligne droite! On est bientôt à la fin des temps, euh du challenge. "
     cas95: "Apocalypse Now!!"
     cas99: "Petit moment de nostalgie? Le challenge touche à sa fin..."
-    cas100: "BRAVO, toutes nos félicitations! Le challenge est terminé. La rencontre avec Dieu peut évidememment se poursuivre à travers sa Parole, aussi souvent que tu le désires. Bonne continuation. Que notre Père te bénisse."
+    cas100: "BRAVO, toutes nos félicitations! Le challenge est terminé. La rencontre avec Dieu peut évidememment se poursuivre à travers sa Parole, aussi souvent que tu le désires. Sur cette page http://ligue.ch/N454/guides-bibliques.html, tu trouveras d'autres guides bibliques. Bonne continuation. Que notre Père te bénisse."
