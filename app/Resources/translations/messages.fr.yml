@@ -46,6 +46,7 @@ favorites:
 
 notes:
     title: "E100 | Notes personnelles"
+    notetext: Ecrire une note
     welcome:
         title: "Notes personnelles"
     action:

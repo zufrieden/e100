@@ -12,14 +12,20 @@
     <div class="row-fluid">
       <div class="span12">
         <form action="{{ path('newNote', { 'id': text.id }) }}" method="post" class="form-horizontal" {{ form_enctype(form) }}>
-         <div class="control-group">
-    {{ form_widget(form) }}
-          </div>
-          <div class="control-group">
-            <div class="controls">
-              <input type="submit" class="btn-primary" value="{{ 'notes.action.new' | trans }}"/>
+          <fieldset>
+           <div class="control-group">
+              <label class="control-label" for="form_notetext">{{ 'notes.notetext' | trans }}</label>
+              <div class="controls">
+                {{ form_widget(form.noteText) }}
+              </div>
             </div>
-          </div>
+            {{ form_rest(form) }}
+            <div class="control-group">
+              <div class="controls">
+                <input type="submit" class="btn-primary" value="{{ 'notes.action.new' | trans }}"/>
+              </div>
+            </div>
+          </fieldset>
         </form>
       </div><!--/span-->
     </div><!--/row-->

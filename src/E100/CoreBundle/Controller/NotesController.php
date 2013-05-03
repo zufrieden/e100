@@ -90,7 +90,7 @@ class NotesController extends Controller
         $note->setText($text);
 
         $form = $this->createFormBuilder($note)
-                        ->add('noteText', 'textarea')
+                        ->add('noteText', 'textarea', array("attr" => array("cols" => 60, "rows" => 10)))
                         ->getForm();
 
         if ($request->getMethod() == 'POST') {

@@ -41,6 +41,7 @@ favorites:
         title: "Meine Favoriten"
 notes:
     title: "E100 | Notizen"
+    notetext: Notiz
     welcome:
         title: "Eigene Notizen"
     action:

@@ -41,6 +41,7 @@ favorites:
 
 notes:
     title: "E100 | Notes"
+    notetext: Write a note
     welcome:
         title: "Notes"
 
