@@ -29,6 +29,14 @@ Favorites:
     requirements:
         _locale: fr|de|en|ru
 
+Random:
+    resource: "@E100CoreBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /{_locale}
+    defaults: { _locale: %locale% }
+    requirements:
+        _locale: fr|de|en|ru
+
 Categories:
     resource: "@E100CoreBundle/Controller/CategoriesController.php"
     type:     annotation
