@@ -100,9 +100,9 @@ user:
 
 text:
     innerNav:
-        bibleText: Texte biblique
+        bibleText: Texte
         comment: Commentaire
-        question: Passe à l'action
+        question: Action
         link: Pour aller plus loin
 
 
