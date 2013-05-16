@@ -8,8 +8,24 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class DefaultController extends Controller
 {
+
     /**
-     * @Route("/")
+     * @Template()
+     * detect the browser language and redirect to homepage
+     */
+    public function detectLanguageAndRedirectAction()
+    {
+        $request = $this->getRequest();
+        $supportedLanguage = array('fr', 'de');
+
+        $newLocale = $request->getPreferredLanguage($supportedLanguage);
+
+        return $this->redirect($this->generateUrl('homepage_i18n', array(
+            '_locale' => $newLocale,
+        )));
+    }
+
+    /**
      * @Template()
      */
     public function indexAction()

@@ -1,6 +1,6 @@
 homepage:
     pattern:  /
-    defaults: { _controller: E100CoreBundle:Default:index }
+    defaults: { _controller: E100CoreBundle:Default:detectLanguageAndRedirect }
 
 homepage_i18n:
     pattern: /{_locale}
@@ -11,7 +11,10 @@ homepage_i18n:
 Default:
     resource: "@E100CoreBundle/Controller/DefaultController.php"
     type:     annotation
-    prefix:   /
+    prefix:   /{_locale}
+    defaults: { _locale: %locale% }
+    requirements:
+        _locale: fr|de|en|ru
 
 Text:
     resource: "@E100CoreBundle/Controller/TextController.php"
