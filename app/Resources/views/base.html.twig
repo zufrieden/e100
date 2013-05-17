@@ -105,6 +105,7 @@
             
         </div>
         <footer>
+          {% if app.request.get('_locale') == 'fr' %}
           <div class="pull-left" style="width:40%;">
             <h3>{{ 'footer.project' | trans }} </h3>
             <a href="http://ligue.ch/">
@@ -119,6 +120,18 @@
                 {{ 'footer.abf' | trans }}
               </a>
           </div>
+          {% endif %}
+          {% if app.request.get('_locale') == 'de' %}
+          <div class="pull-left" style="width:40%;">
+            <h3>{{ 'footer.project' | trans }} </h3>
+            <a href="www.bibellesebund.net">
+              <img src="/img/logo_bibellesebund.png"><br/>
+              {{ 'footer.ligue' | trans }}
+            </a>
+          </div>
+          {% endif %}
+
+
         </footer>
 
     </div>
