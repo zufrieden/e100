@@ -78,10 +78,15 @@
             {{ text.authorDescription }}
           </p>
           <br />
-          {% if hasNote %}
-            {# <a href="#" class="btn">Read note</a> #}
+
+          {% if hasUser %}
+            {% if hasNote %}
+              {# <a href="#" class="btn">Read note</a> #}
+            {% else %}
+                <a href="{{ path('newNote', { 'id': text.id }) }}" class="btn btn-inverse btn-small"><i class="icon-pencil icon-white"></i>{{ 'random.button.note' | trans }}</a>
+            {% endif %}
           {% else %}
-              <a href="{{ path('newNote', { 'id': text.id }) }}" class="btn btn-inverse btn-small"><i class="icon-pencil icon-white"></i>{{ 'random.button.note' | trans }}</a>
+            <a href="{{ path('fos_user_security_login') }}" class="btn btn-inverse btn-small"><i class="icon-pencil icon-white"></i>{{ 'random.button.note' | trans }}</a>
           {% endif %}
           <br />
           <hr />
