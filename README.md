@@ -26,7 +26,7 @@ Translation files of texts are loaded with the command
 ```bash
 
     $ php app/console e100:import:comment data/filename.xlsx --language="locale"
-``
+```
 
 
 
