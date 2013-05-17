@@ -2,6 +2,7 @@
 composer.phar
 
 # Bootstrap
+app/bootstrap*
 /bin/doctrine
 /bin/doctrine.php
 
