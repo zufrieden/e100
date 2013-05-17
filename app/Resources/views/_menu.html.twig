@@ -10,12 +10,14 @@
     <li {% if is_current_route('random') %}class="active"{% endif %}>
         <a href="{{ path('random') }}">{{ 'menu.random' | trans }}</a>
     </li>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
     <li {% if is_current_route('favorites') %}class="active"{% endif %}>
         <a href="{{ path('favorites') }}">{{ 'menu.favorites' | trans }}</a>
     </li>
     <li {% if is_current_route('notes') %}class="active"{% endif %}>
         <a href="{{ path('notes') }}">{{ 'menu.notes' | trans }}</a>
     </li>
+    {% endif %}
     {# <li {% if is_current_route('last') %}class="active"{% endif %}>
         <a href="{{ path('last') }}">{{ 'menu.last' | trans }}</a>
     </li> #}
