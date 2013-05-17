@@ -27,9 +27,9 @@ security:
             #    realm: "Secured Demo Area"
 
     access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(en|fr|de)/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(en|fr|de)/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(en|fr|de)/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/(en|fr|de)/notes, role: ROLE_USER }
         - { path: ^/(en|fr|de)/last, role: ROLE_USER }
         - { path: ^/(en|fr|de)/favorites, role: ROLE_USER }
