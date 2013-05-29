@@ -36,7 +36,7 @@ random:
         facebook: "Partager sur facebook"
         send: "Envoyer à un ami"
         note: "Ecrire une note personnelle"
-        dashboard: "Retour à l'espace personel"
+        dashboard: "Retour à l'espace personnel"
 
 favorites:
     title: "E100 | Favoris"
@@ -74,7 +74,7 @@ dashboard:
     velocity:
         title: Pour atteindre ton objectif, il te faut lire 1 texte tous les %count% jour(s)
     welcome:
-        title: Bienvenue dans ton espace personel
+        title: Bienvenue dans ton espace personnel
         text: Cet espace personnel te permet de retrouver tes notes, favoris, le dernier texte que tu as lu et de suivre ta progression.
     next:
         title:Lire le prochain
