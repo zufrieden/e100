@@ -239,7 +239,7 @@ class Text implements Translatable
     /**
      * Set audio
      *
-     * @param string $link
+     * @param string $audio
      * @return Text
      */
     public function setAudio($audio)
