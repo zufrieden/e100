@@ -51,6 +51,16 @@ class Text implements Translatable
     private $bibleRef;
 
     /**
+     *
+     * @var string $audio
+     * 
+     * @Gedmo\Translatable
+     * @ORM\Column(name="audio", type="string", length=255, nullable=true)
+     */
+
+    private $audio;
+
+    /**
      * @var text $bibleText
      *
      * @Gedmo\Translatable
@@ -212,6 +222,29 @@ class Text implements Translatable
     public function setLink($link)
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+    /**
+     * Get audio
+     *
+     * @return string
+     */
+    public function getAudio()
+    {
+        return $this->audio;
+    }
+
+    /**
+     * Set audio
+     *
+     * @param string $link
+     * @return Text
+     */
+    public function setAudio($audio)
+    {
+        $this->audio = $audio;
 
         return $this;
     }
