@@ -1,124 +1,123 @@
 homepage:
-    title: "E100 | Lass dich herausfordern!"
-    welcome:
-        title: "100 für dich"
-        subTitle: "Mit 100 Texten die ganze Bibel checken"
-        text: "Was steht eigentlich in der Bibel? Muss ich alles lesen, um das zu verstehen? Entdecke die ganze Bibel in nur 100 Texten! E100 hat für dich Texte aus dem Alten und dem Neuen Testament zusammengestellt und kommentiert. Auf Los geht’s Los!"
-        action: "Jetzt starten!"
-        register: "Jetzt kostenlos registrieren für deinen persönlichen Zugang zu E100."
-    categories:
-        title: Rubriken
-        text: "Jeder Text von E100 gehört zu einer Rubrik. "
-        action: "Rubriken ansehen"
-    random:
-        title: "Keinen Plan?"
-        text: "Du weißt nicht, wo du anfangen sollst? Folge dem roten Faden!"
-        action: "Entdecke den ersten Text"
+  title: "100 für dich | Lass dich herausfordern!"
+  welcome:
+    title: "100 für dich"
+    subTitle: "Mit 100 Texten die ganze Bibel überblicken"
+    text: "\"Was steht eigentlich in der Bibel? Muss ich alles lesen, um das zu verstehen?\" Überblicke die ganze Bibel mit nur 100 Texten! 100 für dich hat Texte aus dem Alten und dem Neuen Testament zusammengestellt und kommentiert. Auf Los geht’s los!"
+    action: "Jetzt starten!"
+    register: "Jetzt kostenlos registrieren für deinen persönlichen Zugang zu 100 für dich."
+  categories:
+    title: Rubriken
+    text: "Jeder Text gehört zu einer Rubrik."
+    action: "Rubriken ansehen"
+  random:
+    title: "Keinen Plan?"
+    text: "Du weißt nicht, wo du anfangen sollst? Folge dem roten Faden!"
+    action: "Entdecke den ersten Text"
 categories:
-    title: "E100 | Bibeltexte"
-    welcome:
-        title: "Wähle eine Rubrik und entdecke die Texte"
-        text: "Im Alten Testament geht es um die Entstehung der Welt und um das Volk Israel, mit dem Gott Geschichte schreibt."
-        text2: "Im Neuen Testament dreht sich alles um Jesus Christus. Entdecke, wie er auf der Erde gelebt hat und wie das Christentum entstanden ist!"
-    old:
-        title: "Altes Testament"
-    new:
-        title: "Neues Testament"
+  title: "100 für dich | Bibeltexte"
+  welcome:
+    title: "Wähle eine Rubrik und entdecke die Texte!"
+    text: "Im Alten Testament geht es um die Entstehung der Welt und um das Volk Israel, mit dem Gott Geschichte schreibt."
+    text2: "Im Neuen Testament dreht sich alles um Jesus Christus. Entdecke, wie er auf der Erde gelebt hat und wie das Christentum entstanden ist!"
+  old:
+    title: "Altes Testament"
+  new:
+    title: "Neues Testament"
 random:
-    button:
-        addfavorites: "Zu Favoriten hinzufügen"
-        removefavorites: "Aus Favoriten entfernen"
-        read: "Als gelesen markieren"
-        unread: "Als ungelesen markieren"
-        facebook: "Auf Facebook teilen"
-        send: "An einen Freund weiterleiten"
-        note: "Notiz hinzufügen"
-        dashboard: "Zurück zum persönlichen Bereich"
+  button:
+    addfavorites: "Zu Favoriten hinzufügen"
+    removefavorites: "Aus Favoriten entfernen"
+    read: "Als gelesen markieren"
+    unread: "Als ungelesen markieren"
+    facebook: "Auf Facebook teilen"
+    send: "An einen Freund weiterleiten"
+    note: "Notiz hinzufügen"
+    dashboard: "Zurück zum persönlichen Bereich"
 favorites:
-    title: "E100 | Favoriten"
-    nothingFound: "Noch keine Favoriten"
-    welcome:
-        title: "Meine Favoriten"
+  title: "100 für dich | Favoriten"
+  nothingFound: "Noch keine Favoriten"
+  welcome:
+    title: "Meine Favoriten"
 notes:
-    title: "E100 | Notizen"
-    notetext: Notiz
-    welcome:
-        title: "Eigene Notizen"
-    action:
-        edit: Bearbeiten
-        delete: Löschen
-        new: Hinzufügen
-    nothingFound: "Noch keine eigenen Notizen"
+  title: "100 für dich | Notizen"
+  welcome:
+    title: "Eigene Notizen"
+  action:
+    edit: Bearbeiten
+    delete: Löschen
+    new: Hinzufügen
+  nothingFound: "Noch keine eigenen Notizen"
 menu:
-    home: Home
-    dashboard: "Persönlicher Bereich"
-    categories: Bibeltexte
-    random: Zufallsprinzip
-    notes: Notizen
-    favorites: Favoriten
-    last: "Zuletzt gelesen"
-    goals: "eigenes Ziel setzen "
-    changePassword: "Passwort ändern"
-    logout: Ausloggen
-    language: Sprache
+  home: Home
+  dashboard: "Persönlicher Bereich"
+  categories: Bibeltexte
+  random: Zufallsprinzip
+  notes: Notizen
+  favorites: Favoriten
+  last: "Zuletzt gelesen"
+  goals: "Ziel setzen"
+  changePassword: "Passwort ändern"
+  logout: Ausloggen
 dashboard:
-    title: "Persönlicher Bereich"
-    velocity:
-        title: "Du erreichst dein Ziel, wenn du 1 Text pro %count% Tag(e) liest."
-    welcome:
-        title: "Willkommen in deinem persönlichen Bereich"
-        text: "Sieh dir deine Notizen und Favoriten an. Checke, welchen Text du zuletzt gelesen hast und wie weit du in E100 schon bist."
-    next: Weiterlesen
-    lastread:
-        title: "Zuletzt gelesen"
-        text: Gelesen
-    progress:
-        title: "So weit bist du"
-    goal:
-        link: "Ändere dein Ziel"
+  title: "Persönlicher Bereich"
+  velocity:
+    title: "Du erreichst dein Ziel, wenn du 1 Text pro %count% Tag(e) liest."
+  welcome:
+    title: "Willkommen in deinem persönlichen Bereich"
+    text: "Sieh dir deine Notizen und Favoriten an. Checke, welchen Text du zuletzt gelesen hast und wie weit du schon bist."
+  next: Weiterlesen
+  lastread:
+    title: "Zuletzt gelesen"
+    text: Gelesen
+  progress:
+    title: "So weit bist du"
+  goal:
+    link: "Ändere dein Ziel"
 user:
-    login:
-        title: Login
-        text: "Gib deine E-Mailadresse und dein Passwort ein, um auf deine Daten zuzugreifen."
-        register: "Noch kein Login? Registriere dich kostenlos und erhalte deinen persönlichen Zugang zu E100. Deine Extras: eigene Notizen machen, Favoriten erstellen und deinen E100-Status checken"
-        registerAction: Registrieren
-    register:
-        title: Registrieren
-        text: "Registriere dich bei E100! Deine Extras: eigene Notizen machen, Favoriten erstellen und deinen E100-Status checken"
-        login: "Du hast schon ein Login? Melde dich direkt an. "
-        loginAction: Login
+  login:
+    title: Login
+    text: "Gib deinen Benutzernamen und dein Passwort ein, um auf deine Daten zuzugreifen."
+    register: "Noch kein Login? Registriere dich kostenlos und erhalte deinen persönlichen Zugang zu 100 für dich. Deine Extras: eigene Notizen machen, Favoriten erstellen und deinen Lese-Status checken."
+    registerAction: Registrieren
+  register:
+    title: Registrieren
+    text: "Registriere dich bei 100 für dich! Deine Extras: eigene Notizen machen, Favoriten erstellen und deinen Lese-Status checken."
+    login: "Du hast schon ein Login? Melde dich direkt an. "
+    loginAction: Login
 text:
-    innerNav:
-        bibleText: Bibeltext
-        comment: Kommentar
-        question: "Und jetzt?"
-        link: "Mehr entdecken"
+  innerNav:
+    bibleText: Bibeltext
+    comment: Kommentar
+    question: "Und jetzt?"
+    link: "Mehr entdecken"
 footer:
-    project: "Ein Projekt von"
-    ligue: Bibellesebund
-    partner: ~
-    abf: ~
+  project: "Ein Projekt von"
+  ligue: Bibellesebund
+  partner: ~
+  abf: ~
 goal:
-    title: "Mein Ziel"
-    welcome:
-        title: "Setze dir dein Ziel!"
-    change: "Ändere das Datum, an dem du alle Texte gelesen haben willst."
+  title: "Mein Ziel"
+  welcome:
+    title: "Setze dir dein Ziel!"
+  change: "Ändere das Datum, an dem du alle Texte gelesen haben willst."
 navigation:
-    next: ">"
-    prev: <
+  next: ">"
+  prev: <
 motivation:
-    cas1: "Lass dich herausfordern! Bis wann möchtest du mit E100 durch sein? Setze dir dein Ziel! Los geht's mit dem berühmtesten Paar der Weltgeschichte ... "
-    cas3: "Gut gestartet? Rhythmus gefunden?"
-    cas5: "Yes! Super gemacht! Well done! Bien parti!    शाबाश! 做得好! labi izcepts!"
-    cas10: "10/100. Erste Etappe geschafft! Es fehlen nur noch 9 ;-)"
-    cas20: "Hast du einen guten Zeitpunkt zum regelmäßigen Lesen und Nachdenken über die Texte gefunden? Sieht ganz so aus! Cool! Kurz durchatmen und weiter geht's!"
-    cas33: "Ein Drittel von E100 liegt hinter dir. Das lässt sich sehen! Was hast du bis jetzt mit Gott und der Bibel erlebt? Wir wünschen dir weitere spannende Entdeckungen! ..."
-    cas50: "Halbzeit bei E100! Sehr cool! Und jetzt, wo du's bis hierher geschafft hast, packst du auch die zweite Hälfte locker, oder? Come on!"
-    cas90: "Hey, du biegst schon fast auf die Zielgerade ein! Es warten die letzten zehn Texte von E100!"
-    cas95: "95 Texte - das Ziel ist in Sicht! Kannst du noch?"
-    cas99: "Hast du nach 99 Texten schon eine Meinung über die Bibel? Wie fandest du es? So, dann mach mal die 100 voll! Und wer weiß, was danach folgt?! Mit 100 muss es nicht zu Ende sein …"
-    cas100: |
-            Und das war's! Wir gratulieren dir, dass du mit E100 eine Entdeckungsreise durch die Bibel gewagt hast. Wir reisen gerne weiter mit dir zusammen und bieten dir dafür verschiedene Routen an:
-            Kennst du schon unsere pur-Bibellese-Spezialhefte zu Themen wie Freundschaft, Sex, Talente oder Geld? Oder sichere dir pur für Jugendliche oder klartext für junge Erwachsene als Quartalszeitschrift!
-            Deutschland: http://shop.bibellesebund.de/jugendliche/bibel-lesen/bibellese-zeitschriften.html
-            Schweiz: http://shop.bibellesebund.ch/jugendliche/bibel-lesen/bibellese-zeitschriften.html
+  cas1: "Lass dich herausfordern! Bis wann möchtest du mit 100 für dich durch sein? Setze dir dein Ziel! Los geht's mit dem berühmtesten Paar der Weltgeschichte ... "
+  cas3: "Gut gestartet? Rhythmus gefunden?"
+  cas5: "Yes! Super gemacht! Well done! Bien parti! शाबाश! 做得好! labi izcepts!"
+  cas10: "10/100. Erste Etappe geschafft! Es fehlen nur noch 9 ;-)"
+  cas20: "Hast du einen guten Zeitpunkt zum regelmäßigen Lesen und Nachdenken über die Texte gefunden? Sieht ganz so aus! Cool! Kurz durchatmen und weiter geht's!"
+  cas33: "Ein Drittel von 100 für dich liegt hinter dir. Das lässt sich sehen! Was hast du bis jetzt mit Gott und der Bibel erlebt? Wir wünschen dir weitere spannende Entdeckungen! "
+  cas50: "Halbzeit! Sehr cool! Und jetzt, wo du's bis hierher geschafft hast, packst du auch die zweite Hälfte locker, oder? Come on!"
+  cas90: "Hey, du biegst schon fast auf die Zielgerade ein! Es warten die letzten zehn Texte von 100! "
+  cas95: "95 Texte - das Ziel ist in Sicht! Kannst du noch?"
+  cas99: "Hast du nach 99 Texten schon eine Meinung über die Bibel? Wie fandest du es? So, dann mach mal die 100 voll! Und wer weiß, was danach folgt?! Mit 100 muss es nicht zu Ende sein …"
+  cas100: |-
+      Und das war's! Wir gratulieren dir, dass du mit 100 für dich eine Entdeckungsreise durch die Bibel gewagt hast. Wir reisen gerne weiter mit dir zusammen und bieten dir dafür verschiedene Routen an:
+
+      Kennst du schon unsere pur-Bibellese-Spezialhefte zu Themen wie Freundschaft, Sex, Talente oder Geld? Oder sichere dir pur für Jugendliche oder klartext für junge Erwachsene als Quartalszeitschrift!
+      Deutschland: http://shop.bibellesebund.de/jugendliche/bibel-lesen/bibellese-zeitschriften.html
+      Schweiz: http://shop.bibellesebund.ch/jugendliche/bibel-lesen/bibellese-zeitschriften.html

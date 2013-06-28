@@ -16,6 +16,7 @@ class RegistrationFormType extends BaseType
             'choices' => array(
                 'fr' => 'French',
                 'en' => 'English',
+                'de' => 'Deutsch',
             )
         ));
     }

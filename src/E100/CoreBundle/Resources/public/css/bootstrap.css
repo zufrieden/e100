@@ -5438,6 +5438,9 @@ footer {
   background-color: #ffffff;
   display: block;
 }
+.fos_user_registration_register fieldset legend {
+  display: none;
+}
 /* Sidenav for Docs
 -------------------------------------------------- */
 .bs-docs-sidenav {
