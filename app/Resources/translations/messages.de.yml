@@ -59,6 +59,7 @@ menu:
   goals: "Ziel setzen"
   changePassword: "Passwort ändern"
   logout: Ausloggen
+  language: Sprache
 dashboard:
   title: "Persönlicher Bereich"
   velocity:
@@ -93,7 +94,7 @@ text:
     link: "Mehr entdecken"
 footer:
   project: "Ein Projekt von"
-  ligue: Bibellesebund
+  ligue:  
   partner: ~
   abf: ~
 goal:
