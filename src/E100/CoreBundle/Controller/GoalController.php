@@ -38,7 +38,7 @@ class GoalController extends Controller
                 $em->persist($goal);
                 $em->flush();
 
-                return $this->redirect($this->generateUrl('goal'));
+                return $this->redirect($this->generateUrl('dashboard'));
             }
         }
 
