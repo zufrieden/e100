@@ -1,9 +1,9 @@
 homepage:
-    title: "E100 Youth"
+    title: "E100 Youth – Un challenge pour découvrir la Bible en 100 textes essentiels"
     welcome:
         title: Le challenge biblique E100
         subTitle: 100 textes essentiels – Lance-toi dans le challenge !
-        text: Le E100 est un défi passionnant qui va te permettre de découvrir la Bible. 50 textes de l’Ancien Testament et 50 du Nouveau Testament spécialement sélectionnés pour te permettre une compréhension globale de ce Grand Livre !
+        text: E100 Youth est un challenge créé par la Ligue pour découvrir et méditer la Bible. On y trouve 100 textes bibliques, 100 commentaires et 1 espace personnel qui permet de suivre sa progression et de sauvegarder ce qui t’a plu. 
         action: Commence tout de suite !
         register: Pour participer au challenge, inscris-toi sur le site c’est gratuit.
     categories:
@@ -15,6 +15,9 @@ homepage:
         text: Vous ne savez pas par où commencer. Suivez le guide !
         action: Découvrir le text 1
 
+meta:
+    description: E100 Youth est un challenge créé par la Ligue pour découvrir et méditer la Bible. On y trouve 100 textes bibliques, 100 commentaires et 1 espace personnel qui permet de suivre sa progression et de sauvegarder ce qui t’a plu.
+    keywords: Bible, Challenge, 100 textes, Découvrir, Essentiels
 
 categories:
     title: "E100 | Textes bibliques"
@@ -117,6 +120,7 @@ goal:
     welcome:
         title: Fixe toi un objectif
     change: 'Change la date à laquelle tous les textes devront être lus.'
+    submit: c'est parti
 
 navigation:
     next: '>'

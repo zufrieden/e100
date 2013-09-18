@@ -14,6 +14,9 @@ homepage:
     title: "Keinen Plan?"
     text: "Du weißt nicht, wo du anfangen sollst? Folge dem roten Faden!"
     action: "Entdecke den ersten Text"
+meta:
+  description: "Was steht eigentlich in der Bibel? Muss ich alles lesen, um das zu verstehen? Überblicke die ganze Bibel mit nur 100 Texten! 100 für dich hat Texte aus dem Alten und dem Neuen Testament zusammengestellt und kommentiert. Auf Los geht’s los!"
+  keywords: "Bibel, Challenge, 100 Texte, Entdecken, Ueberblicken"
 categories:
   title: "100 für dich | Bibeltexte"
   welcome:
@@ -41,6 +44,7 @@ favorites:
     title: "Meine Favoriten"
 notes:
   title: "100 für dich | Notizen"
+  notetext: ~
   welcome:
     title: "Eigene Notizen"
   action:
@@ -102,6 +106,7 @@ goal:
   welcome:
     title: "Setze dir dein Ziel!"
   change: "Ändere das Datum, an dem du alle Texte gelesen haben willst."
+  submit: "Datum ändern"
 navigation:
   next: ">"
   prev: <
