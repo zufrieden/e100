@@ -44,7 +44,7 @@ favorites:
     title: "Meine Favoriten"
 notes:
   title: "100 für dich | Notizen"
-  notetext: ~
+  notetext: "Eine Notiz machen"
   welcome:
     title: "Eigene Notizen"
   action:
