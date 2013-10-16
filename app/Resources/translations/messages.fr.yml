@@ -1,140 +1,124 @@
 homepage:
-    title: "E100 Youth – Un challenge pour découvrir la Bible en 100 textes essentiels"
-    welcome:
-        title: Le challenge biblique E100
-        subTitle: 100 textes essentiels – Lance-toi dans le challenge !
-        text: E100 Youth est un challenge créé par la Ligue pour découvrir et méditer la Bible. On y trouve 100 textes bibliques, 100 commentaires et 1 espace personnel qui permet de suivre sa progression et de sauvegarder ce qui t’a plu. 
-        action: Commence tout de suite !
-        register: Pour participer au challenge, inscris-toi sur le site c’est gratuit.
-    categories:
-        title: Catégories
-        text: Chaque texte du défi E100 est classé dans une catégorie.
-        action: Découvrir les catégories
-    random:
-        title: Perdu ?
-        text: Vous ne savez pas par où commencer. Suivez le guide !
-        action: Découvrir le text 1
-
+  title: "E100 Youth – Découvrir la Bible en 100 textes essentiels"
+  welcome:
+    title: "E100 Youth – Découvrir la Bible en 100 textes essentiels"
+    subTitle: "Lance-toi dans le challenge !"
+    text: "E100 Youth est un challenge créé par la Ligue pour découvrir et méditer la Bible. On y trouve 100 textes bibliques, 100 commentaires et 1 espace personnel qui permet de suivre sa progression et de sauvegarder ce qui t’a plu."
+    action: "Commence tout de suite !"
+    register: "Pour participer au challenge, inscris-toi sur le site c’est gratuit."
+  categories:
+    title: Catégories
+    text: "Chaque texte du défi E100 est classé dans une catégorie."
+    action: "Découvrir les catégories"
+  random:
+    title: "Perdu ?"
+    text: "Vous ne savez pas par où commencer. Suivez le guide !"
+    action: "Découvrir le text 1"
 meta:
-    description: E100 Youth est un challenge créé par la Ligue pour découvrir et méditer la Bible. On y trouve 100 textes bibliques, 100 commentaires et 1 espace personnel qui permet de suivre sa progression et de sauvegarder ce qui t’a plu.
-    keywords: Bible, Challenge, 100 textes, Découvrir, Essentiels
-
+  description: "E100 Youth est un challenge créé par la Ligue pour découvrir et méditer la Bible. On y trouve 100 textes bibliques, 100 commentaires et 1 espace personnel qui permet de suivre sa progression et de sauvegarder ce qui t’a plu."
+  keywords: "Bible, Challenge, 100 textes, Découvrir, Essentiels"
 categories:
-    title: "E100 | Textes bibliques"
-    welcome:
-        title: "Clique sur un thème pour accèder aux textes"
-        text: "Dans l’Ancien Testament, on trouve les récits de la création du monde et toute  l’histoire de Dieu avec Israël, son peuple."
-        text2: "Dans le Nouveau Testament, c'est Jésus le personnage central. Ces textes nous racontent son histoire sur la Terre et les débuts de son Eglise."
-    old:
-        title: Ancien Testament
-    new:
-        title: Nouveau Testament
-
+  title: "E100 | Textes bibliques"
+  welcome:
+    title: "Clique sur un thème pour accèder aux textes"
+    text: "Dans l’Ancien Testament, on trouve les récits de la création du monde et toute  l’histoire de Dieu avec Israël, son peuple."
+    text2: "Dans le Nouveau Testament, c'est Jésus le personnage central. Ces textes nous racontent son histoire sur la Terre et les débuts de son Eglise."
+  old:
+    title: "Ancien Testament"
+  new:
+    title: "Nouveau Testament"
 random:
-    button:
-        addfavorites: "Ajouter aux favoris"
-        removefavorites: "Supprimer des favoris"
-        read: "Marquer comme lu"
-        unread: "Marquer comme non-lu"
-        facebook: "Partager sur facebook"
-        send: "Envoyer à un ami"
-        note: "Ecrire une note personnelle"
-        dashboard: "Retour à l'espace personnel"
-
+  button:
+    addfavorites: "Ajouter aux favoris"
+    removefavorites: "Supprimer des favoris"
+    read: "Marquer comme lu"
+    unread: "Marquer comme non-lu"
+    facebook: "Partager sur facebook"
+    send: "Envoyer à un ami"
+    note: "Ecrire une note personnelle"
+    dashboard: "Retour à l'espace personnel"
 favorites:
-    title: "E100 | Favoris"
-    nothingFound: Aucun favori pour le moment
-    welcome:
-        title: "Mes favoris"
-
+  title: "E100 | Favoris"
+  nothingFound: "Aucun favori pour le moment"
+  welcome:
+    title: "Mes favoris"
 notes:
-    title: "E100 | Notes personnelles"
-    notetext: Ecrire une note
-    welcome:
-        title: "Notes personnelles"
-    action:
-        edit: Editer
-        delete: Supprimer
-        new: Ajouter
-    nothingFound: Aucune note pour le moment
-
+  title: "E100 | Notes personnelles"
+  notetext: "Ecrire une note"
+  welcome:
+    title: "Notes personnelles"
+  action:
+    edit: Editer
+    delete: Supprimer
+    new: Ajouter
+  nothingFound: "Aucune note pour le moment"
 menu:
-    home: Accueil
-    dashboard: Espace personnel
-    categories: Textes bibliques
-    random: Aléatoire
-    notes: Notes
-    favorites: Favoris
-    last: Dernier lu
-    goals: Objectifs
-    changePassword: Changer le mot de passe
-    logout: Déconnexion
-    language: Langue
-
-
+  home: Accueil
+  dashboard: "Espace personnel"
+  categories: "Textes bibliques"
+  random: Aléatoire
+  notes: Notes
+  favorites: Favoris
+  last: "Dernier lu"
+  goals: Objectifs
+  changePassword: "Changer le mot de passe"
+  logout: Déconnexion
+  language: Langue
 dashboard:
-    title: Espace personnel
-    velocity:
-        title: Pour atteindre ton objectif, il te faut lire 1 texte tous les %count% jour(s)
-    welcome:
-        title: Bienvenue dans ton espace personnel
-        text: Cet espace personnel te permet de retrouver tes notes, favoris, le dernier texte que tu as lu et de suivre ta progression.
-    next:
-        title:Lire le prochain
-    lastread:
-        title: Dernier texte lu
-        text: déjà lus
-    progress:
-        title: Ta progression
-    goal:
-        link: Modifie ton objectif
-
+  title: "Espace personnel"
+  velocity:
+    title: "Pour atteindre ton objectif, il te faut lire 1 texte tous les %count% jour(s)"
+  welcome:
+    title: "Bienvenue dans ton espace personnel"
+    text: "Cet espace personnel te permet de retrouver tes notes, favoris, le dernier texte que tu as lu et de suivre ta progression."
+  next: "title:Lire le prochain"
+  lastread:
+    title: "Dernier texte lu"
+    text: "déjà lus"
+  progress:
+    title: "Ta progression"
+  goal:
+    link: "Modifie ton objectif"
 user:
-    login:
-        title: S’identifier
-        text: Entre ton email et ton mot de passe pour t’identifier et accèder à ton compte
-        register: Si tu n’as pas de compte, tu peux t’inscrire gratuitement. Ton compte te permet de participer au challenge, suivre ta progression et écrire tes commentaires sur les textes.
-        registerAction: Inscris-toi !
-    register:
-        title: S'inscrire
-        text: Inscris-toi au challenge E100 tu pourras suivre ta progression de lecture, écrire tes commentaires personnels sur les textes et mettre des textes en favoris
-        login: Si tu as déjà un compte, rends toi directement à la page de login.
-        loginAction: S'identifier
-
+  login:
+    title: S’identifier
+    text: "Entre ton email et ton mot de passe pour t’identifier et accèder à ton compte"
+    register: "Si tu n’as pas de compte, tu peux t’inscrire gratuitement. Ton compte te permet de participer au challenge, suivre ta progression et écrire tes commentaires sur les textes."
+    registerAction: "Inscris-toi !"
+  register:
+    title: S'inscrire
+    text: "Inscris-toi au challenge E100 tu pourras suivre ta progression de lecture, écrire tes commentaires personnels sur les textes et mettre des textes en favoris"
+    login: "Si tu as déjà un compte, rends toi directement à la page de login."
+    loginAction: S'identifier
 text:
-    innerNav:
-        bibleText: Texte
-        comment: Commentaire
-        question: Action
-        link: Pour aller plus loin
-
-
+  innerNav:
+    bibleText: Texte
+    comment: Commentaire
+    question: Action
+    link: "Pour aller plus loin"
 footer:
-    project: Un projet
-    ligue: Ligue pour la lecture de la Bible
-    partner: Partenaire
-    abf: Alliance biblique française
-
+  project: "Un projet"
+  ligue: "Ligue pour la lecture de la Bible"
+  partner: Partenaire
+  abf: "Alliance biblique française"
 goal:
-    title: Objectif
-    welcome:
-        title: Fixe toi un objectif
-    change: 'Change la date à laquelle tous les textes devront être lus.'
-    submit: c'est parti
-
+  title: Objectif
+  welcome:
+    title: "Fixe toi un objectif"
+  change: "Change la date à laquelle tous les textes devront être lus."
+  submit: "c'est parti"
 navigation:
-    next: '>'
-    prev: '<'
-
+  next: ">"
+  prev: <
 motivation:
-    cas1: "Bienvenue dans le challenge! Fixe-toi des objectifs pour lire et méditer 100 textes bibliques passionnants. On commence par les présentations avec le couple le plus connu de l’Histoire. "
-    cas3: "Bien commencé? Déjà dans le rythme? On espère que t’as trouvé le bateau. "
-    cas5: "Bien parti! Well done! Guete g’macht! शाबाश! 做得好! labi izcepts!"
-    cas10: "10/100. 1ère étape franchie. Reste plus que les 9 autres ;-) "
-    cas20: "Rythme de méditation trouvé? Il semble que OUI, c’est cool! Bref, c’est pas le moment de prendre l’eau!"
-    cas33: "T’es arrivé au tiers du parcours. Joli score.  "
-    cas50: "Moitié du parcours! Bonne perf! Une fois arrivé là, plus possible de s’arrêter en route. Ce serait trop frustrant, non?"
-    cas90: "Dernière ligne droite! On est bientôt à la fin des temps, euh du challenge. "
-    cas95: "Apocalypse Now!!"
-    cas99: "Petit moment de nostalgie? Le challenge touche à sa fin..."
-    cas100: "BRAVO, toutes nos félicitations! Le challenge est terminé. La rencontre avec Dieu peut évidememment se poursuivre à travers sa Parole, aussi souvent que tu le désires. Sur cette page http://ligue.ch/N454/guides-bibliques.html, tu trouveras d'autres guides bibliques. Bonne continuation. Que notre Père te bénisse."
+  cas1: "Bienvenue dans le challenge! Fixe-toi des objectifs pour lire et méditer 100 textes bibliques passionnants. On commence par les présentations avec le couple le plus connu de l’Histoire. "
+  cas3: "Bien commencé? Déjà dans le rythme? On espère que t’as trouvé le bateau. "
+  cas5: "Bien parti! Well done! Guete g’macht! शाबाश! 做得好! labi izcepts!"
+  cas10: "10/100. 1ère étape franchie. Reste plus que les 9 autres ;-) "
+  cas20: "Rythme de méditation trouvé? Il semble que OUI, c’est cool! Bref, c’est pas le moment de prendre l’eau!"
+  cas33: "T’es arrivé au tiers du parcours. Joli score.  "
+  cas50: "Moitié du parcours! Bonne perf! Une fois arrivé là, plus possible de s’arrêter en route. Ce serait trop frustrant, non?"
+  cas90: "Dernière ligne droite! On est bientôt à la fin des temps, euh du challenge. "
+  cas95: "Apocalypse Now!!"
+  cas99: "Petit moment de nostalgie? Le challenge touche à sa fin..."
+  cas100: "BRAVO, toutes nos félicitations! Le challenge est terminé. La rencontre avec Dieu peut évidememment se poursuivre à travers sa Parole, aussi souvent que tu le désires. Sur cette page http://ligue.ch/N454/guides-bibliques.html, tu trouveras d'autres guides bibliques. Bonne continuation. Que notre Père te bénisse."
