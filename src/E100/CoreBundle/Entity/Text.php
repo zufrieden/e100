@@ -118,7 +118,7 @@ class Text implements Translatable
      * @var text $linkLabel
      *
      * @Gedmo\Translatable
-     * @ORM\Column(name="linkLabel", type="text", nullable=true)
+     * @ORM\Column(name="link_label", type="text", nullable=true)
      */
 
     private $linkLabel;
