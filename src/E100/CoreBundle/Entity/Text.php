@@ -113,6 +113,15 @@ class Text implements Translatable
      */
 
     private $link;
+    
+    /**
+     * @var text $linkLabel
+     *
+     * @Gedmo\Translatable
+     * @ORM\Column(name="linkLabel", type="text", nullable=true)
+     */
+
+    private $linkLabel;
 
     /**
      * @var text $authorName
@@ -225,6 +234,9 @@ class Text implements Translatable
     {
         return $this->link;
     }
+    
+    
+
 
     /**
      * Set bibleRef
@@ -462,5 +474,28 @@ class Text implements Translatable
     public function getAuthorDescription()
     {
         return $this->authorDescription;
+    }
+
+    /**
+     * Set linkLabel
+     *
+     * @param string $linkLabel
+     * @return Text
+     */
+    public function setLinkLabel($linkLabel)
+    {
+        $this->linkLabel = $linkLabel;
+    
+        return $this;
+    }
+
+    /**
+     * Get linkLabel
+     *
+     * @return string 
+     */
+    public function getLinkLabel()
+    {
+        return $this->linkLabel;
     }
 }
