@@ -122,8 +122,7 @@
                 {{ 'footer.abf' | trans }}
               </a>
           </div>
-          {% endif %}
-          {% if app.request.get('_locale') == 'de' %}
+          {% else if app.request.get('_locale') == 'de' %}
           <div class="pull-left" style="width:40%;">
             <h3>{{ 'footer.project' | trans }} </h3>
             <a href="http://www.bibellesebund.net" target="_blank">
@@ -131,7 +130,13 @@
               {{ 'footer.ligue' | trans }}
             </a>
           </div>
+          {% else %}
+          <div class="pull-left" style="width:40%;">
+            <h3>{{ 'footer.project' | trans }} </h3>
+            <p>{{ 'footer.ligue' | trans }}</p>
+          </div>
           {% endif %}
+
 
 
         </footer>
