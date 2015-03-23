@@ -122,7 +122,7 @@
                 {{ 'footer.abf' | trans }}
               </a>
           </div>
-          {% else if app.request.get('_locale') == 'de' %}
+          {% elseif app.request.get('_locale') == 'de' %}
           <div class="pull-left" style="width:40%;">
             <h3>{{ 'footer.project' | trans }} </h3>
             <a href="http://www.bibellesebund.net" target="_blank">
@@ -133,7 +133,7 @@
           {% else %}
           <div class="pull-left" style="width:40%;">
             <h3>{{ 'footer.project' | trans }} </h3>
-            <p>{{ 'footer.ligue' | trans }}</p>
+            <p>{{ 'footer.partner' | trans }}</p>
           </div>
           {% endif %}
 
