@@ -130,6 +130,17 @@
               {{ 'footer.ligue' | trans }}
             </a>
           </div>
+          {% elseif app.request.get('_locale') == 'bg' %}
+            <div class="pull-left" style="width:40%;">
+              <h3>{{ 'footer.project' | trans }} </h3>
+              <a href="http://www.scriptureunion.bg" target="_blank">
+                <img src="/img/logo_su_bg.png"><br/>
+              </a>
+            </div>
+          <div class="pull-right" style="width:40%;">
+              <h3>&nbsp;</h3>
+              <p>{{ 'footer.partner' | trans }}</p>
+          </div>
           {% else %}
           <div class="pull-left" style="width:40%;">
             <h3>{{ 'footer.project' | trans }} </h3>
