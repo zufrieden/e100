@@ -26,6 +26,9 @@
             <label for="password" class="control-label">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
             <div class="controls">
                 <input type="password" id="password" name="_password" required="required" />
+                <span id="helpBlock" class="help-block">
+                  <a href="{{ path("fos_user_resetting_request") }}">{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }} ?</a>
+                </span>
             </div>
         </div>
 
@@ -38,6 +41,7 @@
                 <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" class="btn-primary"/>
             </div>
         </div>
+
 
 
         </form>
