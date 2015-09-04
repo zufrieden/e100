@@ -108,6 +108,12 @@ fos_user_change_password:
     requirements:
         _locale: fr|de|en|bg
 
+fos_user_profile_show:
+    pattern:  /dashboard
+    defaults: { _controller: E100CoreBundle:User:dashboard }
+    requirements:
+        _method: GET
+
 # Internal routing configuration to handle ESI
 #_internal:
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
