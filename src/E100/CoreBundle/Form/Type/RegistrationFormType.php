@@ -18,6 +18,7 @@ class RegistrationFormType extends BaseType
                 'en' => 'English',
                 'de' => 'Deutsch',
                 'bg' => 'Bulgarian',
+                'fi' => 'Suomi',
             )
         ));
     }
