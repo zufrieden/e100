@@ -6,7 +6,7 @@ homepage_i18n:
     pattern: /{_locale}/
     defaults: { _controller: E100CoreBundle:Default:index, _locale: %locale% }
     requirements:
-        _locale: fr|de|en|ru|bg
+        _locale: fr|de|en|ru|bg|fi
 
 Default:
     resource: "@E100CoreBundle/Controller/DefaultController.php"
@@ -14,7 +14,7 @@ Default:
     prefix:   /{_locale}
     defaults: { _locale: %locale% }
     requirements:
-        _locale: fr|de|en|ru|bg
+        _locale: fr|de|en|ru|bg|fi
 
 Text:
     resource: "@E100CoreBundle/Controller/TextController.php"
@@ -22,7 +22,7 @@ Text:
     prefix:   /{_locale}/text
     defaults: { _locale: %locale% }
     requirements:
-        _locale: fr|de|en|ru|bg
+        _locale: fr|de|en|ru|bg|fi
 
 Favorites:
     resource: "@E100CoreBundle/Controller/FavoritesController.php"
@@ -30,7 +30,7 @@ Favorites:
     prefix:   /{_locale}/favorites
     defaults: { _locale: %locale% }
     requirements:
-        _locale: fr|de|en|ru|bg
+        _locale: fr|de|en|ru|bg|fi
 
 Random:
     resource: "@E100CoreBundle/Controller/DefaultController.php"
@@ -38,7 +38,7 @@ Random:
     prefix:   /{_locale}
     defaults: { _locale: %locale% }
     requirements:
-        _locale: fr|de|en|ru|bg
+        _locale: fr|de|en|ru|bg|fi
 
 Categories:
     resource: "@E100CoreBundle/Controller/CategoriesController.php"
@@ -46,7 +46,7 @@ Categories:
     prefix:   /{_locale}/categories
     defaults: { _locale: %locale% }
     requirements:
-        _locale: fr|de|en|ru|bg
+        _locale: fr|de|en|ru|bg|fi
 
 Note:
     resource: "@E100CoreBundle/Controller/NotesController.php"
@@ -54,7 +54,7 @@ Note:
     prefix:   /{_locale}/notes
     defaults: { _locale: %locale% }
     requirements:
-        _locale: fr|de|en|ru|bg
+        _locale: fr|de|en|ru|bg|fi
 
 User:
     resource: "@E100CoreBundle/Controller/UserController.php"
@@ -62,7 +62,7 @@ User:
     prefix:   /{_locale}/user
     defaults: { _locale: %locale% }
     requirements:
-        _locale: fr|de|en|ru|bg
+        _locale: fr|de|en|ru|bg|fi
 
 Goal:
     resource: "@E100CoreBundle/Controller/GoalController.php"
@@ -70,7 +70,7 @@ Goal:
     prefix:   /{_locale}/goal
     defaults: { _locale: %locale% }
     requirements:
-        _locale: fr|de|en|ru|bg
+        _locale: fr|de|en|ru|bg|fi
 
 # Login:
 #     resource: "@E100CoreBundle/Controller/LoginController.php"
@@ -78,35 +78,35 @@ Goal:
 #     prefix:   /{_locale}/login
 #     defaults: { _locale: %locale% }
 #     requirements:
-#         _locale: fr|de|en|ru|bg
+#         _locale: fr|de|en|ru|bg|fi
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
     prefix:   /{_locale}
     defaults: { _locale: %locale% }
     requirements:
-        _locale: fr|de|en|bg
+        _locale: fr|de|en|bg|fi
 
 fos_user_register:
     resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
     prefix: /{_locale}/register
     defaults: { _locale: %locale% }
     requirements:
-        _locale: fr|de|en|bg
+        _locale: fr|de|en|bg|fi
 
 fos_user_resetting:
     resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
     prefix: /{_locale}/resetting
     defaults: { _locale: %locale% }
     requirements:
-        _locale: fr|de|en|bg
+        _locale: fr|de|en|bg|fi
 
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /{_locale}/profile
     defaults: { _locale: %locale% }
     requirements:
-        _locale: fr|de|en|bg
+        _locale: fr|de|en|bg|fi
 
 fos_user_profile_show:
     pattern:  /dashboard
