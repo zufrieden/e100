@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-    
+
     <div class="container">
       <div class="btn-toolbar">
         <div class="btn-group">
@@ -71,7 +71,7 @@
         <div class="span4 offset1">
           <h2 class="normal-color" id="comments">{{ 'text.innerNav.comment' | trans}}</h2>
           <p class="normal-color">
-            {{ text.comment }}
+            {{ text.comment|nl2br }}
           </p>
           <p>
             <strong>{{ text.authorName }}</strong><br/>
