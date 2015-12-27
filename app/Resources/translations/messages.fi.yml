@@ -3,7 +3,7 @@ homepage:
   welcome:
     title: RaamattuStartti
     subTitle: "Matka läpi Raamatun 100 lyhyen lukukohdan kautta"
-    text: "“Mitä Raamattu oikein sisältää? Pitääkö se lukea alusta loppuun, jotta ymmärtäisi sen sanoman?” E100startti tarjoaa mahdollisuuden saada yleiskuva koko Raamatusta vähän nopeammin. Siinä on yhteensä 100 tiivistä, tarkasti valittua lukukohtaa Vanhasta ja Uudesta testamentista. Jokaiseen kohtaan liittyy taustatietoa ja pohdintaa. Jaksot sisältävät materiaalia myös raamatturyhmille. Tartu haasteeseen ja starttaa matkalle läpi Raamatun - yksin tai yhdessä kavereiden kanssa!"
+    text: "“Mitä Raamattu oikein sisältää? Pitääkö se lukea alusta loppuun, jotta ymmärtäisi sen sanoman?” RaamatuStartti tarjoaa mahdollisuuden saada yleiskuva koko Raamatusta vähän nopeammin. Siinä on yhteensä 100 tiivistä, tarkasti valittua lukukohtaa Vanhasta ja Uudesta testamentista. Jokaiseen kohtaan liittyy taustatietoa ja pohdintaa. Jaksot sisältävät materiaalia myös raamatturyhmille. Tartu haasteeseen ja starttaa matkalle läpi Raamatun - yksin tai yhdessä muiden kanssa!"
     action: "Aloita tästä!"
     register: "Rekisteröidy ilmaiseksi ja luo oma RaamattuStartti -tili."
   categories:
@@ -13,12 +13,12 @@ homepage:
   random:
     title: "Satunnainen järjestys"
     text: "Mistä aloittaa? Seuraa ohjeita."
-    action: "Aloita kohdasta 1."
+    action: "Aloita kohdasta 1"
 meta:
-  description: "“Mitä Raamattu oikein sisältää? Pitääkö se lukea alusta loppuun, jotta ymmärtäisi sen sanoman?” E100startti tarjoaa mahdollisuuden saada yleiskuvan koko Raamatusta vähän nopeammin. Siinä on yhteensä 100 tiivistä, tarkasti valittua lukukohtaa Vanhasta ja Uudesta testamentista. Jokaiseen kohtaan liittyy taustatietoa ja pohdintaa. Jaksot sisältävät materiaalia myös raamatturyhmille. Tartu haasteeseen ja starttaa matkalle läpi Raamatun - yksin tai yhdessä kavereiden kanssa!"
+  description: "“Mitä Raamattu oikein sisältää? Pitääkö se lukea alusta loppuun, jotta ymmärtäisi sen sanoman?” RaamattuStartti tarjoaa mahdollisuuden saada yleiskuva koko Raamatusta vähän nopeammin. Siinä on yhteensä 100 tiivistä, tarkasti valittua lukukohtaa Vanhasta ja Uudesta testamentista. Jokaiseen kohtaan liittyy taustatietoa ja pohdintaa. Jaksot sisältävät materiaalia myös raamatturyhmille. Tartu haasteeseen ja starttaa matkalle läpi Raamatun - yksin tai yhdessä muiden kanssa!"
   keywords: "RaamattuStartti, raamattustartti, E100startti, E100, startti, Raamattu, lukuohjelma, aloittelija, raamatturyhmä, Vanha testamentti, Uusi testamentti, pohdintaa, taustatietoa, raamatunkohta, yleiskuva, haaste, matka läpi Raamatun, Raamatunlukijain Liitto, RLL, Hetkinen, Liftari"
 categories:
-  title: "RaamattuStartti / raamatunkohdat"
+  title: "RaamattuStartti/jaksot"
   welcome:
     title: "Valitse jakso alla olevasta valikosta."
     text: "Vanhassa testamentissa kerrotaan koko maailman synnystä, Israelin kansan vaiheista ja Jumalan vaikutuksesta ihmiskunnan historiassa."
@@ -82,20 +82,20 @@ dashboard:
 user:
   login:
     title: "Kirjaudu sisään"
-    text: "Kirjoita käyttäjänimesi ja salasanasi, niin pääset omalle tilillesi."
+    text: "Kirjoita käyttäjätunnuksesi ja salasanasi, niin pääset omalle tilillesi."
     register: "Ei vielä käyttäjätunnusta? Rekisteröidy ilmaiseksi ja luo käyttäjätunnus, niin pääset käyttämään omaa henkilökohtaista RaamattuStartti -tiliäsi. Siellä voit kirjoittaa muistiinpanoja, merkata ja kerätä suosikkeja ja seurata edistymistäsi."
     registerAction: Rekisteröidy
   register:
     title: Rekisteröidy
     text: "Rekisteröidy ilmaiseksi ja luo oma RaamattuStartti -tili. Siellä voit kirjoittaa muistiinpanoja, merkata ja kerätä suosikkeja ja seurata edistymistäsi."
-    login: "Onko sinulla jo käyttäjätunnus? Rekisteröidy RaamattuStarttiin tästä."
-    loginAction: Käyttäjätunnus
+    login: "Onko sinulla jo käyttäjätunnus? Kirjaudu RaamattuStarttiin tästä."
+    loginAction: Kirjaudu
 text:
   innerNav:
     bibleText: Raamatunkohta
     comment: "Pohdintaa ja taustatietoa"
     question: "Mieti:"
-    link: "Pour aller plus loin"
+    link: Raamatturyhmälle
 footer:
   project: "Tämän sivuston on tehnyt"
   ligue: "Tämän sivuston on tehnyt"
@@ -105,7 +105,7 @@ goal:
   title: RaamattuStartti/tavoitteeni
   welcome:
     title: "Aseta itsellesi tavoite!"
-  change: "Vaihda tavoiteaikasi."
+  change: "Vaihda tavoiteaikasi"
   submit: "Vaihda päivämäärä"
 navigation:
   next: "Seuraava sivu"
@@ -122,6 +122,6 @@ motivation:
   cas95: "Nyt sinulla on 95 lukukohtaa takana – maali häämöttää jo viiden kohdan päässä!"
   cas99: "Mitä ajattelet Raamatusta 99 lukukohdan jälkeen? Millaista oli kulkea RaamattuStartin matkassa läpi Raamatun? Sinulla on enää yksi kohta jäljellä. Mitä sen jälkeen? Raamatussa on onneksi vielä paljon luettavaa!"
   cas100: |-
-      Loistavaa! Onnittelut siitä, että jaksoit ja halusit kulkea RaamattuStartin alusta loppuun! Haluaisimme edelleenkin jatkaa kanssasi Raamattuun tutustumista. Julkaisemme raamatunlukuoppaita, joiden avulla löytyy hyvä, päivittäinen rytmi Raamatun lukemiseen:
-      Nuorten raamatunlukuopas Liftari, www.liftari.fi
+      Loistavaa! Onnittelut siitä, että kuljit RaamattuStartin alusta loppuun! Haluaisimme edelleenkin jatkaa kanssasi Raamattuun tutustumista. Julkaisemme raamatunlukuoppaita, joiden avulla löytyy hyvä, päivittäinen rytmi Raamatun lukemiseen:
+      Nuorten raamatunlukuopas Liftari www.liftari.fi
       Aikuisten raamatunlukuopas Hetkinen www.rll.fi
