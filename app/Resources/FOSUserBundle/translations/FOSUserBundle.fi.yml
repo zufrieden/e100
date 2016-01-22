@@ -41,8 +41,8 @@ change_password:
 registration:
     check_email: Sähköposti on lähetetty osoitteeseen %email%. Se sisältää aktivointilinkin, jota klikkaamalla tunnus aktivoidaan.
     confirmed: Onnittelut %username%, tunnuksesi on nyt aktivoitu.
-    back: Takaisin alkuperäiselle sivulle.
-    submit: Luo tunnus
+    back: Takaisin alkuperäiselle sivulle
+    submit: Kirjaudu
     flash:
         user_created: Käyttäjätunnus on luotu onnistuneesti
     email:
