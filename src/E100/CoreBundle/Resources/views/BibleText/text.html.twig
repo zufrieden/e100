@@ -69,6 +69,10 @@
           <br /><br /> #}
         </div>
         <div class="span4 offset1">
+          {% if text.audio %}
+          <h2 class="normal-color" id="comments">{{ 'text.audio' | trans }}</h2>
+          <iframe width="100%" height="40" src="{{ text.audio }}" frameborder="0"></iframe>
+          {% endif %}
           <h2 class="normal-color" id="comments">{{ 'text.innerNav.comment' | trans}}</h2>
           <p class="normal-color">
             {{ text.comment }}
